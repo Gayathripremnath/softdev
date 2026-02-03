@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Features from "./pages/Features";
 import Services from "./pages/Services";
+import MainSection from "./pages/Services";
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
     <>
       <BrowserRouter>
       <Navbar />
-
+     
       <Routes>
          <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

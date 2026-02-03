@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import '../styles/mac-mockup.css';
 import logo from "../assets/mac.jpg";
+import img1 from "../assets/img1.png";
+import img2 from "../assets/img2.png";
+import img3 from "../assets/img3.png";
+import { useRef } from 'react';
+
 
 const Home = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', city: '' });
@@ -9,6 +14,33 @@ const Home = () => {
   const [message, setMessage] = useState('');
   const [isChecked, setIsChecked] = useState(false);
   const [checkboxMessage, setCheckboxMessage] = useState('Unchecked ❌');
+
+  const [activeFeature, setActiveFeature] = useState(0);
+  const featureRefs = useRef([]);
+
+  useEffect(() => {
+    featureRefs.current = featureRefs.current.slice(0, 3); // Keep only first 3 refs
+    const observers = [];
+
+    featureRefs.current.forEach((ref, index) => {
+      if (ref) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setActiveFeature(index);
+            }
+          },
+          { threshold: 0.5, rootMargin: "-10% 0px -10% 0px" }
+        );
+        observer.observe(ref);
+        observers.push(observer);
+      }
+    });
+
+    return () => {
+      observers.forEach((obs) => obs.disconnect());
+    };
+  }, []);
 
   const scrollToForm = () => {
     document.querySelector('.demo-form-card').scrollIntoView({ behavior: 'smooth' });
@@ -23,17 +55,17 @@ const Home = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = { name: '', phone: '', city: '' };
-    
+
     if (!formData.name) newErrors.name = 'Name is required';
     if (!formData.phone) newErrors.phone = 'Phone is required';
     if (!formData.city) newErrors.city = 'City is required';
-    
+
     setErrors(newErrors);
-    
+
     if (!formData.name || !formData.phone || !formData.city) {
       return;
     }
-    
+
     setMessage('Form submitted successfully!');
     console.log('Form Data:', formData);
   };
@@ -46,7 +78,7 @@ const Home = () => {
 
   useEffect(() => {
     const checkIcons = document.querySelectorAll('.check-icon');
-    
+
     checkIcons.forEach((icon, index) => {
       setTimeout(() => {
         icon.style.transform = 'scale(1.2)';
@@ -65,21 +97,22 @@ const Home = () => {
             <h1 className="hero-headline">
               Supercharge Your Construction Projects with Our All-in-One ERP Solution
             </h1>
-            
+
             <p className="hero-description">
-              Transform your construction business with our comprehensive ERP solution. 
-              Improve efficiency, enable real-time project management, and leverage 
+              Transform your construction business with our comprehensive ERP solution.
+              Improve efficiency, enable real-time project management, and leverage
               cloud-based technology to streamline operations and boost productivity.
             </p>
-            
+
             <button className="demo-button" onClick={scrollToForm}>
               Book a Free Demo
             </button>
-            
+
             <div className="features-checklist">
               <div className="feature-item">
                 <span className="check-icon">✓</span>
                 <span>Streamlined Project Management</span>
+
               </div>
               <div className="feature-item">
                 <span className="check-icon">✓</span>
@@ -107,46 +140,46 @@ const Home = () => {
           <div className="hero-right">
             <div className="demo-form-card">
               <h3 className="form-title">Request a Free Demo</h3>
-              
+
               <form className="demo-form" onSubmit={handleSubmit}>
                 <div className="form-field">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="name"
-                    placeholder="Your Name"     
-                    className="form-input" 
+                    placeholder="Your Name"
+                    className="form-input"
                     value={formData.name}
                     onChange={handleChange}
                   />
                   {errors.name && <div className="field-error">{errors.name}</div>}
                 </div>
-                
+
                 <div className="form-field">
-                  <input 
-                    type="tel" 
+                  <input
+                    type="tel"
                     name="phone"
-                    placeholder="Phone Number" 
-                    className="form-input" 
+                    placeholder="Phone Number"
+                    className="form-input"
                     value={formData.phone}
                     onChange={handleChange}
                   />
                   {errors.phone && <div className="field-error">{errors.phone}</div>}
                 </div>
-                
+
                 <div className="form-field">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="city"
-                    placeholder="City Name" 
-                    className="form-input" 
+                    placeholder="City Name"
+                    className="form-input"
                     value={formData.city}
                     onChange={handleChange}
                   />
                   {errors.city && <div className="field-error">{errors.city}</div>}
                 </div>
-                
+
                 {message && <div className="form-message">{message}</div>}
-                
+
                 <button type="submit" className="send-button">
                   Send
                 </button>
@@ -155,93 +188,123 @@ const Home = () => {
           </div>
         </div>
       </div>
-    <section>
-  <div className='chart-page'>
-    <div className='chart'>
-      <div className='chart-image'>
-        <img 
-          src="https://images.unsplash.com/photo-1527443195645-1133f7f28990?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fG1hY3xlbnwwfHwwfHx8MA%3D%3D" 
-          alt="Mac" 
-        />
-      </div>
-      <div className='chart-cont'>
-        <h6>Our Modules</h6>
-        <h4>Integrated Modules into a Single and Centralized Platform</h4>
-        <p>
-          Experience seamless collaboration across departments with our fully integrated construction project management ERP software on a single and centralized platform.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-     <section className="features-section">
-  <div className="features-container">
-    <h2 className="features-heading">From Planning to Execution – Everything on One App</h2>
-    
-    <div className="features-vertical-list">
-      
-      <div className="feature-step">
-        <div className="step-number">1</div>
-        <div className="feature-content">
-          <h3 className="card-title">Enquiry</h3>
-          <p className="card-description">Streamline your project planning with comprehensive tools and real-time insights.</p>
-          <ul className="card-bullets">
-            <li>Resource allocation</li>
-            <li>Timeline management</li>
-            <li>Budget planning</li>
-          </ul>
-          <a href="#" className="card-link">know more &gt;</a>
+      <section>
+        <div className='chart-page'>
+          <div className='chart'>
+            <div className='chart-image'>
+              <img
+                src="https://www.nwayerp.com/wp-content/uploads/2024/09/add-slid-2.webp"
+                alt="Mac"
+              />
+            </div>
+            <div className='chart-cont'>
+              <h6>Our Modules</h6>
+              <h4>Integrated Modules into a Single and Centralized Platform</h4>
+              <p>
+                Experience seamless collaboration across departments with our fully integrated construction project management ERP software on a single and centralized platform.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="feature-step">
-        <div className="step-number">2</div>
-        <div className="feature-content">
-          <h3 className="card-title">Team Collaboration</h3>
-          <p className="card-description">Enable seamless communication and collaboration across all project teams.</p>
-          <ul className="card-bullets">
-            <li>Real-time messaging</li>
-            <li>Document sharing</li>
-            <li>Task assignments</li>
-          </ul>
-          <a href="#" className="card-link">know more &gt;</a>
+      <section className="features-section">
+        <div className="features-container">
+          <h2 className="features-heading">From Planning to Execution – Everything on One App</h2>
+
+          <div className="features-layout">
+            <div className="features-vertical-list">
+
+              <div
+                className={`feature-step ${activeFeature === 0 ? 'active' : ''}`}
+                ref={el => featureRefs.current[0] = el}
+              >
+                <div className="step-number">1</div>
+                <div className="feature-content">
+                  <h3 className="card-title">Enquiry</h3>
+                  <p className="card-description">Streamline your project planning with comprehensive tools and real-time insights.</p>
+                  <ul className="card-bullets">
+                    <li>Resource allocation</li>
+                    <li>Timeline management</li>
+                    <li>Budget planning</li>
+                  </ul>
+                  <a href="#" className="card-link">know more &gt;</a>
+                </div>
+              </div>
+
+              <div
+                className={`feature-step ${activeFeature === 1 ? 'active' : ''}`}
+                ref={el => featureRefs.current[1] = el}
+              >
+                <div className="step-number">2</div>
+                <div className="feature-content">
+                  <h3 className="card-title">Team Collaboration</h3>
+                  <p className="card-description">Enable seamless communication and collaboration across all project teams.</p>
+                  <ul className="card-bullets">
+                    <li>Real-time messaging</li>
+                    <li>Document sharing</li>
+                    <li>Task assignments</li>
+                  </ul>
+                  <a href="#" className="card-link">know more &gt;</a>
+                </div>
+              </div>
+
+              <div
+                className={`feature-step ${activeFeature === 2 ? 'active' : ''}`}
+                ref={el => featureRefs.current[2] = el}
+              >
+                <div className="step-number">3</div>
+                <div className="feature-content">
+                  <h3 className="card-title">Project</h3>
+                  <p className="card-description">Monitor project progress with advanced analytics and reporting tools.</p>
+                  <ul className="card-bullets">
+                    <li>Live progress updates</li>
+                    <li>Performance metrics</li>
+                    <li>Custom reports</li>
+                  </ul>
+                  <a href="#" className="card-link">know more &gt;</a>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="features-images-container">
+              <img
+                src={img1}
+                alt="Enquiry Feature"
+                className={`feature-image ${activeFeature === 0 ? 'active' : ''}`}
+              />
+              <img
+                src={img2}
+                alt="Collaboration Feature"
+                className={`feature-image ${activeFeature === 1 ? 'active' : ''}`}
+              />
+              <img
+                src={img3}
+                alt="Project Feature"
+                className={`feature-image ${activeFeature === 2 ? 'active' : ''}`}
+              />
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+      <div className="hero-container">
 
-      <div className="feature-step">
-        <div className="step-number">3</div>
-        <div className="feature-content">
-          <h3 className="card-title">Project</h3>
-          <p className="card-description">Monitor project progress with advanced analytics and reporting tools.</p>
-          <ul className="card-bullets">
-            <li>Live progress updates</li>
-            <li>Performance metrics</li>
-            <li>Custom reports</li>
-          </ul>
-          <a href="#" className="card-link">know more &gt;</a>
-        </div>
-      </div>
+        <div className="bg-shape"></div>
 
-    </div>
-  </div>
-</section>
-<div className="hero-container">
-     
-      <div className="bg-shape"></div>
+        <div className="hero-content">
 
-      <div className="hero-content">
-     
-        <div className="hero-left">
-          {/* <h6 className="main-title">SMART BUILD
+          <div className="hero-left">
+            {/* <h6 className="main-title">SMART BUILD
           <h6>APPLICATIONS</h6></h6> */}
-        </div>
-    <div className='ph-mac'>
-        <img src="https://www.nwayerp.com/wp-content/uploads/2024/10/all-media-screen-img.webp" alt="" />
-    </div>
+          </div>
+          <div className='ph-mac'>
+            <img src="https://www.nwayerp.com/wp-content/uploads/2024/10/all-media-screen-img.webp" alt="" />
+          </div>
         </div>
       </div>
     </>
+
   );
 };
 
