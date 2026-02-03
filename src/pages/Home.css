@@ -106,7 +106,6 @@ body {
 }
 
 .chart-image img {
-  width: 100%;
   max-width: 600px;
   height: 580px;
   object-fit: cover;
