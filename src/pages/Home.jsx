@@ -222,6 +222,7 @@ const Home = () => {
                 <div className="step-number">1</div>
                 <div className="feature-content">
                   <h3 className="card-title">Enquiry</h3>
+                  <img src={img1} alt="Enquiry" className="mobile-feature-image" />
                   <p className="card-description">Streamline your project planning with comprehensive tools and real-time insights.</p>
                   <ul className="card-bullets">
                     <li>Resource allocation</li>
@@ -239,6 +240,7 @@ const Home = () => {
                 <div className="step-number">2</div>
                 <div className="feature-content">
                   <h3 className="card-title">Team Collaboration</h3>
+                  <img src={img2} alt="Team Collaboration" className="mobile-feature-image" />
                   <p className="card-description">Enable seamless communication and collaboration across all project teams.</p>
                   <ul className="card-bullets">
                     <li>Real-time messaging</li>
@@ -256,6 +258,7 @@ const Home = () => {
                 <div className="step-number">3</div>
                 <div className="feature-content">
                   <h3 className="card-title">Project</h3>
+                  <img src={img3} alt="Project" className="mobile-feature-image" />
                   <p className="card-description">Monitor project progress with advanced analytics and reporting tools.</p>
                   <ul className="card-bullets">
                     <li>Live progress updates</li>

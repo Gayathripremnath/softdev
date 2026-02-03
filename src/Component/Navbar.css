@@ -12,6 +12,7 @@
   left: 0;
   right: 0;
   z-index: 1001;
+  height: 40px;
 }
 
 .top-bar-left {
@@ -25,6 +26,7 @@
 .phone-number {
   color: #495057;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .demo-btn {
@@ -37,6 +39,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .demo-btn:hover {
@@ -47,9 +50,9 @@
 /* Main Navbar Styles */
 .navbar {
   background: white;
-  padding: 25px 20px;
+  padding: 15px 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: fixed;
@@ -57,16 +60,15 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  min-height: 100px;
+  height: 100px;
 }
 
 .logo {
-  position: absolute;
-  left: 50px;
+  flex-shrink: 0;
 }
 
 .logo img {
-  height: 85px;
+  height: 70px;
   width: auto;
 }
 
@@ -76,6 +78,8 @@
   margin: 0;
   padding: 0;
   gap: 32px;
+  justify-content: center;
+  flex: 1;
 }
 
 .nav-links li a {
@@ -106,35 +110,6 @@
   width: 100%;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .top-bar {
-    padding: 8px 16px;
-    font-size: 0.8rem;
-  }
-  
-  .navbar {
-    padding: 12px 16px;
-  }
-  
-  .nav-links {
-    gap: 20px;
-  }
-  
-  .nav-links li a {
-    font-size: 0.9rem;
-  }
-  
-  .logo img {
-    height: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-links {
-    display: none;
-  }
-}
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -142,6 +117,13 @@
   font-size: 24px;
   color: #495057;
   cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  background-color: #f8f9fa;
 }
 
 .mobile-menu {
@@ -154,7 +136,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   padding: 20px;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .mobile-menu a {
@@ -163,6 +145,7 @@
   color: #495057;
   font-weight: 500;
   border-bottom: 1px solid #e9ecef;
+  transition: color 0.3s ease;
 }
 
 .mobile-menu a:last-child {
@@ -173,7 +156,90 @@
   color: #1e3a8a;
 }
 
-@media (max-width: 768px) {
+/* Comprehensive Responsive Design */
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 15px 40px;
+  }
+  
+  .top-bar {
+    padding: 8px 40px;
+  }
+  
+  .nav-links {
+    gap: 40px;
+  }
+}
+
+/* Desktop (992px to 1199px) */
+@media (max-width: 1199px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+  
+  .top-bar {
+    padding: 8px 30px;
+  }
+  
+  .nav-links {
+    gap: 28px;
+  }
+}
+
+/* Tablet Landscape (768px to 991px) */
+@media (max-width: 991px) {
+  .top-bar {
+    padding: 6px 20px;
+    height: 36px;
+  }
+  
+  .navbar {
+    padding: 12px 20px;
+    height: 80px;
+    top: 36px;
+  }
+  
+  .logo img {
+    height: 55px;
+  }
+  
+  .nav-links {
+    gap: 24px;
+  }
+  
+  .nav-links li a {
+    font-size: 0.95rem;
+  }
+  
+  .phone-number {
+    font-size: 0.85rem;
+  }
+  
+  .demo-btn {
+    padding: 6px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet Portrait (576px to 767px) */
+@media (max-width: 767px) {
+  .top-bar {
+    padding: 6px 16px;
+    height: 32px;
+  }
+  
+  .navbar {
+    padding: 10px 16px;
+    height: 70px;
+    top: 32px;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
   .nav-links {
     display: none;
   }
@@ -184,5 +250,114 @@
   
   .mobile-menu {
     display: flex;
+  }
+  
+  .top-bar-left {
+    gap: 12px;
+    margin-right: 12px;
+  }
+  
+  .phone-number {
+    font-size: 0.8rem;
+  }
+  
+  .demo-btn {
+    padding: 5px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Mobile Large (481px to 575px) */
+@media (max-width: 575px) {
+  .top-bar {
+    padding: 4px 12px;
+    height: 28px;
+  }
+  
+  .navbar {
+    padding: 8px 12px;
+    height: 60px;
+    top: 28px;
+  }
+  
+  .logo img {
+    height: 44px;
+  }
+  
+  .top-bar-left {
+    gap: 8px;
+    margin-right: 8px;
+  }
+  
+  .phone-number {
+    font-size: 0.75rem;
+  }
+  
+  .demo-btn {
+    padding: 4px 10px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Mobile Small (320px to 480px) */
+@media (max-width: 480px) {
+  .top-bar {
+    padding: 4px 8px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+  
+  .navbar {
+    padding: 6px 8px;
+    height: 56px;
+    top: 24px;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .top-bar-left {
+    gap: 6px;
+    margin-right: 6px;
+  }
+  
+  .phone-number {
+    font-size: 0.7rem;
+  }
+  
+  .phone-number:first-child {
+    display: none; /* Hide first phone number on very small screens */
+  }
+  
+  .demo-btn {
+    padding: 3px 8px;
+    font-size: 0.65rem;
+    border-radius: 12px;
+  }
+  
+  .mobile-menu {
+    padding: 16px;
+  }
+  
+  .mobile-menu a {
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+  .top-bar-left .phone-number {
+    display: none;
+  }
+  
+  .demo-btn {
+    padding: 2px 6px;
+    font-size: 0.6rem;
+  }
+  
+  .logo img {
+    height: 36px;
   }
 }

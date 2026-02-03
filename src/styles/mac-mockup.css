@@ -7,8 +7,10 @@
 
 .mac-mockup {
   position: relative;
-  width: 600px;
-  height: 375px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  aspect-ratio: 16/10;
   background: linear-gradient(145deg, #e6e6e6, #ffffff);
   border-radius: 16px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
