@@ -10,11 +10,10 @@ export default function About() {
       {/* HERO */}
       <section
         className="about-hero"
-        style={{ backgroundImage: `url(${heroImg})` }}
-      >
+        style={{ backgroundImage: `url(${heroImg})` }}>
         <div className="hero-overlay"></div>
         <div className="hero-content fade-in">
-          <h1>About Smart Build</h1>
+          <h1>About Smart Build</h1> 
           <p>Build Smarter. Track Better. Earn More.</p>
         </div>
       </section>
