@@ -1,3 +1,140 @@
+
+
+/* ================= MODERN ANIMATIONS ================= */
+
+/* Basic fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide left */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideInLeft 1s forwards;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide right */
+.slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: slideInRight 1s forwards;
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Staggered fade for feature cards */
+.features-grid .feature-card,
+.features-wrapper .feature-block {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpStagger 0.8s forwards;
+}
+
+.features-grid .feature-card:nth-child(1),
+.features-wrapper .feature-block:nth-child(1) { animation-delay: 0.2s; }
+.features-grid .feature-card:nth-child(2),
+.features-wrapper .feature-block:nth-child(2) { animation-delay: 0.35s; }
+.features-grid .feature-card:nth-child(3),
+.features-wrapper .feature-block:nth-child(3) { animation-delay: 0.5s; }
+.features-grid .feature-card:nth-child(4),
+.features-wrapper .feature-block:nth-child(4) { animation-delay: 0.65s; }
+.features-grid .feature-card:nth-child(5),
+.features-wrapper .feature-block:nth-child(5) { animation-delay: 0.8s; }
+.features-grid .feature-card:nth-child(6),
+.features-wrapper .feature-block:nth-child(6) { animation-delay: 0.95s; }
+
+@keyframes fadeUpStagger {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover scale / lift for images and cards */
+.about-image img,
+.feature-card,
+.feature-block {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-image img:hover,
+.feature-card:hover,
+.feature-block:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 35px 60px rgba(0,0,0,0.18);
+}
+
+/* Floating background elements for modern feel */
+.about-section::before,
+.about-section::after,
+.about-section.highlight::before,
+.about-section.highlight::after {
+  animation: floatSlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatSlow {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(15px) translateX(10px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+/* Text animations for headings */
+.about-text h2,
+.features-section h2,
+.key-features h2 {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.3s;
+}
+
+/* Optional subtle pulsating effect for CTA button */
+.about-cta button {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .features-grid .feature-card,
+  .features-wrapper .feature-block {
+    animation: fadeInUp 0.8s forwards;
+    animation-delay: 0.2s;
+  }
+
+  .about-text h2,
+  .features-section h2,
+  .key-features h2 {
+    font-size: 2rem;
+  }
+}
 /* GLOBAL */
 .about-page {
   font-family: "Poppins", sans-serif;
@@ -64,6 +201,7 @@
 
 .about-section.light {
   background: #f7fafa;
+
 }
 
 .about-section.fancy {
@@ -71,7 +209,7 @@
 }
 /* ================= MODERN TRUSTED WORLDWIDE ================= */
 .about-section.highlight {
-  background: linear-gradient(135deg, #14297d, #0072ff); /* vibrant gradient */
+  background: linear-gradient(135deg, #146b7d, #77a4dc); /* vibrant gradient */
   color: #ffffff;
   text-align: center;
   padding: 100px 20px;
@@ -80,7 +218,7 @@
   position: relative;
   overflow: hidden;
   margin: 60px auto;
-  max-width: 1100px;
+  max-width: 1500px;
 }
 
 /* optional animated background circles for modern feel */
@@ -335,28 +473,81 @@
 }
 
 /* ================= WHY SMART BUILD ================= */
+/* ================= MODERN FEATURES ================= */
 .features-section {
-  padding: 90px 20px;
-  background: #ffffff;
+  padding: 100px 20px;
+  background: #f5f8fa; /* light modern background */
 }
 
-.features-grid {
-  max-width: 1000px;
-  margin: 40px auto 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  gap: 25px;
-}
-
-.feature-card {
-  background: #f7fafa;
-  padding: 30px;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+.features-section h2 {
   text-align: center;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #063f46;
 }
+
+/* Features grid */
+.features-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Feature cards */
+.feature-card {
+  background: linear-gradient(135deg, #ffffff, #d9ddde); /* subtle gradient */
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: rgb(16, 2, 2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.feature-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* Optional animated accent line on hover */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: #114365; /* accent color */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  border-radius: 2px;
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+
+  .feature-card {
+    padding: 25px 20px;
+    font-size: 1rem;
+  }
+}
+
 
 /* ================= TRUST ================= */
 .center {
