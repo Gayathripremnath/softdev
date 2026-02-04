@@ -5,6 +5,9 @@ import logo from "../assets/mac.jpg";
 import img1 from "../assets/img1.png";
 import img2 from "../assets/img2.png";
 import img3 from "../assets/img3.png";
+import enq from "../assets/enq.mp4";
+import team from "../assets/team.mp4";
+import project from "../assets/project.mp4";
 import { useRef } from 'react';
 
 
@@ -208,104 +211,68 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="features-section">
-        <div className="features-container">
-          <h2 className="features-heading">From Planning to Execution – Everything on One App</h2>
-
-          <div className="features-layout">
-            <div className="features-vertical-list">
-
-              <div
-                className={`feature-step ${activeFeature === 0 ? 'active' : ''}`}
-                ref={el => featureRefs.current[0] = el}
-              >
-                <div className="step-number">1</div>
-                <div className="feature-content">
-                  <h3 className="card-title">Enquiry</h3>
-                  <img src={img1} alt="Enquiry" className="mobile-feature-image" />
-                  <p className="card-description">Streamline your project planning with comprehensive tools and real-time insights.</p>
-                  <ul className="card-bullets">
-                    <li>Resource allocation</li>
-                    <li>Timeline management</li>
-                    <li>Budget planning</li>
-                  </ul>
-                  <a href="#" className="card-link">know more &gt;</a>
-                </div>
-              </div>
-
-              <div
-                className={`feature-step ${activeFeature === 1 ? 'active' : ''}`}
-                ref={el => featureRefs.current[1] = el}
-              >
-                <div className="step-number">2</div>
-                <div className="feature-content">
-                  <h3 className="card-title">Team Collaboration</h3>
-                  <img src={img2} alt="Team Collaboration" className="mobile-feature-image" />
-                  <p className="card-description">Enable seamless communication and collaboration across all project teams.</p>
-                  <ul className="card-bullets">
-                    <li>Real-time messaging</li>
-                    <li>Document sharing</li>
-                    <li>Task assignments</li>
-                  </ul>
-                  <a href="#" className="card-link">know more &gt;</a>
-                </div>
-              </div>
-
-              <div
-                className={`feature-step ${activeFeature === 2 ? 'active' : ''}`}
-                ref={el => featureRefs.current[2] = el}
-              >
-                <div className="step-number">3</div>
-                <div className="feature-content">
-                  <h3 className="card-title">Project</h3>
-                  <img src={img3} alt="Project" className="mobile-feature-image" />
-                  <p className="card-description">Monitor project progress with advanced analytics and reporting tools.</p>
-                  <ul className="card-bullets">
-                    <li>Live progress updates</li>
-                    <li>Performance metrics</li>
-                    <li>Custom reports</li>
-                  </ul>
-                  <a href="#" className="card-link">know more &gt;</a>
-                </div>
-              </div>
-
+      <div><h1 style={{ textAlign: "center", fontSize: "3rem", fontWeight: "800", marginTop: "30px", color: "#0b4f5c", padding:"10px", fontFamily:"ui-sans-serif" }}>From Planning to Execution Everything on One App</h1></div>
+      <section className="info-section reverse enquiry-section" style={{background:"#edf1f6"}}>
+        <div className="enquiry-video-wrapper">
+          <div className="info-container">
+            <div className="info-image">
+              <video src={enq} autoPlay muted loop playsInline></video>
             </div>
-
-            <div className="features-images-container">
-              <img
-                src={img1}
-                alt="Enquiry Feature"
-                className={`feature-image ${activeFeature === 0 ? 'active' : ''}`}
-              />
-              <img
-                src={img2}
-                alt="Collaboration Feature"
-                className={`feature-image ${activeFeature === 1 ? 'active' : ''}`}
-              />
-              <img
-                src={img3}
-                alt="Project Feature"
-                className={`feature-image ${activeFeature === 2 ? 'active' : ''}`}
-              />
+            <div className="info-content">
+              <h2>Enquiry</h2>
+              <p>Streamline your project planning with comprehensive tools and real-time insights.</p>
+              <ul>
+                <li>Resource allocation</li>
+                <li>Timeline management</li>
+                <li>Budget planning</li>
+              </ul>
+              <button className="cta-button">Learn More</button>
             </div>
           </div>
         </div>
       </section>
-      <div className="hero-container">
 
-        <div className="bg-shape"></div>
+      <section className="info-section " style={{background:"#d1dbea"}}>
+        <div className="enquiry-video-wrapper">
+          <div className="info-container">
+            <div className="info-image">
+              <video src={team} autoPlay muted loop playsInline></video>
+            </div>
+            <div className="info-content">
+              <h2>Team Collaboration</h2>
+              <p>EReal-time Site-to-Office Sync: Instantly share site photos and progress reports with the design team.
 
-        <div className="hero-content">
+                Centralized Document Vault: Access the latest blueprints, BOQs, and permits from any device, anywhere.
 
-          <div className="hero-left">
-            {/* <h6 className="main-title">SMART BUILD
-          <h6>APPLICATIONS</h6></h6> */}
-          </div>
-          <div className='ph-mac'>
-            <img src="https://www.nwayerp.com/wp-content/uploads/2024/10/all-media-screen-img.webp" alt="" />
+                Smart Task Management: Assign roles and track deadlines with automated notifications to prevent bottlenecks..</p>
+              <ul>
+                <li>Real-time messaging</li>
+                <li>Document sharing</li>
+                <li>Task assignments</li>
+              </ul>
+              <button className="cta-button">Discover Features</button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="info-section" style={{background:"#e8ebf0"}}>
+        <div className="info-container">
+          <div className="info-content">
+            <h2>Project</h2>
+            <p>Monitor project progress with advanced analytics and reporting tools.</p>
+            <ul>
+              <li>Live progress updates</li>
+              <li>Performance metrics</li>
+              <li>Custom reports</li>
+            </ul>
+            <button className="cta-button">View Demo</button>
+          </div>
+          <div className="info-image">
+            <video src={project} autoPlay muted loop playsInline></video>
+          </div>
+        </div>
+      </section>
     </>
 
   );
