@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* background-color: white; */
 }
 
 body {
@@ -1340,4 +1341,11 @@ html {
   font-size: 0.95rem;
   line-height: 1.6;
   opacity: 0.9;
+}
+/* Ensure light background on mobile for footer */
+@media (max-width: 768px) {
+  .site-footer {
+    background-color: #fafafc !important; 
+    color: #064955 !important;
+  }
 }

@@ -121,7 +121,7 @@
 
 .why-grid {
 
-    background-color: #1d5d69;
+
   max-width:1200px;
   margin: auto;
   display: grid;
@@ -172,5 +172,12 @@
 
   .why-grid {
     grid-template-columns: 1fr;
+  }
+}
+/* Ensure light background on mobile for footer */
+@media (max-width: 768px) {
+  .site-footer {
+    background-color: #fafafc !important; 
+    color: #064955 !important;
   }
 }
