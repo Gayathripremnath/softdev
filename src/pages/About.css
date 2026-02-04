@@ -1,0 +1,176 @@
+.about-page {
+  font-family: "Poppins", sans-serif;
+}
+
+/* HERO */
+.about-hero {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.about-hero-content {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.about-hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin: 15px 0;
+}
+
+.about-hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.primary-btn {
+  margin-top: 20px;
+  background: #f4a300;
+  color: #000;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* INTRO */
+.about-intro {
+  padding: 80px 20px;
+  background: #fafafa;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.about-images img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.about-text h2 {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  color: #555;
+  line-height: 1.7;
+}
+
+.about-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.about-stats h3 {
+  font-size: 2rem;
+  color: #1d5d69;
+}
+
+.about-stats span {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* WHY */
+.why-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.why-sub {
+  color: #666;
+  max-width: 600px;
+  margin: 10px auto 40px;
+}
+
+.why-grid {
+
+    background-color: #1d5d69;
+  max-width:1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.why-card {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.why-card h4 {
+  margin-bottom: 10px;
+  color: #1d5d69;
+}
+
+/* CTA */
+.about-cta {
+  padding: 80px 20px;
+  background: #1d5d69;
+  color: #fff;
+}
+
+.cta-box {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}

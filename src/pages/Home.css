@@ -1247,3 +1247,97 @@ html {
 .enquiry-section {
   background-color: #e6f2ff;
 }
+
+
+
+.site-footer {
+  background-color: #fafafc ;
+  position: relative;
+  padding: 60px 20px 20px;
+  margin-top: 80px;
+  color: #064955;
+  overflow: hidden;
+  border-top: 2px solid rgb(12, 78, 78);
+}
+
+
+
+
+
+/* CONTENT ABOVE IMAGE */
+.site-footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.footer-container {
+
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-col h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.footer-col p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.footer-col ul {
+  color: black;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.footer-col ul li:hover {
+  color: #c78488;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(5, 36, 51);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.footer-logo {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}

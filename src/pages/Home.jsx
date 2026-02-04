@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 import '../styles/mac-mockup.css';
-import logo from "../assets/mac.jpg";
 import img1 from "../assets/img1.png";
-import img2 from "../assets/img2.png";
-import img3 from "../assets/img3.png";
 import enq from "../assets/enq.mp4";
 import team from "../assets/team.mp4";
 import project from "../assets/project.mp4";
+import logo from "../assets/logo.jpg";
 import { useRef } from 'react';
 
 
@@ -273,6 +271,46 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* -----footer----- */}
+      
+     <footer className="site-footer" >
+  <div className="footer-container">
+
+    <div className="footer-col footer-brand">
+       <div className="logo">
+                <img src={logo} alt="Logo" />
+              </div>
+      <p>
+        Our all-in-one ERP solution helps construction companies plan, manage,
+        and execute projects efficiently with real-time insights.
+      </p>
+    </div>
+
+    <div className="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li>Home</li>
+        <li>Features</li>
+        <li>Modules</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <div className="footer-col">
+      <h3>Contact</h3>
+      <p>📞 +91 98765 43210</p>
+      <p>📧 info@yourerp.com</p>
+      <p>📍 Kerala, India</p>
+    </div>
+
+  </div>
+
+  <div className="footer-bottom">
+    © {new Date().getFullYear()} Your ERP Solution. All Rights Reserved.
+  </div>
+</footer>
+
     </>
 
   );
