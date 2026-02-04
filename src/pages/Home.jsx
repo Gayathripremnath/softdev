@@ -209,8 +209,8 @@ const Home = () => {
         </div>
       </section>
 
-      <div><h1 style={{ textAlign: "center", fontSize: "3rem", fontWeight: "800", marginTop: "30px", color: "#0b4f5c", padding:"10px", fontFamily:"ui-sans-serif" }}>From Planning to Execution Everything on One App</h1></div>
-      <section className="info-section reverse enquiry-section" style={{background:"#edf1f6"}}>
+      <div><h1 style={{ textAlign: "center", fontSize: "3rem", fontWeight: "800", marginTop: "30px", color: "#0f1e46", padding:"10px", fontFamily:"'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"}}>From Planning to Execution Everything on One App</h1></div>
+      <section className="info-section reverse enquiry-section" >
         <div className="enquiry-video-wrapper">
           <div className="info-container">
             <div className="info-image">
@@ -254,7 +254,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="info-section" style={{background:"#e8ebf0"}}>
+      <section className="info-section" >
         <div className="info-container">
           <div className="info-content">
             <h2>Project</h2>
