@@ -14,6 +14,7 @@ const Services = () => {
       <section className="services-hero">
         <div className="services-hero-text">
           <h1>Comprehensive Construction Services</h1>
+          
           <p>
             Smart Build Application delivers professional construction planning,
             inspection, and execution services powered by technology.
@@ -51,22 +52,22 @@ const Services = () => {
 
       {/* INSPECTION COVER */}
       <section className="inspection-cover">
-        <div className="inspection-text">
-          <h2>What Our Services Cover</h2>
-          <ul>
-            <li>✔ Detailed Site Inspection</li>
-            <li>✔ Real-time Progress Monitoring</li>
-            <li>✔ Quality & Safety Audits</li>
-            <li>✔ Cost & Resource Optimization</li>
-            <li>✔ Final Project Reporting</li>
-          </ul>
-        </div>
+  <div className="inspection-text">
+    <h2>What Our Services Cover</h2>
+    <ul>
+      <li>✔ Detailed Site Inspection</li>
+      <li>✔ Real-time Progress Monitoring</li>
+      <li>✔ Quality & Safety Audits</li>
+      <li>✔ Cost & Resource Optimization</li>
+      <li>✔ Final Project Reporting</li>
+    </ul>
+  </div>
 
-        <div className="inspection-image">
-          <img src={img1} style={{padding:"10px"}} alt="Inspection" />
-          <img src={img2} alt="" />
-        </div>
-      </section>
+  <div className="inspection-image">
+    <img src={img1} className="img-primary" alt="Inspection 1" />
+    <img src={img2} className="img-secondary" alt="Inspection 2" />
+  </div>
+</section>
 
       {/* INCLUDED REPORT */}
       <section className="included">
