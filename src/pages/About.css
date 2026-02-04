@@ -41,16 +41,31 @@
 }
 
 /* ================= SECTIONS ================= */
+
 .about-section {
-  padding: 90px 20px;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* soft background glow */
+.about-section::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,122,24,0.15), transparent 70%);
+  top: -100px;
+  left: -100px;
+  z-index: 0;
 }
 
 .about-section.light {
   background: #f7fafa;
 }
 
-.about-section.highlight {
-  background: #eef7f8;
+.about-section.fancy {
+  animation: sectionFade 1.2s ease both;
 }
 
 /* ================= CONTAINER ================= */
@@ -59,39 +74,179 @@
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 60px;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
-.about-container.reverse {
-  direction: rtl;
+/* second section image LEFT */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px; /* space between image and text */
+  flex-wrap: wrap; /* ensures responsiveness */
 }
-.about-container.reverse > * {
-  direction: ltr;
+
+.about-image {
+  flex: 1; /* takes half the width */
+  min-width: 300px; /* responsive minimum */
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.about-text {
+  flex: 1; /* takes half the width */
+  min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* stack on mobile */
+  }
+}
+
+
+/* Default section */
+.about-container .about-text {
+  order: 1;
+}
+.about-container .about-image {
+  order: 2;
+}
+
+/* THIS makes image LEFT for your section */
+.about-container.reverse .about-image {
+  order: 1;  
+}
+
+.about-container.reverse .about-text {
+  order: 2;  
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* stack normally on mobile */
+  .about-container.reverse .about-image,
+  .about-container.reverse .about-text {
+    order: unset;
+  }
 }
 
 /* ================= TEXT ================= */
+.about-text {
+  animation: textFloat 1.3s ease both;
+}
+
 .about-text h2 {
-  font-size: 2.3rem;
-  margin-bottom: 15px;
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.about-text h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #ff7a18;
+  display: block;
+  margin-top: 10px;
+  border-radius: 5px;
 }
 
 .about-text p {
-  line-height: 1.7;
+  line-height: 1.8;
   color: #444;
   margin-bottom: 14px;
+  font-size: 1.05rem;
 }
 
 /* ================= IMAGE ================= */
+.about-image {
+  position: relative;
+  animation: imageReveal 1.4s ease both;
+}
+
+/* image glow */
+.about-image::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: linear-gradient(135deg, rgba(255,122,24,0.25), transparent);
+  z-index: -1;
+  filter: blur(35px);
+}
+
 .about-image img {
   width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  transition: transform 0.4s ease;
+  border-radius: 22px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
 
 .about-image img:hover {
-  transform: scale(1.04);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes sectionFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textFloat {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-section::before {
+    display: none;
+  }
 }
 
 /* ================= WHY SMART BUILD ================= */

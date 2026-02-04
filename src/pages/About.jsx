@@ -44,23 +44,23 @@ export default function About() {
 
       {/* WORKFLOW */}
       <section className="about-section light">
-        <div className="about-container reverse">
-          <div className="about-image slide-left">
-            <img src={mobileImg} alt="Mobile App" />
-          </div>
+  <div className="about-container">
+    <div className="about-image slide-left">
+      <img src={mobileImg} alt="Mobile App" />
+    </div>
 
-          <div className="about-text slide-right">
-            <h2>End-to-End Project Tracking</h2>
-            <p>
-              From enquiry to final billing, Smart Build tracks every activity,
-              expense, and report project-wise.
-            </p>
-            <p>
-              Know exactly where your money goes and how much profit you make.
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="about-text slide-right">
+      <h2>End-to-End Project Tracking</h2>
+      <p>
+        From enquiry to final billing, Smart Build tracks every activity,
+        expense, and report project-wise.
+      </p>
+      <p>
+        Know exactly where your money goes and how much profit you make.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* FEATURES */}
       <section className="features-section">
