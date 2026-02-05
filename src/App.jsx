@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Features from "./pages/Features";
 import Services from "./pages/Services";
 import MainSection from "./pages/Services";
+import Footer from "./pages/Footer";
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
     <>
       <BrowserRouter>
       <Navbar />
-     {/* <Footer/> */}
+     
       <Routes>
          <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -23,6 +24,7 @@ function App() {
         <Route path="/services" element={<Services />} />
       </Routes>
     </BrowserRouter>
+    <Footer/>
     </>
   )
 }

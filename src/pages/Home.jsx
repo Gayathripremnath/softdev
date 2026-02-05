@@ -209,107 +209,28 @@ const Home = () => {
         </div>
       </section>
 
-      <div><h1 style={{ textAlign: "center", fontSize: "3rem", fontWeight: "800", marginTop: "30px", color: "#0f1e46", padding:"10px", fontFamily:"'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"}}>From Planning to Execution Everything on One App</h1></div>
-      <section className="info-section reverse enquiry-section" >
-        <div className="enquiry-video-wrapper">
-          <div className="info-container">
-            <div className="info-image">
-              <video src={enq} autoPlay muted loop playsInline></video>
-            </div>
-            <div className="info-content">
-              <h2>Enquiry</h2>
-              <p>Streamline your project planning with comprehensive tools and real-time insights.</p>
-              <ul>
-                <li>Resource allocation</li>
-                <li>Timeline management</li>
-                <li>Budget planning</li>
-              </ul>
-              <button className="cta-button">Learn More</button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* <div><h1 style={{ textAlign: "center", fontSize: "3rem", fontWeight: "800", marginTop: "30px", color: "#0f1e46", padding:"10px", fontFamily:"'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"}}>From Planning to Execution Everything on One App</h1></div> */}
+   <section className="client-flow">
+  <h2 className="clients-title">CLIENTS WHO TRUSTED US</h2>
 
-      <section className="info-section " style={{background:"#d1dbea"}}>
-        <div className="enquiry-video-wrapper">
-          <div className="info-container">
-            <div className="info-image">
-              <video src={team} autoPlay muted loop playsInline></video>
-            </div>
-            <div className="info-content">
-              <h2>Team Collaboration</h2>
-              <p>EReal-time Site-to-Office Sync: Instantly share site photos and progress reports with the design team.
-
-                Centralized Document Vault: Access the latest blueprints, BOQs, and permits from any device, anywhere.
-
-                Smart Task Management: Assign roles and track deadlines with automated notifications to prevent bottlenecks..</p>
-              <ul>
-                <li>Real-time messaging</li>
-                <li>Document sharing</li>
-                <li>Task assignments</li>
-              </ul>
-              <button className="cta-button">Discover Features</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="info-section" >
-        <div className="info-container">
-          <div className="info-content">
-            <h2>Project</h2>
-            <p>Monitor project progress with advanced analytics and reporting tools.</p>
-            <ul>
-              <li>Live progress updates</li>
-              <li>Performance metrics</li>
-              <li>Custom reports</li>
-            </ul>
-            <button className="cta-button">View Demo</button>
-          </div>
-          <div className="info-image">
-            <video src={project} autoPlay muted loop playsInline></video>
-          </div>
-        </div>
-      </section>
-
-      {/* -----footer----- */}
-      
-     <footer className="site-footer" >
-  <div className="footer-container">
-
-    <div className="footer-col footer-brand">
-       <div className="logo">
-                <img src={logo} alt="Logo" />
-              </div>
-      <p>
-        Our all-in-one ERP solution helps construction companies plan, manage,
-        and execute projects efficiently with real-time insights.
-      </p>
-    </div>
-
-    <div className="footer-col">
-      <h3>Quick Links</h3>
-      <ul>
-        <li>Home</li>
-        <li>Features</li>
-        <li>Modules</li>
-        <li>Contact</li>
-      </ul>
-    </div>
-
-    <div className="footer-col">
-      <h3>Contact</h3>
-      <p>📞 +91 98765 43210</p>
-      <p>📧 info@yourerp.com</p>
-      <p>📍 Kerala, India</p>
-    </div>
-
+  <div className="flow-line">
+    {[
+      "https://www.genovatechnologies.com/images/clients/miart.jpg",
+      "https://www.genovatechnologies.com/images/clients/micc_calicut.jpg",
+      "https://www.genovatechnologies.com/images/clients/gateway.jpg",
+      "https://www.genovatechnologies.com/images/clients/majestic.jpg",
+      "https://www.genovatechnologies.com/images/clients/better_half.jpg",
+      "https://www.genovatechnologies.com/images/clients/pure_solutions.jpg",
+      "https://www.genovatechnologies.com/images/clients/meque.jpg",
+      "https://www.genovatechnologies.com/images/clients/eric.jpg",
+    ].map((logo, index) => (
+      <div className="flow-item" key={index}>
+        <img src={logo} alt="client logo" />
+      </div>
+    ))}
   </div>
+</section>
 
-  <div className="footer-bottom">
-    © {new Date().getFullYear()} Your ERP Solution. All Rights Reserved.
-  </div>
-</footer>
 
     </>
 
