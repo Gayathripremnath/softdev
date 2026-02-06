@@ -14,11 +14,11 @@ body {
 
 .hero-section {
   min-height: 100vh;
-  background: linear-gradient(rgba(248, 249, 250, 0.8), rgba(255, 255, 255, 0.8)), url('../assets/civil.jpg');
+  /* background: linear-gradient(rgba(12, 107, 120, 0.725), rgba(255, 255, 255, 0.8)); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 220px 0 60px;
+  padding: 160px 0 60px;
   position: relative;
 }
 
@@ -85,6 +85,178 @@ body {
   box-shadow: 0 6px 20px rgba(52, 58, 64, 0.3);
 }
 
+
+
+/* Keep parent perspective for 3D effect */
+.hero-right {
+  perspective: 1000px; /* Required for 3D transforms */
+  
+}
+
+
+
+/* Form card with flip animation */
+/* .demo-form-card {
+  background: linear-gradient(rgba(12, 107, 120, 0.725), rgba(255, 255, 255, 0.8));
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+
+  transform-style: preserve-3d; 
+  backface-visibility: hidden; 
+  opacity: 0;
+  transform: rotateY(90deg);
+  animation: flipIn 0.8s ease-out forwards; 
+} */
+.demo-form-card {
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  background: lightblue;
+  color: white;
+  transform-style: preserve-3d;
+  opacity: 0; /* start invisible */
+  transform: rotateY(-20deg);
+  animation: cardFlipIn 1s ease-out forwards; /* single animation */
+}
+
+@keyframes cardFlipIn {
+  0% {
+    transform: rotateY(-20deg);
+    opacity: 0;
+  }
+  50% {
+    transform: rotateY(10deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.demo-form-card:hover {
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02); /* optional hover effect */
+}
+
+
+/* Moving gradient keyframes */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Optional hover effect */
+.demo-form-card:hover {
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* Flip animation keyframes */
+@keyframes flipIn {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateY(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+/* Optional: flip on hover */
+.demo-form-card:hover {
+  transform: rotateY(180deg);
+  transition: transform 0.8s ease;
+}
+
+/* Demo button stays the same */
+.demo-button {
+  background: #343a40;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(52, 58, 64, 0.2);
+}
+
+.demo-button:hover {
+  background: #23272b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 58, 64, 0.3);
+}
+
+
+
+/* ===== Hero Section Animation ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* start below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* final position */
+  }
+}
+
+/* Hero Left Content Animation */
+.hero-left {
+  max-width: 600px;
+  opacity: 0; 
+  animation: fadeUp 1s ease-out forwards;
+}
+
+/* Headline Animation */
+.hero-headline {
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Description Animation */
+.hero-description {
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+/* Button Animation */
+.demo-button {
+
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* Optional: smooth GPU rendering */
+.hero-left,
+.hero-headline,
+.hero-description,
+.demo-button {
+  will-change: transform, opacity;
+}
+
+
+
+
+
+
+
 .features-checklist {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -137,6 +309,44 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: #041545;
+}
+/* Initial hidden state */
+.chart {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.9s ease-out;
+}
+
+/* When visible */
+.chart.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image animation */
+.chart-image {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s ease-out;
+  transition-delay: 0.2s;
+}
+
+.chart.show .chart-image {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Content animation */
+.chart-cont {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s ease-out;
+  transition-delay: 0.4s;
+}
+
+.chart.show .chart-cont {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Global responsive adjustments */
@@ -228,7 +438,7 @@ body {
 }
 
 .demo-form-card {
-  background: white;
+  
   border-radius: 16px;
   padding: 32px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);

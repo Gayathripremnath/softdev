@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          © Copyright @ 2025. <span>GENOVA TECHNOLOGIES</span>. All rights reserved.
+          © Copyright @ 2025 <span>TECHNOLOGIES</span>. All rights reserved.
         </div>
 
       </div>

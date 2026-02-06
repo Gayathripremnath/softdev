@@ -89,14 +89,31 @@ const Home = () => {
       }, index * 300);
     });
   }, []);
+useEffect(() => {
+  const charts = document.querySelectorAll(".chart");
 
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.3 } // 30% visible aayal trigger
+  );
+
+  charts.forEach((chart) => observer.observe(chart));
+
+  return () => observer.disconnect();
+}, []);
   return (
     <>
       <div className="hero-section">
         <div className="hero-cont">
           <div className="hero-left">
             <h1 className="hero-headline">
-              Supercharge Your Construction Projects with Our All-in-One ERP Solution
+              Supercharge Your Construction Projects with Our <span style={{color:"white", background:"lightblue", borderRadius:"900px", padding:"10px"}}>All-in-One ERP Solution</span>
             </h1>
 
             <p className="hero-description">
@@ -189,6 +206,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+
       <section>
         <div className='chart-page'>
           <div className='chart'>
