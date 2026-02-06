@@ -1,6 +1,6 @@
 /* Top Bar Styles */
 .top-bar {
-background: rgb(4, 91, 98);
+background: rgb(15, 81, 109);
   padding: 8px 20px;
   display: flex;
   justify-content: space-around;
@@ -61,7 +61,7 @@ background: rgb(4, 91, 98);
   left: 50%;
   transform: translateX(-50%);
 
-  width: calc(90% - 80px); 
+  width: calc(94% - 80px); 
   height: 60px;
 
   border-radius: 999px;   
