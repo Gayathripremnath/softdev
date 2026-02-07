@@ -6,16 +6,13 @@ const Footer = () => {
   return (
     <footer className="footer-wrapper">
 
-      <div className="footer-logo-float">
-        <img src={logo} alt="Genova Technologies" />
-      </div>
-
+   
       {/* FOOTER CONTENT */}
       <div className="footer-main">
 
         <div className="footer-header">
          
-
+<h1>SMART BUILD</h1>
           <div className="social-icons">
             <span>f</span>
             <span>t</span>
