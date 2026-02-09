@@ -31,6 +31,9 @@ const About = () => {
           </p>
         </div>
 
+        <div className="hero-img animate right">
+          <img src={about} alt="Smart Build" />
+        </div> 
       </section>
 
       {/* INTRO */}
