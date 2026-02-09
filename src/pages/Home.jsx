@@ -107,6 +107,24 @@ useEffect(() => {
 
   return () => observer.disconnect();
 }, []);
+
+useEffect(() => {
+  const items = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  items.forEach(el => observer.observe(el));
+}, []);
+
   return (
     <>
       <div className="hero-section">
@@ -116,12 +134,7 @@ useEffect(() => {
               Supercharge Your Construction Projects with Our <span style={{color:"white", background:"rgba(22, 65, 66, 0.9)", borderRadius:"900px", padding:"5px"}}>All-in-One ERP Solution</span>
             </h1>
 
-            <p className="hero-description">
-              Transform your construction business with our comprehensive ERP solution.
-              Improve efficiency, enable real-time project management, and leverage
-              cloud-based technology to streamline operations and boost productivity.
-            </p>
-
+       
             <button className="demo-button" onClick={scrollToForm}>
               Book a Free Demo
             </button>
@@ -202,96 +215,56 @@ useEffect(() => {
                   Send
                 </button>
               </form>
+              
             </div>
+
           </div>
         </div>
       </div>
 
-
-      <section>
-        <div className='chart-page'>
-          <div className='chart'>
-            <div className='chart-image'>
-              <img
-                src="https://www.nwayerp.com/wp-content/uploads/2024/09/add-slid-2.webp"
-                alt="Mac"
-              />
-            </div>
-            <div className='chart-cont'>
-              <h6>Our Modules</h6>
-              <h4>Integrated Modules into a Single and Centralized Platform</h4>
-              <p>
-                Experience seamless collaboration across departments with our fully integrated construction project management ERP software on a single and centralized platform.
-              </p>
-            </div>
-          </div>
-        </div>
+      <section className='payroll'>
+        <p>Techwave payroll is a cutting-edge, cloud
+based Human Resources Management
+Software designed to streamline.</p>
       </section>
+    
 
 
 
-  <section id="planing">
-      <div className="planing-head">
-        <h1>From Planning to Execution Everything on One App</h1>
+<section className="integration-section reveal">
+  <div className="integration-wrapper">
+
+    {/* LEFT – Circle integrations */}
+    <div className="integration-visual">
+      <div className="circle">
+        <span className="center-text">
+          <h2>100+</h2>
+          <p>Tool Integrations</p>
+        </span>
+
+       <img src="https://techwave.golothemes.com/payroll/wp-content/uploads/sites/33/2024/06/icon-images-min.png" alt="" />
       </div>
+    </div>
 
-      <div className="timeline">
+    {/* RIGHT – Content */}
+    <div className="integration-content">
+      <span className="tag">INTEGRATION</span>
+      <h2>
+        Scale your team <br /> up-and-down
+      </h2>
+      <p>
+        Solutions for startup and SMBs, helping them establish
+        efficient HR operations, manage growing teams.
+      </p>
 
+      <button className="primary-btn">
+        Start 14-day free trial
+      </button>
+    </div>
 
-        <div className="timeline-item left">
-          <div className="timeline-card">
-            <h3>Enquiry</h3>
+  </div>
+</section>
 
-            <p>
-            Streamline enquiries with smart tracking and real-time updates.
-            </p>
-          <video src={enq} muted autoPlay loop playsInline preload="auto" style={{width:"320px", borderRadius:"40px"}}></video>
-            <div className="tech-used">
-              <span>Resource allocation</span>
-              <span>Timeline planning</span>
-              <span>Budget control</span>
-             
-            </div>
-          </div>
-        </div>
-
-        <div className="timeline-item right">
-          <div className="timeline-card">
-            <h3>Construction Material Management</h3>
-
-            <p>
-              Get real-time visibility of material stock on site & fasten the procurement proces
-            </p>
-          <video src={team} muted autoPlay loop playsInline preload="auto" style={{width:"320px", borderRadius:"40px"}}  ></video>
-            <div className="tech-used">
-              <span> 
-Procure and allocate materials faster</span>
-              <span>Avoid Material loss or theft</span>
-              <span>Generate instant POs and GRNs</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="timeline-item left">
-          <div className="timeline-card">
-            <h3>Project</h3>
-
-            <p>
-              Manage your projects on mobile, get real-time updates, enhance collaboration, & increase efficiency
-            </p>
-            <img src={img1} style={{borderRadius:"40px"}} alt="" />
-
-            <div className="tech-used">
-              <span>Track project progress at a glance</span>
-              <span>Avoid delays by getting quick insights</span>
-              <span>Generate detailed daily progress 
-reports</span>
-              <span>Data Reporting</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
    <section className="client-flow">
 
   <div className="flow-line">

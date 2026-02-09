@@ -2,7 +2,7 @@
 
 
 .about-page {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans';
   color: #0f1e46;
   background: #ffffff;
   overflow-x: hidden;
@@ -154,21 +154,114 @@
 
 /* WHY */
 .why-section {
-  text-align: center;
-  padding: 100px 40px;
+  background: #fff;
+  padding: 100px 80px;
 }
 
-.why-list {
-  list-style: none;
-  padding: 0;
-  margin: 30px 0;
-  font-size: 18px;
+.why-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
 
-.tagline {
-  margin-top: 40px;
-  font-size: 26px;
-  color: #1c3eff;
+/* IMAGE */
+.why-image img {
+  width: 100%;
+  border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+  box-shadow: 0 20px 10px rgb(0, 0, 0);
+}
+
+/* CONTENT */
+.why-tag {
+  display: inline-block;
+  border: 1px solid #e5e5e5;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.why-content h2 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+.why-content span {
+  color: #0b5cff;
+}
+
+.why-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 28px;
+  margin-top: 30px;
+}
+
+.why-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.why-point .icon {
+  width: 26px;
+  height: 26px;
+  background: #e8f1ff;
+  color: #0b5cff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.why-point p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .why-points {
+    grid-template-columns: 1fr;
+  }
+}
+
+.why-btn {
+  margin-top: 20px;
+  padding: 14px 34px;
+  border-radius: 30px;
+  border: none;
+  background: #0b1c2d;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.why-btn:hover {
+  background: #0b5cff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .why-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .why-content h2 {
+    font-size: 36px;
+  }
+
+  .why-section {
+    padding: 80px 30px;
+  }
 }
 
 /* ANIMATIONS */

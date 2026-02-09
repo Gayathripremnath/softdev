@@ -52,6 +52,71 @@ profit you make.
 
         </p>
       </section>
+  {/* WHY */}
+      <section className="why-section">
+  <div className="why-wrapper">
+
+    {/* IMAGE */}
+    <div className="why-image">
+      <img
+        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+        alt="Why choose us"
+      />
+    </div>
+
+    {/* CONTENT */}
+    <div className="why-content">
+      <span className="why-tag">WHY CHOOSE US</span>
+
+      <h2>
+        WHY WE'RE THE <br />
+        <span>PERFECT FIT</span> FOR YOU
+      </h2>
+
+      <div className="why-points">
+
+  <div className="why-point">
+    <div className="icon">✔</div>
+    <p>Cloud-based & secure</p>
+  </div>
+
+  <div className="why-point">
+    <div className="icon">✔</div>
+    <p>Fully customizable as per your business needs</p>
+  </div>
+
+  <div className="why-point">
+    <div className="icon">✔</div>
+    <p>Eliminates profit loss</p>
+  </div>
+
+  <div className="why-point">
+    <div className="icon">✔</div>
+    <p>Improves efficiency & transparency</p>
+  </div>
+
+  <div className="why-point">
+    <div className="icon">✔</div>
+    <p>Scales with your business</p>
+  </div>
+
+  <div className="why-point">
+    <div className="icon">✔</div>
+    <p>Trusted by 5,000+ clients worldwide</p>
+  </div>
+
+  <div className="why-point">
+    <div className="icon">✔</div>
+    <p>9+ years of industry expertise</p>
+  </div>
+
+</div>
+
+      <button className="why-btn">Contact Us</button>
+    </div>
+
+  </div>
+</section>
 
       {/* PLATFORM */}
       <section className="cards-section">
@@ -71,7 +136,7 @@ profit you make.
         </div>
       </section>
 
-      {/* FEATURES */}
+
       <section className="features">
         <h2 className="animate up">Smart Build – Key Features</h2>
 
@@ -108,21 +173,8 @@ profit you make.
         </div>
       </section>
 
-      {/* WHY */}
-      <section className="why-section animate up">
-        <h2>Why Choose Smart Build?</h2>
-        <ul className="why-list">
-          <li>✔ Cloud-based & Secure</li>
-          <li>✔ Fully Customizable</li>
-          <li>✔ Eliminates Profit Loss</li>
-          <li>✔ 9+ Years Experience</li>
-          <li>✔ 5,000+ Clients Worldwide</li>
-        </ul>
+    
 
-        <h3 className="tagline">
-          Build Smarter. Track Better. Earn More.
-        </h3>
-      </section>
 
     </div>
   );
