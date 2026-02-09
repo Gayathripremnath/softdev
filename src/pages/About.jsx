@@ -26,7 +26,7 @@ const About = () => {
       <section className="about-hero">
         <div className="hero-text animate up">
           <h1>About <span>Smart</span> Build</h1>
-          <img src="https://images.unsplash.com/photo-1482731215275-a1f151646268?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJ1aWxkZXJzfGVufDB8fDB8fHww" style={{width:"1000px", height:"500px", borderRadius:"99px", padding:"10px", marginLeft:"70px"}} alt="" />
+          <img src="https://images.unsplash.com/photo-1482731215275-a1f151646268?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJ1aWxkZXJzfGVufDB8fDB8fHww" style={{width:"1000px", height:"500px", borderRadius:"99px", padding:"10px", marginLeft:"100px"}} alt="" />
           <p>
             Smart Build is a smart, cloud-based construction management software
             built exclusively for builders, architects, and contractors.
