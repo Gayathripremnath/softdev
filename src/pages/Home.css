@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 * {
   margin: 0;
@@ -10,11 +11,13 @@ body {
   margin: 0;
   padding: 0;
   background-color: #b2e1eb;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
 }
 
 .hero-section {
+  
   min-height: 100vh;
-  /* background: linear-gradient(rgba(12, 107, 120, 0.725), rgba(255, 255, 255, 0.8)); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -23,6 +26,7 @@ body {
 }
 
 .hero-cont {
+  
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -51,16 +55,15 @@ body {
 .hero-headline {
   font-size: 3rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.4;
   color: #041545;
   margin-bottom: 24px;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .hero-description {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #6c757d;
+  color: #343638;
   margin-bottom: 32px;
   font-weight: 400;
 }
@@ -451,7 +454,7 @@ body {
   border-radius: 8px;
   font-size: 0.95rem;
   transition: all 0.3s ease;
-  font-family: inherit;
+  /* font-family: inherit; */
   width: 100%;
 }
 
@@ -485,6 +488,10 @@ body {
 /* Comprehensive Media Queries */
 
 /* Large Desktop (1200px and up) */
+@media (max-width: 414px) {
+  
+}
+
 @media (min-width: 1200px) {
   .hero-content {
     max-width: 1400px;
@@ -528,7 +535,7 @@ body {
     width: 100%;
     max-width: 500px;
   }
-
+  
   .bg-shape {
     right: 0;
     width: 100%;
@@ -541,7 +548,14 @@ body {
     margin: 0 auto;
   }
 }
-
+@media (max-width:820px){
+  .timeline-card img {
+    width:500px;
+  }
+  video{
+    width: 20px;
+  }
+}
 /* Tablet Portrait (576px to 767px) */
 @media (max-width: 767px) {
   .hero-container {
@@ -587,6 +601,7 @@ body {
 
   .hero-headline {
     font-size: 1.8rem;
+    line-height: 1.7;
   }
 
   .demo-form-card {
@@ -614,6 +629,7 @@ body {
   .hero-headline {
     font-size: 1.6rem;
     margin-bottom: 16px;
+    line-height: 1.6;
   }
 
   .hero-content {
@@ -1357,7 +1373,7 @@ html {
 
 .clients-title {
   color: #050a35;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
   text-align: center;
   font-size: 34px;
   margin-bottom: 30px;

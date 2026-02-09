@@ -245,7 +245,7 @@ useEffect(() => {
             <p>
             Streamline enquiries with smart tracking and real-time updates.
             </p>
-          <video src={enq} uted autoPlay loop playsInline preload="auto" style={{width:"400px"}}></video>
+          <video src={enq} muted autoPlay loop playsInline preload="auto" style={{width:"320px", borderRadius:"40px"}}></video>
             <div className="tech-used">
               <span>Resource allocation</span>
               <span>Timeline planning</span>
@@ -262,7 +262,7 @@ useEffect(() => {
             <p>
               Get real-time visibility of material stock on site & fasten the procurement proces
             </p>
-          <video src={team} muted autoPlay loop playsInline preload="auto" style={{width:"400px"}} ></video>
+          <video src={team} muted autoPlay loop playsInline preload="auto" style={{width:"320px", borderRadius:"40px"}}  ></video>
             <div className="tech-used">
               <span> 
 Procure and allocate materials faster</span>
@@ -279,7 +279,7 @@ Procure and allocate materials faster</span>
             <p>
               Manage your projects on mobile, get real-time updates, enhance collaboration, & increase efficiency
             </p>
-            <img src={img1} alt="" />
+            <img src={img1} style={{borderRadius:"40px"}} alt="" />
 
             <div className="tech-used">
               <span>Track project progress at a glance</span>

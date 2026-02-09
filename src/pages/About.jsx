@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./About.css";
 import about from "../assets/about-civil.jpg";
+import team from '../assets/team.mp4'
 const About = () => {
 
   useEffect(() => {
@@ -30,13 +31,10 @@ const About = () => {
             built exclusively for builders, architects, and contractors.
           </p>
         </div>
-
-        <div className="hero-img animate right">
-          <img src={about} alt="Smart Build" />
-        </div> 
       </section>
 
-      {/* INTRO */}
+
+
       <section className="about-section animate up">
         <p>
          In construction, even small tracking mistakes can lead to huge financial losses.

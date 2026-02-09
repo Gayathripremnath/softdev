@@ -1,4 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+
 /* Top Bar Styles */
+
+
+
 .top-bar {
 background: rgb(15, 81, 109);
   padding: 8px 20px;
@@ -49,6 +56,7 @@ background: rgb(15, 81, 109);
 
 /* Main Navbar Styles */
 .navbar {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   background: white;
   padding: 19px 40px;
   display: flex;
@@ -97,8 +105,9 @@ background: rgb(15, 81, 109);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-decoration: none;
   color: #0b5968;
+  padding: 10px;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.3rem;
   transition: color 0.3s ease;
   position: relative;
 }
@@ -169,13 +178,18 @@ background: rgb(15, 81, 109);
 }
 
 /* Comprehensive Responsive Design */
-
+@media (max-width: 414px) {
+   .logo img {
+    height: 55px;
+    margin-left: 1px;
+  }
+}
 /* Large Desktop (1200px and up) */
 @media (min-width: 1200px) {
   .navbar {
     padding: 15px 40px;
   }
-  
+
   .top-bar {
     padding: 8px 40px;
   }
@@ -190,7 +204,10 @@ background: rgb(15, 81, 109);
   .navbar {
     padding: 15px 30px;
   }
-  
+   .logo img {
+    height: 55px;
+    margin-left: 10px;
+  }
   .top-bar {
     padding: 8px 30px;
   }
@@ -215,6 +232,7 @@ background: rgb(15, 81, 109);
   
   .logo img {
     height: 55px;
+    margin-left: 10px;
   }
   
   .nav-links {
@@ -248,8 +266,9 @@ background: rgb(15, 81, 109);
     top: 32px;
   }
   
-  .logo img {
+ .logo img {
     height: 50px;
+    margin-left: 10px;
   }
   
   .nav-links {
@@ -293,7 +312,8 @@ background: rgb(15, 81, 109);
   }
   
   .logo img {
-    height: 44px;
+    height:44px;
+    margin-left: 10px;
   }
   
   .top-bar-left {
