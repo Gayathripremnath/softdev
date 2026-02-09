@@ -223,7 +223,7 @@ useEffect(() => {
       </div>
 
       <section className='payroll'>
-        <p>Techwave payroll is a cutting-edge, cloud
+        <p>Smart build payroll is a cutting-edge, cloud
 based Human Resources Management
 Software designed to streamline.</p>
       </section>
