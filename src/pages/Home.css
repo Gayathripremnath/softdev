@@ -4,12 +4,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: white; */
 }
 
 body {
   margin: 0;
   padding: 0;
+  background-color: #b2e1eb;
 }
 
 .hero-section {
@@ -275,7 +275,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
+  /* background-color: white; */
 }
 
 .chart-cont h6 {
@@ -1344,10 +1344,6 @@ html {
   }
 }
 
-.enquiry-section {
-  background-color: #e6f2ff;
-}
-
 
 
 
@@ -1360,9 +1356,8 @@ html {
 }
 
 .clients-title {
-  color: #083745;
-  text-decoration:underline rgb(149, 164, 165);
-  font-family: sans-serif;
+  color: #050a35;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
   font-size: 34px;
   margin-bottom: 30px;
@@ -1392,10 +1387,8 @@ html {
 
 /* LOGO ITEM */
 .flow-item {
-  background: #fff;
   padding: 1px 10px;
   z-index: 2;
-  animation: float 4s ease-in-out infinite;
 }
 
 .flow-item img {
@@ -1404,10 +1397,7 @@ html {
 }
 
 /* FLOAT EFFECT */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
+
 
 /* DIFFERENT DELAY FOR VARIETY */
 .flow-item:nth-child(even) {
@@ -1415,13 +1405,183 @@ html {
 }
 
 /* MOBILE */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .flow-line {
-    flex-wrap: wrap;
-    gap: 40px;
+    flex-wrap: wrap;              
+    justify-content: center;    
+    gap: 30px 20px;   
   }
 
-  .flow-line::before {
-    display: none;
+  .flow-item {
+    flex: 0 0 45%;              
+    display: flex;
+    justify-content: center;
+  }
+
+  .flow-item img {
+    height: 45px;
+    max-width: 140px;
+  }
+}
+
+
+
+
+
+
+#planing {
+  /* padding: 20%; */
+  color: #022c36;
+  animation: text_appear both;
+  animation-timeline: view(15% 20%);
+  animation-range: entry 15% cover 100vh;
+}
+
+@keyframes text_appear {
+  from{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.planing-head {
+  text-align: center;
+  margin-bottom: 80px;
+
+}
+
+.planing-head h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #011954, #053643);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+
+.timeline {
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+  padding-top: 50px;
+  
+}
+
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #013647, #586270);
+  transform: translateX(-50%);
+  padding-top: 50px;
+}
+
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 50px;
+  position: relative; opacity: 0;
+
+}
+
+.timeline-item.left {
+  justify-content: flex-start;
+  transform: translateX(100px);
+  animation: slideFromLeft 0.3s ease-out forwards;
+  animation-timeline:view();
+}
+@keyframes slideFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+  transform: translateX(-100px);
+  animation: slideFromLeft 0.3s ease-out forwards;
+  animation-timeline:view();
+}
+
+@keyframes slideFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.timeline-card {
+  width: 45%;
+  background: rgb(2, 23, 30);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 28px;
+  backdrop-filter: blur(14px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 45px rgba(136, 91, 91, 0.45);
+  border-color: blue;
+}
+
+
+.timeline-card h3 {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 6px;
+}
+
+
+
+.timeline-card p {
+  font-size: 0.95rem;
+  color: rgb(255, 255, 255);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+
+.tech-used {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-used span {
+  font-size: 0.7rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    justify-content: flex-start;
+  }
+
+  .timeline-card {
+    width: 90%;
+    margin-left: 40px;
   }
 }

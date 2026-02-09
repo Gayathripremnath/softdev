@@ -21,7 +21,7 @@ const About = () => {
   return (
     <div className="about-page">
 
-      {/* HERO */}
+  
       <section className="about-hero">
         <div className="hero-text animate up">
           <h1>About <span>Smart</span> Build</h1>
@@ -31,9 +31,6 @@ const About = () => {
           </p>
         </div>
 
-        <div className="hero-img animate right">
-          <img src={about} alt="Smart Build" />
-        </div>
       </section>
 
       {/* INTRO */}

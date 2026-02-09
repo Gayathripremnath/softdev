@@ -113,7 +113,7 @@ useEffect(() => {
         <div className="hero-cont">
           <div className="hero-left">
             <h1 className="hero-headline">
-              Supercharge Your Construction Projects with Our <span style={{color:"white", background:"lightblue", borderRadius:"900px", padding:"10px"}}>All-in-One ERP Solution</span>
+              Supercharge Your Construction Projects with Our <span style={{color:"white", background:"rgba(22, 65, 66, 0.9)", borderRadius:"900px", padding:"5px"}}>All-in-One ERP Solution</span>
             </h1>
 
             <p className="hero-description">
@@ -228,9 +228,71 @@ useEffect(() => {
         </div>
       </section>
 
-      {/* <div><h1 style={{ textAlign: "center", fontSize: "3rem", fontWeight: "800", marginTop: "30px", color: "#0f1e46", padding:"10px", fontFamily:"'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"}}>From Planning to Execution Everything on One App</h1></div> */}
+
+
+  <section id="planing">
+      <div className="planing-head">
+        <h1>From Planning to Execution Everything on One App</h1>
+      </div>
+
+      <div className="timeline">
+
+
+        <div className="timeline-item left">
+          <div className="timeline-card">
+            <h3>Enquiry</h3>
+
+            <p>
+            Streamline enquiries with smart tracking and real-time updates.
+            </p>
+          <video src={enq} uted autoPlay loop playsInline preload="auto" style={{width:"400px"}}></video>
+            <div className="tech-used">
+              <span>Resource allocation</span>
+              <span>Timeline planning</span>
+              <span>Budget control</span>
+             
+            </div>
+          </div>
+        </div>
+
+        <div className="timeline-item right">
+          <div className="timeline-card">
+            <h3>Construction Material Management</h3>
+
+            <p>
+              Get real-time visibility of material stock on site & fasten the procurement proces
+            </p>
+          <video src={team} muted autoPlay loop playsInline preload="auto" style={{width:"400px"}} ></video>
+            <div className="tech-used">
+              <span> 
+Procure and allocate materials faster</span>
+              <span>Avoid Material loss or theft</span>
+              <span>Generate instant POs and GRNs</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="timeline-item left">
+          <div className="timeline-card">
+            <h3>Project</h3>
+
+            <p>
+              Manage your projects on mobile, get real-time updates, enhance collaboration, & increase efficiency
+            </p>
+            <img src={img1} alt="" />
+
+            <div className="tech-used">
+              <span>Track project progress at a glance</span>
+              <span>Avoid delays by getting quick insights</span>
+              <span>Generate detailed daily progress 
+reports</span>
+              <span>Data Reporting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
    <section className="client-flow">
-  <h2 className="clients-title">CLIENTS WHO TRUSTED US</h2>
 
   <div className="flow-line">
     {[
