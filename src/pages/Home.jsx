@@ -90,73 +90,25 @@ const Home = () => {
       }, index * 300);
     });
   }, []);
-useEffect(() => {
-  const charts = document.querySelectorAll(".chart");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    },
-    { threshold: 0.3 } 
-  );
-
-  charts.forEach((chart) => observer.observe(chart));
-
-  return () => observer.disconnect();
-}, []);
 
 useEffect(() => {
-  const items = document.querySelectorAll(".reveal");
+  const el = document.querySelector(".payroll");
+  if (!el) return;
 
   const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        el.classList.add("show");
+      }
     },
     { threshold: 0.3 }
   );
 
-  items.forEach(el => observer.observe(el));
-}, []);
-document.querySelectorAll('.reveal-text').forEach(el => {
-  const text = el.innerText;
-  const words = text.split(' ');
-
-  el.innerHTML = words
-    .map((word, i) => `<span style="--i:${i}">${word}&nbsp;</span>`)
-    .join('');
-});
-
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-
-document.querySelectorAll('.reveal-text').forEach(el => {
   observer.observe(el);
-});
+  return () => observer.disconnect();
+}, []);
 
-document.querySelectorAll('.reveal-text').forEach(el => {
-  const text = el.innerText;
-  const words = text.split(' ');
-
-  el.innerHTML = words
-    .map((word, i) => `<span style="--i:${i}">${word}&nbsp;</span>`)
-    .join('');
-});
 useEffect(() => {
   const reveals = document.querySelectorAll(".reveal");
 
@@ -198,7 +150,7 @@ useEffect(() => {
               </div>
               <div className="feature-item">
                 <span className="check-icon">✓</span>
-                <span>Real-Time Collaboration</span>
+                <span>Real-Time Collaboration</span>  
               </div>
               <div className="feature-item">
                 <span className="check-icon">✓</span>
@@ -291,7 +243,7 @@ useEffect(() => {
 
     <div className="workflow-content">
       <span className="tag">ENQUIRY</span>
-      <h2>Smart enquiry management</h2>
+      <h2>Smart  enquiry  <br /> management</h2>
       <p>
         Capture and manage customer enquiries efficiently with <span>real-time tracking,</span> 
         follow-ups, and centralized communication.
@@ -307,7 +259,7 @@ useEffect(() => {
 
     <div className="workflow-content">
       <span className="tag">ISSUE MANAGEMENT</span>
-      <h2>Resolve issues faster</h2>
+      <h2>Resolve <br /> issues faster</h2>
       <p>
         Track, assign, and close issues seamlessly with <span>transparent workflows</span>  and
         instant <span>updates </span> across teams.
@@ -323,7 +275,7 @@ useEffect(() => {
 
     <div className="workflow-content">
       <span className="tag">PROJECT</span>
-      <h2>Complete project control</h2>
+      <h2>Complete <br /> project  control</h2>
       <p>
         Monitor progress, expenses, and timelines from <span> one dashboard</span> to ensure
         projects stay <span> profitable.</span> 
@@ -366,26 +318,52 @@ useEffect(() => {
 
   </div>
 </section>
+  <div className='client-head'>
+    <h1>Prestigious Clients</h1>
+  </div>
+<section className="client-flow">
 
-   <section className="client-flow">
+  <div className="flow-track">
+    
+    {[...Array(2)].map((_, loopIndex) =>
+      [
+        "https://www.genovatechnologies.com/images/clients/miart.jpg",
+        "https://www.genovatechnologies.com/images/clients/micc_calicut.jpg",
+        "https://www.genovatechnologies.com/images/clients/gateway.jpg",
+        "https://www.genovatechnologies.com/images/clients/majestic.jpg",
+        "https://www.genovatechnologies.com/images/clients/better_half.jpg",
+        "https://www.genovatechnologies.com/images/clients/pure_solutions.jpg",
+        "https://www.genovatechnologies.com/images/clients/meque.jpg",
+        "https://www.genovatechnologies.com/images/clients/eric.jpg",
+      ].map((logo, index) => (
+        <div className="flow-item" key={`${loopIndex}-${index}`}>
+          <img src={logo} alt="client logo" />
+        </div>
+      ))
+    )}
+  </div>
 
-  <div className="flow-line">
-    {[
-      "https://www.genovatechnologies.com/images/clients/miart.jpg",
-      "https://www.genovatechnologies.com/images/clients/micc_calicut.jpg",
-      "https://www.genovatechnologies.com/images/clients/gateway.jpg",
-      "https://www.genovatechnologies.com/images/clients/majestic.jpg",
-      "https://www.genovatechnologies.com/images/clients/better_half.jpg",
-      "https://www.genovatechnologies.com/images/clients/pure_solutions.jpg",
-      "https://www.genovatechnologies.com/images/clients/meque.jpg",
-      "https://www.genovatechnologies.com/images/clients/eric.jpg",
-    ].map((logo, index) => (
-      <div className="flow-item" key={index}>
-        <img src={logo} alt="client logo" />
-      </div>
-    ))}
+    <div className="flow-track2">
+    
+    {[...Array(2)].map((_, loopIndex) =>
+      [
+        "https://www.genovatechnologies.com/images/clients/miart.jpg",
+        "https://www.genovatechnologies.com/images/clients/micc_calicut.jpg",
+        "https://www.genovatechnologies.com/images/clients/gateway.jpg",
+        "https://www.genovatechnologies.com/images/clients/majestic.jpg",
+        "https://www.genovatechnologies.com/images/clients/better_half.jpg",
+        "https://www.genovatechnologies.com/images/clients/pure_solutions.jpg",
+        "https://www.genovatechnologies.com/images/clients/meque.jpg",
+        "https://www.genovatechnologies.com/images/clients/eric.jpg",
+      ].map((logo, index) => (
+        <div className="flow-item" key={`${loopIndex}-${index}`}>
+          <img src={logo} alt="client logo" />
+        </div>
+      ))
+    )}
   </div>
 </section>
+
 
 
     </>
