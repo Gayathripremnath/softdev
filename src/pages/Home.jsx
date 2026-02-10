@@ -7,6 +7,7 @@ import team from "../assets/team.mp4";
 import project from "../assets/project.mp4";
 import logo from "../assets/logo.jpg";
 import { useRef } from 'react';
+import { img } from 'framer-motion/client';
 
 
 const Home = () => {
@@ -20,7 +21,7 @@ const Home = () => {
   const featureRefs = useRef([]);
 
   useEffect(() => {
-    featureRefs.current = featureRefs.current.slice(0, 3); // Keep only first 3 refs
+    featureRefs.current = featureRefs.current.slice(0, 3); 
     const observers = [];
 
     featureRefs.current.forEach((ref, index) => {
@@ -100,7 +101,7 @@ useEffect(() => {
         }
       });
     },
-    { threshold: 0.3 } // 30% visible aayal trigger
+    { threshold: 0.3 } 
   );
 
   charts.forEach((chart) => observer.observe(chart));
@@ -124,6 +125,56 @@ useEffect(() => {
 
   items.forEach(el => observer.observe(el));
 }, []);
+document.querySelectorAll('.reveal-text').forEach(el => {
+  const text = el.innerText;
+  const words = text.split(' ');
+
+  el.innerHTML = words
+    .map((word, i) => `<span style="--i:${i}">${word}&nbsp;</span>`)
+    .join('');
+});
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+document.querySelectorAll('.reveal-text').forEach(el => {
+  observer.observe(el);
+});
+
+document.querySelectorAll('.reveal-text').forEach(el => {
+  const text = el.innerText;
+  const words = text.split(' ');
+
+  el.innerHTML = words
+    .map((word, i) => `<span style="--i:${i}">${word}&nbsp;</span>`)
+    .join('');
+});
+useEffect(() => {
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  reveals.forEach(el => observer.observe(el));
+}, []);
+
+
 
   return (
     <>
@@ -222,14 +273,65 @@ useEffect(() => {
         </div>
       </div>
 
-      <section className='payroll'>
-        <p>Smart build payroll is a cutting-edge, cloud
-based Human Resources Management
-Software designed to streamline.</p>
-      </section>
-    
+   <section className="payroll">
+  <p className="reveal-text">
+    Smart build payroll is a cutting-edge, cloud
+    based Human Resources Management
+    Software designed to streamline.
+  </p>
+</section>
 
+<section className="workflow-section">
 
+  {/* ENQUIRY */}
+  <div className="workflow-row reveal">
+    <div className="workflow-image card-float">
+      <img src="https://marketingradar.com/wp-content/uploads/2023/03/shutterstock_1275409879-Leads-2048x1365.jpg.webp" alt="Enquiry" />
+    </div>
+
+    <div className="workflow-content">
+      <span className="tag">ENQUIRY</span>
+      <h2>Smart enquiry management</h2>
+      <p>
+        Capture and manage customer enquiries efficiently with <span>real-time tracking,</span> 
+        follow-ups, and centralized communication.
+      </p>
+    </div>
+  </div>
+
+  {/* ISSUE MANAGEMENT */}
+  <div className="workflow-row reverse reveal">
+    <div className="workflow-image card-float">
+      <img src="https://img.freepik.com/free-photo/confident-businesspeople-discussing-analytics-data-successful-experienced-managers-office-suits-meeting-conference-room-planning-strategy-teamwork-business-management-concept_74855-6866.jpg?semt=ais_hybrid&w=740&q=80" alt="Issue Management" />
+    </div>
+
+    <div className="workflow-content">
+      <span className="tag">ISSUE MANAGEMENT</span>
+      <h2>Resolve issues faster</h2>
+      <p>
+        Track, assign, and close issues seamlessly with <span>transparent workflows</span>  and
+        instant <span>updates </span> across teams.
+      </p>
+    </div>
+  </div>
+
+  {/* PROJECT */}
+  <div className="workflow-row reveal">
+    <div className="workflow-image card-float">
+      <img src={img1} alt="Project" />
+    </div>
+
+    <div className="workflow-content">
+      <span className="tag">PROJECT</span>
+      <h2>Complete project control</h2>
+      <p>
+        Monitor progress, expenses, and timelines from <span> one dashboard</span> to ensure
+        projects stay <span> profitable.</span> 
+       </p>
+    </div>
+  </div>
+
+</section>
 
 <section className="integration-section reveal">
   <div className="integration-wrapper">
