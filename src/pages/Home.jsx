@@ -21,7 +21,7 @@ const Home = () => {
   const featureRefs = useRef([]);
 
   useEffect(() => {
-    featureRefs.current = featureRefs.current.slice(0, 3); 
+    featureRefs.current = featureRefs.current.slice(0, 3);
     const observers = [];
 
     featureRefs.current.forEach((ref, index) => {
@@ -92,52 +92,64 @@ const Home = () => {
   }, []);
 
 
-useEffect(() => {
-  const el = document.querySelector(".payroll");
-  if (!el) return;
+  useEffect(() => {
+    const el = document.querySelector(".payroll");
+    if (!el) return;
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        el.classList.add("show");
-      }
-    },
-    { threshold: 0.3 }
-  );
-
-  observer.observe(el);
-  return () => observer.disconnect();
-}, []);
-
-useEffect(() => {
-  const reveals = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("show");
+          el.classList.add("show");
         }
-      });
-    },
-    { threshold: 0.2 }
-  );
+      },
+      { threshold: 0.3 }
+    );
 
-  reveals.forEach(el => observer.observe(el));
-}, []);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    reveals.forEach(el => observer.observe(el));
+  }, []);
 
 
 
   return (
-    <>
+    <div className="home-page">
+      {/* Background Floating Icons */}
+      <div className="bg-construction-icons-home">
+        <span className="icon-float-home h1">🏗️</span>
+        <span className="icon-float-home h2">🔨</span>
+        <span className="icon-float-home h3">📐</span>
+        <span className="icon-float-home h4">🔧</span>
+        <span className="icon-float-home h5">🦺</span>
+        <span className="icon-float-home h6">🚜</span>
+        <span className="icon-float-home h7">🧱</span>
+        <span className="icon-float-home h8">🪜</span>
+      </div>
+
       <div className="hero-section">
         <div className="hero-cont">
           <div className="hero-left">
             <h1 className="hero-headline">
-              Supercharge Your Construction Projects with Our <span style={{color:"white", background:"rgba(22, 65, 66, 0.9)", borderRadius:"900px", padding:"5px"}}>All-in-One ERP Solution</span>
+              Supercharge Your Construction Projects with Our <span style={{ color: "white", background: "rgba(22, 65, 66, 0.9)", borderRadius: "900px", padding: "5px" }}>All-in-One ERP Solution</span>
             </h1>
 
-       
+
             <button className="demo-button" onClick={scrollToForm}>
               Book a Free Demo
             </button>
@@ -150,7 +162,7 @@ useEffect(() => {
               </div>
               <div className="feature-item">
                 <span className="check-icon">✓</span>
-                <span>Real-Time Collaboration</span>  
+                <span>Real-Time Collaboration</span>
               </div>
               <div className="feature-item">
                 <span className="check-icon">✓</span>
@@ -159,14 +171,6 @@ useEffect(() => {
               <div className="feature-item">
                 <span className="check-icon">✓</span>
                 <span>Integrated Budget & Cost Control</span>
-              </div>
-              <div className="feature-item">
-                <span className="check-icon">✓</span>
-                <span>Customizable Dashboards</span>
-              </div>
-              <div className="feature-item">
-                <span className="check-icon">✓</span>
-                <span>Cloud-Based Platform</span>
               </div>
             </div>
           </div>
@@ -218,155 +222,157 @@ useEffect(() => {
                   Send
                 </button>
               </form>
-              
+
             </div>
 
           </div>
         </div>
       </div>
 
-   <section className="payroll">
-  <p className="reveal-text">
-    Smart build payroll is a cutting-edge, cloud
-    based Human Resources Management
-    Software designed to streamline.
-  </p>
-</section>
+      <section className="payroll">
+        <p className="reveal-text">
+          {"Smart build payroll is a cutting-edge, cloud based Human Resources Management Software designed to streamline.".split(" ").map((word, i) => (
+            <span key={i} style={{ "--i": i }}>
+              {word}{" \u00A0"}
+            </span>
+          ))}
+        </p>
+      </section>
 
-<section className="workflow-section">
+      <section className="workflow-section">
 
-  {/* ENQUIRY */}
-  <div className="workflow-row reveal">
-    <div className="workflow-image card-float">
-      <img src="https://marketingradar.com/wp-content/uploads/2023/03/shutterstock_1275409879-Leads-2048x1365.jpg.webp" alt="Enquiry" />
-    </div>
+        {/* ENQUIRY */}
+        <div className="workflow-row reveal">
+          <div className="workflow-image card-float">
+            <img src="https://marketingradar.com/wp-content/uploads/2023/03/shutterstock_1275409879-Leads-2048x1365.jpg.webp" alt="Enquiry" />
+          </div>
 
-    <div className="workflow-content">
-      <span className="tag">ENQUIRY</span>
-      <h2>Smart  enquiry  <br /> management</h2>
-      <p>
-        Capture and manage customer enquiries efficiently with <span>real-time tracking,</span> 
-        follow-ups, and centralized communication.
-      </p>
-    </div>
-  </div>
+          <div className="workflow-content">
+            <span className="tag">ENQUIRY</span>
+            <h2>Smart  enquiry  <br /> management</h2>
+            <p>
+              Capture and manage customer enquiries efficiently with <span>real-time tracking,</span>
+              follow-ups, and centralized communication.
+            </p>
+          </div>
+        </div>
 
-  {/* ISSUE MANAGEMENT */}
-  <div className="workflow-row reverse reveal">
-    <div className="workflow-image card-float">
-      <img src="https://img.freepik.com/free-photo/confident-businesspeople-discussing-analytics-data-successful-experienced-managers-office-suits-meeting-conference-room-planning-strategy-teamwork-business-management-concept_74855-6866.jpg?semt=ais_hybrid&w=740&q=80" alt="Issue Management" />
-    </div>
+        {/* ISSUE MANAGEMENT */}
+        <div className="workflow-row reverse reveal">
+          <div className="workflow-image card-float">
+            <img src="https://img.freepik.com/free-photo/confident-businesspeople-discussing-analytics-data-successful-experienced-managers-office-suits-meeting-conference-room-planning-strategy-teamwork-business-management-concept_74855-6866.jpg?semt=ais_hybrid&w=740&q=80" alt="Issue Management" />
+          </div>
 
-    <div className="workflow-content">
-      <span className="tag">ISSUE MANAGEMENT</span>
-      <h2>Resolve <br /> issues faster</h2>
-      <p>
-        Track, assign, and close issues seamlessly with <span>transparent workflows</span>  and
-        instant <span>updates </span> across teams.
-      </p>
-    </div>
-  </div>
+          <div className="workflow-content">
+            <span className="tag">ISSUE MANAGEMENT</span>
+            <h2>Resolve <br /> issues faster</h2>
+            <p>
+              Track, assign, and close issues seamlessly with <span>transparent workflows</span>  and
+              instant <span>updates </span> across teams.
+            </p>
+          </div>
+        </div>
 
-  {/* PROJECT */}
-  <div className="workflow-row reveal">
-    <div className="workflow-image card-float">
-      <img src={img1} alt="Project" />
-    </div>
+        {/* PROJECT */}
+        <div className="workflow-row reveal">
+          <div className="workflow-image card-float">
+            <img src={img1} alt="Project" />
+          </div>
 
-    <div className="workflow-content">
-      <span className="tag">PROJECT</span>
-      <h2>Complete <br /> project  control</h2>
-      <p>
-        Monitor progress, expenses, and timelines from <span> one dashboard</span> to ensure
-        projects stay <span> profitable.</span> 
-       </p>
-    </div>
-  </div>
+          <div className="workflow-content">
+            <span className="tag">PROJECT</span>
+            <h2>Complete <br /> project  control</h2>
+            <p>
+              Monitor progress, expenses, and timelines from <span> one dashboard</span> to ensure
+              projects stay <span> profitable.</span>
+            </p>
+          </div>
+        </div>
 
-</section>
+      </section>
 
-<section className="integration-section reveal">
-  <div className="integration-wrapper">
+      <section className="integration-section reveal">
+        <div className="integration-wrapper">
 
-    {/* LEFT – Circle integrations */}
-    <div className="integration-visual">
-      <div className="circle">
-        <span className="center-text">
-          <h2>100+</h2>
-          <p>Tool Integrations</p>
-        </span>
+          {/* LEFT – Circle integrations */}
+          <div className="integration-visual">
+            <div className="circle">
+              <span className="center-text">
+                <h2>100+</h2>
+                <p>Tool Integrations</p>
+              </span>
 
-       <img src="https://techwave.golothemes.com/payroll/wp-content/uploads/sites/33/2024/06/icon-images-min.png" alt="" />
+              <img src="https://techwave.golothemes.com/payroll/wp-content/uploads/sites/33/2024/06/icon-images-min.png" alt="" />
+            </div>
+          </div>
+
+          {/* RIGHT – Content */}
+          <div className="integration-content">
+            <span className="tag">INTEGRATION</span>
+            <h2>
+              Scale your team <br /> up-and-down
+            </h2>
+            <p>
+              Solutions for startup and SMBs, helping them establish
+              efficient HR operations, manage growing teams.
+            </p>
+
+            <button className="primary-btn">
+              Start 14-day free trial
+            </button>
+          </div>
+
+        </div>
+      </section>
+      <div className='client-head'>
+        <h1>Prestigious Clients</h1>
       </div>
-    </div>
+      <section className="client-flow">
 
-    {/* RIGHT – Content */}
-    <div className="integration-content">
-      <span className="tag">INTEGRATION</span>
-      <h2>
-        Scale your team <br /> up-and-down
-      </h2>
-      <p>
-        Solutions for startup and SMBs, helping them establish
-        efficient HR operations, manage growing teams.
-      </p>
+        <div className="flow-track">
 
-      <button className="primary-btn">
-        Start 14-day free trial
-      </button>
-    </div>
-
-  </div>
-</section>
-  <div className='client-head'>
-    <h1>Prestigious Clients</h1>
-  </div>
-<section className="client-flow">
-
-  <div className="flow-track">
-    
-    {[...Array(2)].map((_, loopIndex) =>
-      [
-        "https://www.genovatechnologies.com/images/clients/miart.jpg",
-        "https://www.genovatechnologies.com/images/clients/micc_calicut.jpg",
-        "https://www.genovatechnologies.com/images/clients/gateway.jpg",
-        "https://www.genovatechnologies.com/images/clients/majestic.jpg",
-        "https://www.genovatechnologies.com/images/clients/better_half.jpg",
-        "https://www.genovatechnologies.com/images/clients/pure_solutions.jpg",
-        "https://www.genovatechnologies.com/images/clients/meque.jpg",
-        "https://www.genovatechnologies.com/images/clients/eric.jpg",
-      ].map((logo, index) => (
-        <div className="flow-item" key={`${loopIndex}-${index}`}>
-          <img src={logo} alt="client logo" />
+          {[...Array(2)].map((_, loopIndex) =>
+            [
+              "https://www.genovatechnologies.com/images/clients/miart.jpg",
+              "https://www.genovatechnologies.com/images/clients/micc_calicut.jpg",
+              "https://www.genovatechnologies.com/images/clients/gateway.jpg",
+              "https://www.genovatechnologies.com/images/clients/majestic.jpg",
+              "https://www.genovatechnologies.com/images/clients/better_half.jpg",
+              "https://www.genovatechnologies.com/images/clients/pure_solutions.jpg",
+              "https://www.genovatechnologies.com/images/clients/meque.jpg",
+              "https://www.genovatechnologies.com/images/clients/eric.jpg",
+            ].map((logo, index) => (
+              <div className="flow-item" key={`${loopIndex}-${index}`}>
+                <img src={logo} alt="client logo" />
+              </div>
+            ))
+          )}
         </div>
-      ))
-    )}
-  </div>
 
-    <div className="flow-track2">
-    
-    {[...Array(2)].map((_, loopIndex) =>
-      [
-        "https://www.genovatechnologies.com/images/clients/miart.jpg",
-        "https://www.genovatechnologies.com/images/clients/micc_calicut.jpg",
-        "https://www.genovatechnologies.com/images/clients/gateway.jpg",
-        "https://www.genovatechnologies.com/images/clients/majestic.jpg",
-        "https://www.genovatechnologies.com/images/clients/better_half.jpg",
-        "https://www.genovatechnologies.com/images/clients/pure_solutions.jpg",
-        "https://www.genovatechnologies.com/images/clients/meque.jpg",
-        "https://www.genovatechnologies.com/images/clients/eric.jpg",
-      ].map((logo, index) => (
-        <div className="flow-item" key={`${loopIndex}-${index}`}>
-          <img src={logo} alt="client logo" />
+        <div className="flow-track2">
+
+          {[...Array(2)].map((_, loopIndex) =>
+            [
+              "https://www.genovatechnologies.com/images/clients/miart.jpg",
+              "https://www.genovatechnologies.com/images/clients/micc_calicut.jpg",
+              "https://www.genovatechnologies.com/images/clients/gateway.jpg",
+              "https://www.genovatechnologies.com/images/clients/majestic.jpg",
+              "https://www.genovatechnologies.com/images/clients/better_half.jpg",
+              "https://www.genovatechnologies.com/images/clients/pure_solutions.jpg",
+              "https://www.genovatechnologies.com/images/clients/meque.jpg",
+              "https://www.genovatechnologies.com/images/clients/eric.jpg",
+            ].map((logo, index) => (
+              <div className="flow-item" key={`${loopIndex}-${index}`}>
+                <img src={logo} alt="client logo" />
+              </div>
+            ))
+          )}
         </div>
-      ))
-    )}
-  </div>
-</section>
+      </section>
 
 
 
-    </>
+    </div>
 
   );
 };
