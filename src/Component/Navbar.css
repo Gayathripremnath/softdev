@@ -258,7 +258,47 @@
     font-size: 0.8rem;
   }
 }
+@media (max-width: 900px) {
+  .hero-headline {
+    font-size: 2.8rem !important;
+    line-height: 1.2 !important;
+  }
 
+  .workflow-content h2 {
+    font-size: 42px !important;
+    line-height: 1.3 !important;
+  }
+
+  .workflow-content p {
+    font-size:28px !important;
+    line-height: 1.8 !important;
+  }
+
+  .workflow-content .tag,
+  .integration-content .tag {
+    font-size: 14px !important;
+    padding: 8px 18px !important;
+  }
+
+  .payroll {
+    font-size: 34px !important;
+    line-height: 1.4 !important;
+  }
+
+  .integration-content h2 {
+    font-size: 62px !important;
+    line-height: 1.2 !important;
+  }
+
+  .integration-content p {
+    font-size: 28px !important;
+    line-height: 1.7 !important;
+  }
+
+  .client-head h1 {
+    font-size: 40px !important;
+  }
+}
 /* Tablet Portrait (576px to 767px) */
 @media (max-width: 767px) {
   .top-bar {
