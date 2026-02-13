@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 
@@ -7,7 +6,8 @@
 
 
 .top-bar {
-background:rgb(6, 65, 104);
+  font-family: 'Plus Jakarta Sans';
+  background: rgb(6, 65, 104);
   padding: 8px 20px;
   display: flex;
   justify-content: space-around;
@@ -37,6 +37,7 @@ background:rgb(6, 65, 104);
 }
 
 .demo-btn {
+  font-family: 'Plus Jakarta Sans';
   background: #1e3a8a;
   color: white;
   border: none;
@@ -69,10 +70,10 @@ background:rgb(6, 65, 104);
   left: 50%;
   transform: translateX(-50%);
 
-  width: calc(94% - 80px); 
+  width: calc(94% - 80px);
   height: 60px;
 
-  border-radius: 60px;   
+  border-radius: 60px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 
   z-index: 1000;
@@ -90,7 +91,7 @@ background:rgb(6, 65, 104);
 }
 
 .nav-links {
-  font-family:'Plus Jakarta Sans' ;
+  font-family: 'Plus Jakarta Sans';
   letter-spacing: 2px;
   display: flex;
   list-style: none;
@@ -103,7 +104,7 @@ background:rgb(6, 65, 104);
 }
 
 .nav-links li a {
-  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  font-family: 'Plus Jakarta Sans';
   text-decoration: none;
   color: #0b5968;
   padding: 10px;
@@ -162,6 +163,7 @@ background:rgb(6, 65, 104);
 }
 
 .mobile-menu a {
+  font-family: 'Plus Jakarta Sans';
   padding: 12px 0;
   text-decoration: none;
   color: #495057;
@@ -180,11 +182,12 @@ background:rgb(6, 65, 104);
 
 /* Comprehensive Responsive Design */
 @media (max-width: 414px) {
-   .logo img {
+  .logo img {
     height: 55px;
     margin-left: 1px;
   }
 }
+
 /* Large Desktop (1200px and up) */
 @media (min-width: 1200px) {
   .navbar {
@@ -194,7 +197,7 @@ background:rgb(6, 65, 104);
   .top-bar {
     padding: 8px 40px;
   }
-  
+
   .nav-links {
     gap: 40px;
   }
@@ -205,14 +208,16 @@ background:rgb(6, 65, 104);
   .navbar {
     padding: 15px 30px;
   }
-   .logo img {
+
+  .logo img {
     height: 55px;
     margin-left: 10px;
   }
+
   .top-bar {
     padding: 8px 30px;
   }
-  
+
   .nav-links {
     gap: 28px;
   }
@@ -224,30 +229,30 @@ background:rgb(6, 65, 104);
     padding: 6px 20px;
     height: 36px;
   }
-  
+
   .navbar {
     padding: 12px 20px;
     height: 80px;
     top: 36px;
   }
-  
+
   .logo img {
     height: 55px;
     margin-left: 10px;
   }
-  
+
   .nav-links {
     gap: 24px;
   }
-  
+
   .nav-links li a {
     font-size: 0.95rem;
   }
-  
+
   .phone-number {
     font-size: 0.85rem;
   }
-  
+
   .demo-btn {
     padding: 6px 16px;
     font-size: 0.8rem;
@@ -260,39 +265,39 @@ background:rgb(6, 65, 104);
     padding: 6px 16px;
     height: 32px;
   }
-  
+
   .navbar {
     padding: 10px 16px;
     height: 70px;
     top: 32px;
   }
-  
- .logo img {
+
+  .logo img {
     height: 50px;
     margin-left: 10px;
   }
-  
+
   .nav-links {
     display: none;
   }
-  
+
   .mobile-menu-btn {
     display: block;
   }
-  
+
   .mobile-menu {
     display: flex;
   }
-  
+
   .top-bar-left {
     gap: 12px;
     margin-right: 12px;
   }
-  
+
   .phone-number {
     font-size: 0.8rem;
   }
-  
+
   .demo-btn {
     padding: 5px 12px;
     font-size: 0.75rem;
@@ -305,27 +310,27 @@ background:rgb(6, 65, 104);
     padding: 4px 12px;
     height: 28px;
   }
-  
+
   .navbar {
     padding: 8px 12px;
     height: 60px;
     top: 28px;
   }
-  
+
   .logo img {
-    height:44px;
+    height: 44px;
     margin-left: 10px;
   }
-  
+
   .top-bar-left {
     gap: 8px;
     margin-right: 8px;
   }
-  
+
   .phone-number {
     font-size: 0.75rem;
   }
-  
+
   .demo-btn {
     padding: 4px 10px;
     font-size: 0.7rem;
@@ -339,40 +344,41 @@ background:rgb(6, 65, 104);
     height: 24px;
     font-size: 0.75rem;
   }
-  
+
   .navbar {
     padding: 6px 8px;
     height: 56px;
     top: 24px;
   }
-  
+
   .logo img {
     height: 40px;
   }
-  
+
   .top-bar-left {
     gap: 6px;
     margin-right: 6px;
   }
-  
+
   .phone-number {
     font-size: 0.7rem;
   }
-  
+
   .phone-number:first-child {
-    display: none; /* Hide first phone number on very small screens */
+    display: none;
+    /* Hide first phone number on very small screens */
   }
-  
+
   .demo-btn {
     padding: 3px 8px;
     font-size: 0.65rem;
     border-radius: 12px;
   }
-  
+
   .mobile-menu {
     padding: 16px;
   }
-  
+
   .mobile-menu a {
     padding: 10px 0;
     font-size: 0.9rem;
@@ -384,16 +390,17 @@ background:rgb(6, 65, 104);
   .top-bar-left .phone-number {
     display: none;
   }
-  
+
   .demo-btn {
     padding: 2px 6px;
     font-size: 0.6rem;
   }
-  
+
   .logo img {
     height: 36px;
   }
 }
+
 /* Top Bar phone numbers responsive */
 .top-bar-left .phone-number {
   display: inline-block;
@@ -404,13 +411,13 @@ background:rgb(6, 65, 104);
 /* Hide the second number on very small screens */
 @media (max-width: 480px) {
   .top-bar-left .phone-number:nth-child(2) {
-    display: none; 
+    display: none;
   }
 }
 
 /* Extra small mobile (below 320px) */
 @media (max-width: 319px) {
   .top-bar-left .phone-number {
-    display: none; 
+    display: none;
   }
 }
