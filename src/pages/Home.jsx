@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
+import { motion } from "framer-motion";
 import './Home.css';
 import '../styles/mac-mockup.css';
 import img1 from "../assets/img1.png";
@@ -19,6 +20,31 @@ const Home = () => {
 
   const [activeFeature, setActiveFeature] = useState(0);
   const featureRefs = useRef([]);
+
+  // Mouse tracking for parallax effect
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({
+        x: (e.clientX / window.innerWidth - 0.5) * 40,
+        y: (e.clientY / window.innerHeight - 0.5) * 40
+      });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  const constructionIcons = useMemo(() => [
+    { icon: "🏗️", x: "5%", y: "12%", speed: 1.2 },
+    { icon: "🔨", x: "92%", y: "25%", speed: 0.8 },
+    { icon: "📐", x: "12%", y: "42%", speed: 1.5 },
+    { icon: "🔧", x: "45%", y: "15%", speed: 1.0 },
+    { icon: "🦺", x: "85%", y: "60%", speed: 0.7 },
+    { icon: "🚜", x: "8%", y: "75%", speed: 1.3 },
+    { icon: "🧱", x: "75%", y: "20%", speed: 0.9 },
+    { icon: "🪜", x: "80%", y: "35%", speed: 1.1 },
+  ], []);
 
   useEffect(() => {
     featureRefs.current = featureRefs.current.slice(0, 3);
@@ -130,16 +156,32 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      {/* Background Floating Icons */}
-      <div className="bg-construction-icons-home">
-        <span className="icon-float-home h1">🏗️</span>
-        <span className="icon-float-home h2">🔨</span>
-        <span className="icon-float-home h3">📐</span>
-        <span className="icon-float-home h4">🔧</span>
-        <span className="icon-float-home h5">🦺</span>
-        <span className="icon-float-home h6">🚜</span>
-        <span className="icon-float-home h7">🧱</span>
-        <span className="icon-float-home h8">🪜</span>
+      {/* Interactive Blueprint Construction Background */}
+      <div className="about-blueprint-bg">
+        <div className="blueprint-grid"></div>
+
+        {constructionIcons.map((item, i) => (
+          <motion.div
+            key={i}
+            className="parallax-icon"
+            animate={{
+              x: mousePos.x * item.speed,
+              y: mousePos.y * item.speed,
+            }}
+            transition={{ type: "spring", stiffness: 50, damping: 20 }}
+            style={{
+              position: "fixed",
+              left: item.x,
+              top: item.y,
+              fontSize: "2.5rem",
+              opacity: 0.15,
+              pointerEvents: "none",
+              zIndex: 0
+            }}
+          >
+            {item.icon}
+          </motion.div>
+        ))}
       </div>
 
       <div className="hero-section">
