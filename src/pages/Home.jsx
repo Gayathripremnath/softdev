@@ -188,13 +188,8 @@ const Home = () => {
         <div className="hero-cont">
           <div className="hero-left">
             <h1 className="hero-headline">
-              Supercharge Your Construction Projects with Our <span style={{ color: "white", background: "rgba(22, 65, 66, 0.9)", borderRadius: "900px", padding: "5px" }}>All-in-One ERP Solution</span>
+              Supercharge Your Construction Projects with Our <span style={{ color: "white", background: "rgba(22, 65, 66, 0.9)", borderRadius: "900px", padding: "5px" }}>All-in-One ERP</span> <span style={{ color: "white", background: "rgba(22, 65, 66, 0.9)", borderRadius: "900px", padding: "5px" }}>Solution</span> 
             </h1>
-
-
-            <button className="demo-button" onClick={scrollToForm}>
-              Book a Free Demo
-            </button>
 
             <div className="features-checklist">
               <div className="feature-item">

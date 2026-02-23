@@ -15,19 +15,20 @@ const Navbar = () => {
       <div className="top-bar">
         <div className="top-bar-left">
           <span className="phone-number">
-            📞 +91-9993060007
-          </span>
-          <span className="phone-number">
-            📞 +91-91234 56789
-          </span>
+  <a href="tel:+919993060007">📞 +91-9778553345</a>
+</span>
+
+<span className="phone-number">
+  <a href="tel:+919123456789">📞 +91-9123456789</a>
+</span>
         </div>
         <button className="demo-btn" onClick={scrollToForm}>Request Demo</button>
       </div>
 
       <nav className="navbar">
-        <div className="logo">
+        <Link to="/" className="logo">
           <img src={logo} alt="Logo" />
-        </div>
+        </Link>
 
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>

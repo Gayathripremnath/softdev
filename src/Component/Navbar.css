@@ -6,6 +6,7 @@
 
 
 .top-bar {
+
   font-family: 'Plus Jakarta Sans';
   background: rgb(6, 65, 104);
   padding: 8px 20px;
@@ -19,7 +20,7 @@
   left: 0;
   right: 0;
   z-index: 1001;
-  height: 40px;
+  height: 50px;
 }
 
 .top-bar-left {
@@ -30,7 +31,8 @@
   margin-right: 20px;
 }
 
-.phone-number {
+.phone-number a{
+  text-decoration: none;
   color: #f8fbfe;
   font-weight: 500;
   white-space: nowrap;
@@ -66,7 +68,7 @@
   margin-top: 11px;
 
   position: fixed;
-  top: 40px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
 
@@ -108,8 +110,8 @@
   text-decoration: none;
   color: #0b5968;
   padding: 10px;
-  font-weight: 500;
-  font-size: 1rem;
+  font-weight: bold;
+  font-size: 14px;
   transition: color 0.3s ease;
   position: relative;
 }
