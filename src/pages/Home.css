@@ -57,7 +57,7 @@ body {
   }
 
   .payroll {
-    font-size: 32px;
+    font-size: 28px;
     margin-top: 20px;
     padding: 20px 30px;
     width: 100%;
@@ -121,88 +121,42 @@ body {
 
 
 
+
+
+
+
 .demo-form-card {
   border-radius: 16px;
-  padding: 24px;
+  padding: 32px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   border: 1px solid #e9ecef;
-  color: white;
-  transform-style: preserve-3d;
-  opacity: 0;
-  /* start invisible */
-  transform: rotateY(-20deg);
-  animation: cardFlipIn 1s ease-out forwards;
-}
-
-@keyframes cardFlipIn {
-  0% {
-    transform: rotateY(-20deg);
-    opacity: 0;
-  }
-
-  50% {
-    transform: rotateY(10deg);
-    opacity: 0.7;
-  }
-
-  100% {
-    transform: rotateY(0deg);
-    opacity: 1;
-  }
-}
-
-.demo-form-card:hover {
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-  transform: scale(1.02);
-}
-
-
-/* Moving gradient keyframes */
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Optional hover effect */
-.demo-form-card:hover {
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-  transform: translateY(-3px);
   transition: all 0.3s ease;
 }
 
-/* Flip animation keyframes */
-@keyframes flipIn {
-  0% {
-    opacity: 0;
-    transform: rotateY(90deg);
-  }
-
-  50% {
-    opacity: 1;
-    transform: rotateY(-10deg);
-  }
-
-  100% {
-    opacity: 1;
-    transform: rotateY(0deg);
-  }
-}
-
-/* Optional: flip on hover */
 .demo-form-card:hover {
-  transform: rotateY(180deg);
-  transition: transform 0.8s ease;
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
+.demo-form-card {
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.demo-form-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    transform: translate3d(20);
+  }
+}
 /* Demo button stays the same */
 .demo-button {
   background: #343a40;
@@ -406,11 +360,11 @@ body {
   }
 
   .workflow-content h2 {
-    font-size: 38px;
+    font-size: 34px;
   }
 
   .workflow-content p {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
@@ -441,12 +395,12 @@ body {
   }
 
   .workflow-content h2 {
-    font-size: 30px;
+    font-size: 26px;
     line-height: 1.4;
   }
 
   .workflow-content p {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.7;
   }
 }
@@ -467,16 +421,16 @@ body {
   }
 
   .workflow-content h2 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .workflow-content p {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .workflow-content .tag {
-    font-size: 10px;
-    padding: 5px 12px;
+    font-size: 9px;
+    padding: 4px 10px;
   }
 }
 
@@ -499,7 +453,7 @@ body {
   }
 
   .workflow-content h2 {
-    font-size: 34px;
+    font-size: 30px;
   }
 }
 
@@ -766,8 +720,8 @@ body {
     gap: 30px;
   }
 
-  .hero-headline {
-    font-size: 2rem;
+  .hero-headline h1{
+    font-size: 1.8rem;
     line-height: 1.2;
   }
 
@@ -783,7 +737,7 @@ body {
   }
 
   .form-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .bg-shape {
@@ -791,7 +745,15 @@ body {
     opacity: 0.2;
   }
 }
-
+@media (max-width: 390px) {
+  .hero-headline {
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
+  }
+  .hero-headline span {
+   font-size: .45rem !important;
+  }
+}
 /* Mobile Large (481px to 575px) */
 @media (max-width: 575px) {
   .hero-section {

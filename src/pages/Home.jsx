@@ -199,7 +199,7 @@ const Home = () => {
               </div>
               <div className="feature-item">
                 <span className="check-icon">✓</span>
-                <span>Real-Time Collaboration</span>
+                <span>Real-Time Seamless Collaboration </span>
               </div>
               <div className="feature-item">
                 <span className="check-icon">✓</span>
