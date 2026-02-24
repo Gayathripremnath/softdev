@@ -1,5 +1,6 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from 'react';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 import './Home.css';
 import '../styles/mac-mockup.css';
 import img1 from "../assets/img1.png";
@@ -8,7 +9,7 @@ import team from "../assets/team.mp4";
 import project from "../assets/project.mp4";
 import logo from "../assets/logo.jpg";
 import { useRef } from 'react';
-import { img } from 'framer-motion/client';
+import homev from "../assets/homev.mp4";
 
 
 const Home = () => {
@@ -24,6 +25,18 @@ const Home = () => {
   // Mouse tracking for parallax effect
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 50
+    });
+
+    AOS.refresh();   // IMPORTANT
+  }, []);
+
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePos({
@@ -35,16 +48,7 @@ const Home = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const constructionIcons = useMemo(() => [
-    { icon: "🏗️", x: "5%", y: "12%", speed: 1.2 },
-    { icon: "🔨", x: "92%", y: "25%", speed: 0.8 },
-    { icon: "📐", x: "12%", y: "42%", speed: 1.5 },
-    { icon: "🔧", x: "45%", y: "15%", speed: 1.0 },
-    { icon: "🦺", x: "85%", y: "60%", speed: 0.7 },
-    { icon: "🚜", x: "8%", y: "75%", speed: 1.3 },
-    { icon: "🧱", x: "75%", y: "20%", speed: 0.9 },
-    { icon: "🪜", x: "80%", y: "35%", speed: 1.1 },
-  ], []);
+
 
   useEffect(() => {
     featureRefs.current = featureRefs.current.slice(0, 3);
@@ -156,42 +160,16 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      {/* Interactive Blueprint Construction Background */}
-      <div className="about-blueprint-bg">
-        <div className="blueprint-grid"></div>
 
-        {constructionIcons.map((item, i) => (
-          <motion.div
-            key={i}
-            className="parallax-icon"
-            animate={{
-              x: mousePos.x * item.speed,
-              y: mousePos.y * item.speed,
-            }}
-            transition={{ type: "spring", stiffness: 50, damping: 20 }}
-            style={{
-              position: "fixed",
-              left: item.x,
-              top: item.y,
-              fontSize: "2.5rem",
-              opacity: 0.15,
-              pointerEvents: "none",
-              zIndex: 0
-            }}
-          >
-            {item.icon}
-          </motion.div>
-        ))}
-      </div>
 
       <div className="hero-section">
         <div className="hero-cont">
           <div className="hero-left">
-            <h1 className="hero-headline">
-              Supercharge Your Construction Projects with Our <span style={{ color: "white", background: "rgba(22, 65, 66, 0.9)", borderRadius: "900px", padding: "5px" }}>All-in-One ERP</span> <span style={{ color: "white", background: "rgba(22, 65, 66, 0.9)", borderRadius: "900px", padding: "5px" }}>Solution</span> 
+            <h1 className="hero-headline" data-aos="flip-left">
+              Supercharge Your Construction Projects with Our <span style={{ color: "white", background: "rgba(22, 65, 66, 0.9)", borderRadius: "900px", padding: "5px" }}>All-in-One ERP</span> <span style={{ color: "white", background: "rgba(22, 65, 66, 0.9)", borderRadius: "900px", padding: "5px" }}>Solution</span>
             </h1>
 
-            <div className="features-checklist">
+            <div className="features-checklist" data-aos="zoom-in">
               <div className="feature-item">
                 <span className="check-icon">✓</span>
                 <span>Streamlined Project Management</span>
@@ -212,7 +190,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="hero-right">
+          <div className="hero-right" data-aos="fade-left">
             <div className="demo-form-card">
               <h3 className="form-title">Request a Free Demo</h3>
 
@@ -276,16 +254,16 @@ const Home = () => {
         </p>
       </section>
 
-      <section className="workflow-section">
+      <section className="workflow-section" >
 
         {/* ENQUIRY */}
-        <div className="workflow-row reveal">
-          <div className="workflow-image card-float">
+        <div className="workflow-row reveal" >
+          <div className="workflow-image card-float" >
             <img src="https://marketingradar.com/wp-content/uploads/2023/03/shutterstock_1275409879-Leads-2048x1365.jpg.webp" alt="Enquiry" />
           </div>
 
           <div className="workflow-content">
-            <span className="tag">ENQUIRY</span>
+            <span className="tag" >ENQUIRY</span>
             <h2>Smart  enquiry  <br /> management</h2>
             <p>
               Capture and manage customer enquiries efficiently with <span>real-time tracking,</span>
@@ -328,11 +306,11 @@ const Home = () => {
 
       </section>
 
-      <section className="integration-section reveal">
+      <section className="integration-section reveal" >
         <div className="integration-wrapper">
 
           {/* LEFT – Circle integrations */}
-          <div className="integration-visual">
+          <div className="integration-visual" >
             <div className="circle">
               <span className="center-text">
                 <h2>100+</h2>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/logo.jpg";
+import logosmall from "../assets/logosmall.png";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = () => {
 
       <nav className="navbar">
         <Link to="/" className="logo">
-          <img src={logo} alt="Logo" />
+          <img src={logosmall} alt="Logo" />
         </Link>
 
         <ul className="nav-links">
