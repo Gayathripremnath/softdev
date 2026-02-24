@@ -230,10 +230,11 @@ body {
 
 
 .workflow-section {
-  padding: 120px 80px;
+  max-width: 1580px;
+  padding: 100px 80px;
   display: flex;
   flex-direction: column;
-  gap: 140px;
+  gap: 100px;
 }
 
 /* ROW */
@@ -241,7 +242,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 120px;
+  gap: 40px;
 }
 
 .workflow-row.reverse {
@@ -250,8 +251,8 @@ body {
 
 /* IMAGE CARD */
 .workflow-image {
-  width: 420px;
-  height: 420px;
+  width: 520px;
+  height: 480px;
   border-radius: 36px;
 
   display: flex;
@@ -344,7 +345,7 @@ body {
   max-width: 1200px;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  font-size: 56px;
+  font-size: 43px;
   font-weight: 300;
   text-align: center;
   color: #0c3347;
@@ -1139,7 +1140,7 @@ html {
 
 /* SECTION */
 .integration-section {
-  background: #07516559;
+  background: #687a8ed0;
   padding: 120px 0;
   overflow: hidden;
   position: relative;

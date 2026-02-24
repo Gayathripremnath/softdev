@@ -9,7 +9,6 @@ import team from "../assets/team.mp4";
 import project from "../assets/project.mp4";
 import logo from "../assets/logo.jpg";
 import { useRef } from 'react';
-import homev from "../assets/homev.mp4";
 
 
 const Home = () => {
@@ -264,10 +263,10 @@ const Home = () => {
 
           <div className="workflow-content">
             <span className="tag" >ENQUIRY</span>
-            <h2>Smart  enquiry  <br /> management</h2>
+            <h2>Smart  enquiry management</h2>
             <p>
               Capture and manage customer enquiries efficiently with <span>real-time tracking,</span>
-              follow-ups, and centralized communication.
+              follow-ups, and centralized communication. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias provident voluptatibus velit veniam, laborum doloremque ullam ipsa blanditiis consequatur officia nesciunt in adipisci pariatur! Laborum aliquam amet repellat quam quaerat.
             </p>
           </div>
         </div>
@@ -280,10 +279,10 @@ const Home = () => {
 
           <div className="workflow-content">
             <span className="tag">ISSUE MANAGEMENT</span>
-            <h2>Resolve <br /> issues faster</h2>
+            <h2>Resolve  issues faster</h2>
             <p>
               Track, assign, and close issues seamlessly with <span>transparent workflows</span>  and
-              instant <span>updates </span> across teams.
+              instant <span>updates </span> across teams. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quo sequi eius voluptatem error odit ad, numquam dolorem! Ea nesciunt molestias, sed id quos temporibus unde amet odio ducimus. Nobis.
             </p>
           </div>
         </div>
@@ -296,10 +295,10 @@ const Home = () => {
 
           <div className="workflow-content">
             <span className="tag">PROJECT</span>
-            <h2>Complete <br /> project  control</h2>
+            <h2>Complete  project  control</h2>
             <p>
               Monitor progress, expenses, and timelines from <span> one dashboard</span> to ensure
-              projects stay <span> profitable.</span>
+              projects stay <span> profitable.</span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem sunt tenetur, mollitia maxime corporis harum ducimus in nesciunt voluptatibus reiciendis aut. Perferendis nesciunt enim natus accusamus expedita alias numquam cum?
             </p>
           </div>
         </div>
