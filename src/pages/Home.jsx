@@ -253,10 +253,10 @@ const Home = () => {
         </p>
       </section>
 
-      <section className="workflow-section" >
+      <section className="workflow-section row" >
 
         {/* ENQUIRY */}
-        <div className="workflow-row reveal" >
+        <div className="workflow-row reveal col-md-6 " >
           <div className="workflow-image card-float" >
             <img src="https://marketingradar.com/wp-content/uploads/2023/03/shutterstock_1275409879-Leads-2048x1365.jpg.webp" alt="Enquiry" />
           </div>
@@ -272,7 +272,7 @@ const Home = () => {
         </div>
 
         {/* ISSUE MANAGEMENT */}
-        <div className="workflow-row reverse reveal">
+        <div className="workflow-row reverse reveal col-md-6">
           <div className="workflow-image card-float">
             <img src="https://img.freepik.com/free-photo/confident-businesspeople-discussing-analytics-data-successful-experienced-managers-office-suits-meeting-conference-room-planning-strategy-teamwork-business-management-concept_74855-6866.jpg?semt=ais_hybrid&w=740&q=80" alt="Issue Management" />
           </div>
