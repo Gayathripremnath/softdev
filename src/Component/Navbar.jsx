@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/Logo_black.png";
+
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -34,7 +35,8 @@ const Navbar = () => {
   }, [location]);
 
   const scrollToForm = () => {
-    document.querySelector('.demo-form-card')?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector(".demo-form-card")?.scrollIntoView({ behavior: "smooth" });
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -73,11 +75,30 @@ const Navbar = () => {
 
             <div className="nav-center">
               <ul className={`menu-list ${mobileMenuOpen ? "active" : ""}`}>
-                <li><Link to="/" className={location.pathname === "/" ? "active" : ""}>Home</Link></li>
-                <li><Link to="/about" className={location.pathname === "/about" ? "active" : ""}>About</Link></li>
-                <li><Link to="/features" className={location.pathname === "/features" ? "active" : ""}>Features</Link></li>
-                <li><Link to="/services" className={location.pathname === "/services" ? "active" : ""}>Services</Link></li>
+                <li>
+                  <Link to="/" className={location.pathname === "/" ? "active" : ""}>
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className={location.pathname === "/about" ? "active" : ""}>
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/features" className={location.pathname === "/features" ? "active" : ""}>
+                    Features
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className={location.pathname === "/services" ? "active" : ""}>
+                    Services
+                  </Link>
+                </li>
                 <li className="mobile-cta">
+                  <button className="glow-btn mobile-menu-btn" onClick={scrollToForm}>
+                    Request Demo
+                  </button>
                 </li>
               </ul>
             </div>
@@ -105,4 +126,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

@@ -15,14 +15,17 @@
   /* Increased space to prevent overlap */
   padding: 0 40px;
 }
-
+.text-center {
+  padding: 10px;
+  top: 50%;
+}
 .section-label {
   display: block;
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--primary-blue);
   letter-spacing: 2px;
-  margin-bottom: 20px;
+  margin-top: 40px;
   text-transform: uppercase;
 }
 
@@ -192,13 +195,14 @@
 
 /* Team Section */
 .wrapper {
-  padding: 10px 20px;
+  margin-left: 130px;
+  padding: 0px 50px;
   /* Small space in left and right */
-  width: 100%;
+  width:90%;
 }
 
 .card-area {
-  padding: 10px 0;
+  padding: 10px 20px;
 }
 
 .box-area {
@@ -206,16 +210,16 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  /* Reduced gap slightly for 4 items */
+ 
   margin-top: 30px;
-  width: 100%;
+  width: 90%;
 }
 
 .box {
   width: calc(25% - 15px);
-  /* 4 items per row default */
+ 
   min-width: 260px;
-  /* Base size */
+
   border-radius: 10px;
   position: relative;
   overflow: hidden;
@@ -306,6 +310,9 @@
 /* Large Screens */
 @media (max-width: 1200px) {
   .wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
     padding: 20px 2%;
   }
 
@@ -314,6 +321,9 @@
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .box {
@@ -338,8 +348,17 @@
 }
 
 @media (max-width: 992px) {
+  .wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
   .box-area {
     gap: 30px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .box {
@@ -362,6 +381,9 @@
 /* Mobile */
 @media (max-width: 768px) {
   .wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
     padding: 10px 5%;
   }
 
@@ -369,6 +391,9 @@
     flex-direction: row;
     /* Ensure 2 items per line */
     justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .box {
@@ -396,9 +421,19 @@
 
 /* Mobile Small (576px) */
 @media (max-width: 576px) {
+  .wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 10px 4%;
+  }
+
   .box-area {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .box {

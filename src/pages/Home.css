@@ -1132,7 +1132,7 @@ html {
 
 /* SECTION */
 .integration-section {
-  background: #687a8ed0;
+  background:rgba(77, 167, 219, 0.392);
   padding: 120px 0;
   overflow: hidden;
   position: relative;
@@ -1161,7 +1161,7 @@ html {
   width: 490px;
   height: 480px;
   border-radius: 50%;
-  border: 1px solid #eee;
+  border: 1px solid #2b2828;
 }
 
 .center-text {
