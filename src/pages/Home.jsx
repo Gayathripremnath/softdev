@@ -256,12 +256,14 @@ const Home = () => {
       <section className="workflow-section row" >
 
         {/* ENQUIRY */}
-        <div className="workflow-row reveal col-md-6 " >
-          <div className="workflow-image card-float" >
-            <img src="https://marketingradar.com/wp-content/uploads/2023/03/shutterstock_1275409879-Leads-2048x1365.jpg.webp" alt="Enquiry" />
+        <div className="workflow-row col-md-6">
+          <div className="workflow-image-wrap reveal reveal-delay-1">
+            <div className="workflow-image card-float">
+              <img src="https://marketingradar.com/wp-content/uploads/2023/03/shutterstock_1275409879-Leads-2048x1365.jpg.webp" alt="Enquiry" />
+            </div>
           </div>
 
-          <div className="workflow-content">
+          <div className="workflow-content reveal reveal-delay-2">
             <span className="tag" >ENQUIRY</span>
             <h2>Smart  enquiry management</h2>
             <p>
@@ -272,12 +274,14 @@ const Home = () => {
         </div>
 
         {/* ISSUE MANAGEMENT */}
-        <div className="workflow-row reverse reveal col-md-6">
-          <div className="workflow-image card-float">
-            <img src="https://img.freepik.com/free-photo/confident-businesspeople-discussing-analytics-data-successful-experienced-managers-office-suits-meeting-conference-room-planning-strategy-teamwork-business-management-concept_74855-6866.jpg?semt=ais_hybrid&w=740&q=80" alt="Issue Management" />
+        <div className="workflow-row reverse col-md-6">
+          <div className="workflow-image-wrap reveal reveal-delay-1">
+            <div className="workflow-image card-float">
+              <img src="https://img.freepik.com/free-photo/confident-businesspeople-discussing-analytics-data-successful-experienced-managers-office-suits-meeting-conference-room-planning-strategy-teamwork-business-management-concept_74855-6866.jpg?semt=ais_hybrid&w=740&q=80" alt="Issue Management" />
+            </div>
           </div>
 
-          <div className="workflow-content">
+          <div className="workflow-content reveal reveal-delay-2">
             <span className="tag">ISSUE MANAGEMENT</span>
             <h2>Resolve  issues faster</h2>
             <p>
@@ -288,12 +292,14 @@ const Home = () => {
         </div>
 
         {/* PROJECT */}
-        <div className="workflow-row reveal">
-          <div className="workflow-image card-float">
-            <img src={img1} alt="Project" />
+        <div className="workflow-row">
+          <div className="workflow-image-wrap reveal reveal-delay-1">
+            <div className="workflow-image card-float">
+              <img src={img1} alt="Project" />
+            </div>
           </div>
 
-          <div className="workflow-content">
+          <div className="workflow-content reveal reveal-delay-2">
             <span className="tag">PROJECT</span>
             <h2>Complete  project  control</h2>
             <p>
