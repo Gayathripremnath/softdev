@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -13,4 +16,28 @@ body {
 #root {
   min-height: 100vh;
   width: 100vw;
+}
+
+:root {
+  --sb-ink: #10263b;
+  --sb-ink-soft: #46627b;
+  --sb-line: #d2e4f6;
+  --sb-brand: #0a79c5;
+  --sb-brand-deep: #084a86;
+  --sb-bg: #f3f8ff;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--sb-ink);
+  background: linear-gradient(180deg, #f7fbff 0%, var(--sb-bg) 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Outfit', sans-serif;
 }
