@@ -67,7 +67,7 @@ const controlCards = [
 
 const Features = () => {
   useEffect(() => {
-    const elements = document.querySelectorAll(".fx-observe");
+    const items = document.querySelectorAll(".fx-scroll");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -77,10 +77,10 @@ const Features = () => {
           }
         });
       },
-      { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.14, rootMargin: "0px 0px -10% 0px" }
     );
 
-    elements.forEach((el) => observer.observe(el));
+    items.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
   }, []);
 
@@ -88,7 +88,7 @@ const Features = () => {
     <div className="fx-page">
       <section className="fx-hero">
         <div className="fx-wrap fx-hero-grid">
-          <div className="fx-hero-main fx-observe" style={{ "--d": "80ms" }}>
+          <div className="fx-hero-main fx-scroll" style={{ "--sd": "60ms" }}>
             <p className="fx-kicker">SMART BUILD FEATURES</p>
             <h1>Modern Construction ERP Built For Speed, Control, And Profit</h1>
             <p className="fx-subtitle">
@@ -101,8 +101,8 @@ const Features = () => {
             </div>
           </div>
 
-          <div className="fx-hero-side fx-observe" style={{ "--d": "180ms" }}>
-            <div className="fx-hero-card fx-observe" style={{ "--d": "220ms" }}>
+          <div className="fx-hero-side">
+            <div className="fx-hero-card fx-scroll" style={{ "--sd": "160ms" }}>
               <h3>Live Operations Pulse</h3>
               <ul>
                 <li><span className="dot"></span> 14 Projects active this week</li>
@@ -110,7 +110,7 @@ const Features = () => {
                 <li><span className="dot"></span> 99.1% data capture compliance</li>
               </ul>
             </div>
-            <div className="fx-hero-card fx-card-dark fx-observe" style={{ "--d": "300ms" }}>
+            <div className="fx-hero-card fx-card-dark fx-scroll" style={{ "--sd": "240ms" }}>
               <p>Decision-ready dashboard for owners, PMs, and site engineers.</p>
             </div>
           </div>
@@ -121,11 +121,7 @@ const Features = () => {
         <div className="fx-wrap">
           <div className="fx-proof-grid">
             {outcomes.map((item, index) => (
-              <article
-                className="fx-proof-item fx-observe"
-                style={{ "--d": `${120 + index * 90}ms` }}
-                key={item.label}
-              >
+              <article className="fx-proof-item fx-scroll" style={{ "--sd": `${80 + index * 90}ms` }} key={item.label}>
                 <h3>{item.value}</h3>
                 <p>{item.label}</p>
               </article>
@@ -136,23 +132,21 @@ const Features = () => {
 
       <section className="fx-grid-section">
         <div className="fx-wrap">
-          <div className="fx-section-head fx-observe" style={{ "--d": "90ms" }}>
+          <div className="fx-section-head fx-scroll" style={{ "--sd": "70ms" }}>
             <p className="fx-kicker">CORE CAPABILITIES</p>
             <h2>Everything Your Team Needs In One Platform</h2>
           </div>
           <div className="fx-grid">
             {featureList.map((item, index) => (
-              <article
-                className="fx-item fx-observe"
-                style={{ "--d": `${120 + index * 90}ms` }}
-                key={item.title}
-              >
-                <div className="fx-item-image">
+              <article className="fx-item" key={item.title}>
+                <div className="fx-item-image fx-scroll" style={{ "--sd": `${90 + index * 95}ms` }}>
                   <img src={item.img} alt={item.title} loading="lazy" />
                 </div>
-                <span className="fx-item-index">0{index + 1}</span>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
+                <div className="fx-item-body fx-scroll" style={{ "--sd": `${130 + index * 95}ms` }}>
+                  <span className="fx-item-index">0{index + 1}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -161,7 +155,7 @@ const Features = () => {
 
       <section className="fx-ops-section">
         <div className="fx-wrap fx-ops-layout">
-          <div className="fx-ops-content fx-observe" style={{ "--d": "100ms" }}>
+          <div className="fx-ops-content fx-scroll" style={{ "--sd": "80ms" }}>
             <p className="fx-kicker">OPERATIONS TEMPLATE</p>
             <h2>Built For Office, Site, And Management In One Flow</h2>
             <p className="fx-subtitle">
@@ -179,15 +173,15 @@ const Features = () => {
           </div>
 
           <div className="fx-ops-panels">
-            <article className="fx-ops-image-card fx-observe" style={{ "--d": "180ms" }}>
+            <article className="fx-ops-image-card fx-scroll" style={{ "--sd": "150ms" }}>
               <img
                 src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
                 alt="Construction planning and execution"
                 loading="lazy"
               />
             </article>
-            {controlCards.map((item) => (
-              <article className="fx-ops-card fx-observe" style={{ "--d": "240ms" }} key={item.title}>
+            {controlCards.map((item, index) => (
+              <article className="fx-ops-card fx-scroll" style={{ "--sd": `${210 + index * 90}ms` }} key={item.title}>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </article>
@@ -198,17 +192,13 @@ const Features = () => {
 
       <section className="fx-flow-section">
         <div className="fx-wrap">
-          <div className="fx-section-head fx-observe" style={{ "--d": "90ms" }}>
+          <div className="fx-section-head fx-scroll" style={{ "--sd": "70ms" }}>
             <p className="fx-kicker">DELIVERY FLOW</p>
             <h2>How Smart Build Moves Work Forward</h2>
           </div>
           <div className="fx-flow-grid">
             {flow.map((item, index) => (
-              <article
-                className="fx-flow-item fx-observe"
-                style={{ "--d": `${130 + index * 120}ms` }}
-                key={item.step}
-              >
+              <article className="fx-flow-item fx-scroll" style={{ "--sd": `${110 + index * 120}ms` }} key={item.step}>
                 <span>{item.step}</span>
                 <h4>{item.title}</h4>
                 <p>{item.desc}</p>
@@ -219,7 +209,7 @@ const Features = () => {
       </section>
 
       <section className="fx-cta-section">
-        <div className="fx-wrap fx-cta-box fx-observe" style={{ "--d": "140ms" }}>
+        <div className="fx-wrap fx-cta-box fx-scroll" style={{ "--sd": "120ms" }}>
           <h2>Need A Demo Built Around Your Workflow?</h2>
           <p>We configure Smart Build around your process so your team adopts faster.</p>
           <a href="/" className="fx-btn fx-btn-primary">Request Demo</a>
