@@ -8,6 +8,7 @@ import Features from "./pages/Features";
 import Services from "./pages/Services";
 import MainSection from "./pages/Services";
 import Footer from "./pages/Footer";
+import ScrollToTop from "./Component/scrollTo";
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <ScrollTo />
+      <ScrollToTop/>
         <Navbar />
 
         <Routes>
