@@ -972,6 +972,7 @@ body {
   .impact-stat {
     flex-direction: column;
     gap: 15px;
+    
   }
 
   .demo-section-title {
