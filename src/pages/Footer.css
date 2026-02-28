@@ -9,8 +9,8 @@
 
 
 .footer-main {
-  padding: 10px 70px 10px 70px;
-  line-height: 3;
+  padding: 10px 70px;
+  line-height: 2;
   color: #b5b5b5;
 }
 
@@ -88,7 +88,7 @@
   }
 
   .footer-main {
-    padding: 90px 20px 30px;
+    padding: 40px 20px 20px;
   }
 
   .footer-header {

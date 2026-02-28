@@ -192,7 +192,7 @@
   font-size: 0.94rem;
 }
 
-.dot {
+.dots {
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -746,7 +746,7 @@
   .fx-kicker,
   .fx-hero h1,
   .fx-hero-card,
-  .dot,
+  .dots,
   .fx-item,
   .fx-item-index,
   .fx-btn-primary::after,

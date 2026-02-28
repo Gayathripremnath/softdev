@@ -3,65 +3,69 @@ import "./Features.css";
 
 const featureList = [
   {
-    title: "Project Lifecycle Visibility",
-    desc: "Track every stage from enquiry to handover with clear ownership and real-time status.",
+    title: "Enquiry Management",
+    desc: "Enquiry upload, customer details entry, follow-up tracking, status monitoring, and conversion management.",
     img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
   },
   {
-    title: "Live Cost Intelligence",
-    desc: "Monitor budget versus actual spend continuously and prevent unnoticed cost leakage.",
+    title: "Quotation Management",
+    desc: "Prepare professional quotations with item-wise cost calculation, approval tracking, and version control.",
     img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80"
   },
   {
-    title: "Material & Inventory Control",
-    desc: "Manage inward/outward movement, stock alerts, and consumption across sites.",
+    title: "Financial Control",
+    desc: "Invoice creation, security deposit management, creditors and debtors tracking, balance sheet generation, and extra expense management.",
     img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80"
   },
   {
-    title: "Labour & Contractor Monitoring",
-    desc: "Capture attendance, productivity, and contractor progress with auditable records.",
+    title: "Planning & Documentation",
+    desc: "BOQ management, project schedule monitoring, daily task assignment, and photo documentation.",
     img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=80"
   },
   {
-    title: "Finance & Reporting",
-    desc: "Generate project-ledgers, profitability views, and one-click management reports.",
+    title: "Purchase & Stock Control",
+    desc: "Purchase request, purchase order, purchase bill entry, stock management, and stock transfer.",
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
   },
   {
-    title: "Client Transparency",
-    desc: "Share controlled updates and milestone summaries through a dedicated client view.",
+    title: "Workforce & Resource Management",
+    desc: "Labour management, salary management, subcontract management, tools management, and vehicle management.",
     img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
   }
 ];
 
 const flow = [
-  { step: "01", title: "Capture", desc: "Collect project, cost, and site data in one structure." },
-  { step: "02", title: "Connect", desc: "Align office and site teams around a shared workflow." },
-  { step: "03", title: "Control", desc: "Act quickly with live insights before delays escalate." }
+  { step: "01", title: "Enquiry to Quotation", desc: "Capture enquiries, track follow-ups, and generate approved quotations." },
+  { step: "02", title: "Quotation to Live Project", desc: "Convert approved quotations directly into projects without duplicate entry." },
+  { step: "03", title: "Project to Final Reports", desc: "Track operations and finance, then close with complete ledgers and reports." }
 ];
 
 const outcomes = [
-  { value: "38%", label: "Lower Cost Leakage" },
-  { value: "2.4x", label: "Faster Approvals" },
-  { value: "92%", label: "On-Time Milestones" },
-  { value: "100%", label: "Audit Ready Logs" }
+  { value: "100%", label: "End-to-End Workflow" },
+  { value: "0", label: "Duplicate Entry After Approval" },
+  { value: "1", label: "Centralized Data System" },
+  { value: "24/7", label: "Browser Report Access" }
 ];
 
 const workModules = [
-  "Daily progress updates with date/location proof",
-  "Material request, issue, and stock reconciliation",
-  "Labour attendance and subcontractor billing",
-  "Project-wise finance, P&L, and live cash view"
+  "Cash Ledger",
+  "Bank Ledger",
+  "Vendor Ledger",
+  "Labour Ledger",
+  "HR Ledger",
+  "Vehicle Ledger",
+  "Client Ledger",
+  "Subcontract Ledger"
 ];
 
 const controlCards = [
   {
-    title: "Site Command Center",
-    desc: "View all active projects, pending issues, and blockers from one operational board."
+    title: "Additional Reports",
+    desc: "Daily Report and Daily Transaction Report are available instantly for management."
   },
   {
-    title: "Management Snapshot",
-    desc: "Get daily executive summaries on progress, risk, and cost variance across teams."
+    title: "Centralized Financial Visibility",
+    desc: "All project data is centralized and automatically reflected in financial reports."
   }
 ];
 
@@ -90,10 +94,10 @@ const Features = () => {
         <div className="fx-wrap fx-hero-grid">
           <div className="fx-hero-main fx-scroll" style={{ "--sd": "60ms" }}>
             <p className="fx-kicker">SMART BUILD FEATURES</p>
-            <h1>Modern Construction ERP Built For Speed, Control, And Profit</h1>
+            <h1>Complete Enquiry to Project Management Workflow</h1>
             <p className="fx-subtitle">
-              One connected workflow for enquiry, site execution, inventory, labour, and finance.
-              Your team updates once, leadership gets complete visibility in real time.
+              Smart Build covers the full business cycle from enquiry to final balance sheet,
+              with centralized project, financial, workforce, and reporting control.
             </p>
             <div className="fx-hero-actions">
               <a href="/" className="fx-btn fx-btn-primary">Request Demo</a>
@@ -103,15 +107,15 @@ const Features = () => {
 
           <div className="fx-hero-side">
             <div className="fx-hero-card fx-scroll" style={{ "--sd": "160ms" }}>
-              <h3>Live Operations Pulse</h3>
+              <h3>Business Cycle Coverage</h3>
               <ul>
-                <li><span className="dot"></span> 14 Projects active this week</li>
-                <li><span className="dot"></span> 27 Pending approvals synced</li>
-                <li><span className="dot"></span> 99.1% data capture compliance</li>
+                <li><span className="dots"></span> Enquiry Management</li>
+                <li><span className="dots"></span> Quotation Management</li>
+                <li><span className="dots"></span> Project + Ledger Control</li>
               </ul>
             </div>
             <div className="fx-hero-card fx-card-dark fx-scroll" style={{ "--sd": "240ms" }}>
-              <p>Decision-ready dashboard for owners, PMs, and site engineers.</p>
+              <p>Management can access project and financial reports instantly from the browser anytime.</p>
             </div>
           </div>
         </div>
@@ -134,7 +138,7 @@ const Features = () => {
         <div className="fx-wrap">
           <div className="fx-section-head fx-scroll" style={{ "--sd": "70ms" }}>
             <p className="fx-kicker">CORE CAPABILITIES</p>
-            <h2>Everything Your Team Needs In One Platform</h2>
+            <h2>Project Management Modules (Inside Project)</h2>
           </div>
           <div className="fx-grid">
             {featureList.map((item, index) => (
@@ -156,11 +160,11 @@ const Features = () => {
       <section className="fx-ops-section">
         <div className="fx-wrap fx-ops-layout">
           <div className="fx-ops-content fx-scroll" style={{ "--sd": "80ms" }}>
-            <p className="fx-kicker">OPERATIONS TEMPLATE</p>
-            <h2>Built For Office, Site, And Management In One Flow</h2>
+            <p className="fx-kicker">OUTSIDE PROJECT</p>
+            <h2>Ledger & Financial Modules</h2>
             <p className="fx-subtitle">
-              Replace fragmented tools with one connected template where execution teams update once
-              and leadership gets instant clarity.
+              Smart Build provides complete accounting visibility through centralized ledgers
+              and instantly available management reports.
             </p>
             <ul className="fx-ops-list">
               {workModules.map((item) => (
@@ -194,7 +198,7 @@ const Features = () => {
         <div className="fx-wrap">
           <div className="fx-section-head fx-scroll" style={{ "--sd": "70ms" }}>
             <p className="fx-kicker">DELIVERY FLOW</p>
-            <h2>How Smart Build Moves Work Forward</h2>
+            <h2>How Smart Build Handles the Complete Lifecycle</h2>
           </div>
           <div className="fx-flow-grid">
             {flow.map((item, index) => (

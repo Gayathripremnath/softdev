@@ -47,11 +47,11 @@ const Navbar = () => {
           <div className="banner-content">
             <div className="banner-left">
               <a href="tel:+919778553345" className="contact-link">
-                <span className="dot"></span> +91-9778553345
+                <span className="navdot"></span> +91-9778553345
               </a>
               <span className="separator">/</span>
               <a href="tel:+919123456789" className="contact-link">
-                <span className="dot"></span> +91-9123456789
+                <span className="navdot"></span> +91-9123456789
               </a>
               <span className="separator">|</span>
               <span className="availability">Available 24/7</span>
@@ -126,3 +126,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

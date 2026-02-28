@@ -1,104 +1,68 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import './Home.css';
-import '../styles/mac-mockup.css';
-import img1 from "../assets/img1.png";
-import enq from "../assets/enq.mp4";
-import team from "../assets/team.mp4";
-import project from "../assets/project.mp4";
-import logo from "../assets/logo.jpg";
-import { useRef } from 'react';
 
+// Assets
+import heroBg from "../assets/homepage.jpg";
+import civilImg from "../assets/civil.jpg";
+import aboutImg from "../assets/about-civil.jpg";
+import enquiryImg from "../assets/enquiry.webp";
+import projectImg from "../assets/project-tracking.png";
 
 const Home = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', city: '' });
   const [errors, setErrors] = useState({ name: '', phone: '', city: '' });
   const [message, setMessage] = useState('');
-  const [isChecked, setIsChecked] = useState(false);
-  const [checkboxMessage, setCheckboxMessage] = useState('Unchecked ❌');
 
-  const [activeFeature, setActiveFeature] = useState(0);
-  const featureRefs = useRef([]);
-
-  // Mouse tracking for parallax effect
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
+  const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 50
-    });
+    AOS.init({ duration: 1000, once: true, offset: 50 });
 
-    AOS.refresh();   // IMPORTANT
-  }, []);
-
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePos({
-        x: (e.clientX / window.innerWidth - 0.5) * 40,
-        y: (e.clientY / window.innerHeight - 0.5) * 40
-      });
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 500);
     };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
+    window.addEventListener('scroll', handleScroll);
 
+    // Custom observer for the word reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-words');
+        }
+      });
+    }, { threshold: 0.1 });
 
-  useEffect(() => {
-    featureRefs.current = featureRefs.current.slice(0, 3);
-    const observers = [];
-
-    featureRefs.current.forEach((ref, index) => {
-      if (ref) {
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              setActiveFeature(index);
-            }
-          },
-          { threshold: 0.5, rootMargin: "-10% 0px -10% 0px" }
-        );
-        observer.observe(ref);
-        observers.push(observer);
-      }
-    });
+    const revealElement = document.querySelector('.home-payroll-reveal');
+    if (revealElement) observer.observe(revealElement);
 
     return () => {
-      observers.forEach((obs) => obs.disconnect());
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  const scrollToForm = () => {
-    document.querySelector('.demo-form-card').scrollIntoView({ behavior: 'smooth' });
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleCheckboxChange = (e) => {
-    const checked = e.target.checked;
-    setIsChecked(checked);
-    setCheckboxMessage(checked ? 'Checked ✅' : 'Unchecked ❌');
+  const scrollToForm = () => {
+    document.getElementById('request-demo-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = { name: '', phone: '', city: '' };
-
-    if (!formData.name) newErrors.name = 'Name is required';
-    if (!formData.phone) newErrors.phone = 'Phone is required';
-    if (!formData.city) newErrors.city = 'City is required';
-
+    if (!formData.name) newErrors.name = 'Required';
+    if (!formData.phone) newErrors.phone = 'Required';
+    if (!formData.city) newErrors.city = 'Required';
     setErrors(newErrors);
-
-    if (!formData.name || !formData.phone || !formData.city) {
-      return;
-    }
-
-    setMessage('Form submitted successfully!');
-    console.log('Form Data:', formData);
+    if (!formData.name || !formData.phone || !formData.city) return;
+    setMessage('Demo requested successfully!');
+    setTimeout(() => setMessage(''), 5000);
   };
 
   const handleChange = (e) => {
@@ -107,293 +71,269 @@ const Home = () => {
     setMessage('');
   };
 
-  useEffect(() => {
-    const checkIcons = document.querySelectorAll('.check-icon');
+  const platformFeatures = [
+    { title: "Office Management", desc: "Powerful Web Application for Office Administration", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" },
+    { title: "Site Engineers", desc: "Smart Mobile App for Real-time Site Updates", img: "https://images.unsplash.com/photo-1541888082425-eb1b8493cf4f?auto=format&fit=crop&q=80&w=800" },
+    { title: "Client Access", desc: "Dedicated Mobile App for Client Transparency", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" },
+    { title: "Financial Reports", desc: "Real-Time Project Costing and Profit Tracking", img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800" },
+    { title: "Customizable", desc: "Fully Customizable Modules to fit your workflow", img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800" },
+    { title: "Support", desc: "Dedicated Technical Support Team for your success", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" }
+  ];
 
-    checkIcons.forEach((icon, index) => {
-      setTimeout(() => {
-        icon.style.transform = 'scale(1.2)';
-        setTimeout(() => {
-          icon.style.transform = 'scale(1)';
-        }, 200);
-      }, index * 300);
-    });
-  }, []);
-
-
-  useEffect(() => {
-    const el = document.querySelector(".payroll");
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("show");
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const reveals = document.querySelectorAll(".reveal");
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    reveals.forEach(el => observer.observe(el));
-  }, []);
-
-
+  const showcaseItems = [
+    {
+      chip: "ENQUIRY",
+      title: "Smart enquiry management",
+      desc: "Capture and manage customer enquiries efficiently with real-time tracking, follow-ups, and centralized communication.",
+      img: enquiryImg
+    },
+    {
+      chip: "ISSUE MANAGEMENT",
+      title: "Resolve issues faster",
+      desc: "Track, assign, and close issues seamlessly with transparent workflows and instant updates across teams.",
+      img: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+      chip: "PROJECT",
+      title: "Complete project control",
+      desc: "Monitor progress, expenses, and timelines from one dashboard to ensure projects stay profitable.",
+      img: projectImg
+    }
+  ];
 
   return (
-    <div className="home-page">
+    <div className="modern-home-wrapper">
 
+      {/* ── 1. MODERN SPLIT HERO ── */}
+      <section className="modern-hero">
+        <div className="modern-hero-bg" style={{ backgroundImage: `url(${heroBg})` }}></div>
+        <div className="modern-hero-gradient-overlay"></div>
 
-      <div className="hero-section">
-        <div className="hero-cont">
-          <div className="hero-left">
-            <h1 className="hero-headline" data-aos="flip-left">
-              Supercharge Your Construction Projects with Our <span style={{ color: "white", background: "rgba(22, 65, 66, 0.9)", borderRadius: "900px", padding: "5px" }}>All-in-One ERP</span> <span style={{ color: "white", background: "rgba(22, 65, 66, 0.9)", borderRadius: "900px", padding: "5px" }}>Solution</span>
+        <div className="modern-hero-container">
+          <motion.div
+            className="modern-hero-text"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="modern-chip">The Complete Digital Solution</div>
+            <h1 className="modern-h1">
+              Smart Build – The Complete Digital Solution for <span className="modern-text-gradient">Construction Management</span>
             </h1>
-
-            <div className="features-checklist" data-aos="zoom-in">
-              <div className="feature-item">
-                <span className="check-icon">✓</span>
-                <span>Streamlined Project Management</span>
-
-              </div>
-              <div className="feature-item">
-                <span className="check-icon">✓</span>
-                <span>Real-Time Seamless Collaboration </span>
-              </div>
-              <div className="feature-item">
-                <span className="check-icon">✓</span>
-                <span>Resource Allocation Optimization</span>
-              </div>
-              <div className="feature-item">
-                <span className="check-icon">✓</span>
-                <span>Integrated Budget & Cost Control</span>
-              </div>
+            <p className="modern-lead">
+              A comprehensive platform giving Builders, Contractors, Architects, and Developers complete real-time control to scale operations instantly seamlessly.
+            </p>
+            <div className="modern-hero-buttons">
+              <button className="modern-btn-primary" onClick={scrollToForm}>Explore Platform</button>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="hero-right" data-aos="fade-left">
-            <div className="demo-form-card">
-              <h3 className="form-title">Request a Free Demo</h3>
-
-              <form className="demo-form" onSubmit={handleSubmit}>
-                <div className="form-field">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    className="form-input"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
-                  {errors.name && <div className="field-error">{errors.name}</div>}
+          <motion.div
+            id="request-demo-section"
+            className="modern-hero-form"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
+            <div className="modern-glass-card form-card">
+              <div className="form-header">
+                <h2>Request Free Demo</h2>
+                <p>Experience the power of Smart Build</p>
+              </div>
+              <form onSubmit={handleSubmit} className="modern-form">
+                <div className="modern-input-wrapper">
+                  <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} className={errors.name ? 'error' : ''} />
                 </div>
-
-                <div className="form-field">
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    className="form-input"
-                    value={formData.phone}
-                    onChange={handleChange}
-                  />
-                  {errors.phone && <div className="field-error">{errors.phone}</div>}
+                <div className="modern-input-wrapper">
+                  <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className={errors.phone ? 'error' : ''} />
                 </div>
-
-                <div className="form-field">
-                  <input
-                    type="text"
-                    name="city"
-                    placeholder="City Name"
-                    className="form-input"
-                    value={formData.city}
-                    onChange={handleChange}
-                  />
-                  {errors.city && <div className="field-error">{errors.city}</div>}
+                <div className="modern-input-wrapper">
+                  <input type="text" name="city" placeholder="City Name" value={formData.city} onChange={handleChange} className={errors.city ? 'error' : ''} />
                 </div>
-
-                {message && <div className="form-message">{message}</div>}
-
-                <button type="submit" className="send-button">
-                  Send
-                </button>
+                <button type="submit" className="modern-btn-submit">Get Demo Access</button>
+                {message && <div className="modern-success-msg">{message}</div>}
               </form>
-
             </div>
-
-          </div>
-        </div>
-      </div>
-
-      <section className="payroll">
-        <p className="reveal-text">
-          {"Smart build payroll is a cutting-edge, cloud based Human Resources Management Software designed to streamline.".split(" ").map((word, i) => (
-            <span key={i} style={{ "--i": i }}>
-              {word}{" \u00A0"}
-            </span>
-          ))}
-        </p>
-      </section>
-
-      <section className="workflow-section row" >
-
-        {/* ENQUIRY */}
-        <div className="workflow-row col-md-6">
-          <div className="workflow-image-wrap reveal reveal-delay-1">
-            <div className="workflow-image card-float">
-              <img src="https://marketingradar.com/wp-content/uploads/2023/03/shutterstock_1275409879-Leads-2048x1365.jpg.webp" alt="Enquiry" />
-            </div>
-          </div>
-
-          <div className="workflow-content reveal reveal-delay-2">
-            <span className="tag" >ENQUIRY</span>
-            <h2>Smart  enquiry management</h2>
-            <p>
-              Capture and manage customer enquiries efficiently with <span>real-time tracking,</span>
-              follow-ups, and centralized communication. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias provident voluptatibus velit veniam, laborum doloremque ullam ipsa blanditiis consequatur officia nesciunt in adipisci pariatur! Laborum aliquam amet repellat quam quaerat.
-            </p>
-          </div>
-        </div>
-
-        {/* ISSUE MANAGEMENT */}
-        <div className="workflow-row reverse col-md-6">
-          <div className="workflow-image-wrap reveal reveal-delay-1">
-            <div className="workflow-image card-float">
-              <img src="https://img.freepik.com/free-photo/confident-businesspeople-discussing-analytics-data-successful-experienced-managers-office-suits-meeting-conference-room-planning-strategy-teamwork-business-management-concept_74855-6866.jpg?semt=ais_hybrid&w=740&q=80" alt="Issue Management" />
-            </div>
-          </div>
-
-          <div className="workflow-content reveal reveal-delay-2">
-            <span className="tag">ISSUE MANAGEMENT</span>
-            <h2>Resolve  issues faster</h2>
-            <p>
-              Track, assign, and close issues seamlessly with <span>transparent workflows</span>  and
-              instant <span>updates </span> across teams. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quo sequi eius voluptatem error odit ad, numquam dolorem! Ea nesciunt molestias, sed id quos temporibus unde amet odio ducimus. Nobis.
-            </p>
-          </div>
-        </div>
-
-        {/* PROJECT */}
-        <div className="workflow-row">
-          <div className="workflow-image-wrap reveal reveal-delay-1">
-            <div className="workflow-image card-float">
-              <img src={img1} alt="Project" />
-            </div>
-          </div>
-
-          <div className="workflow-content reveal reveal-delay-2">
-            <span className="tag">PROJECT</span>
-            <h2>Complete  project  control</h2>
-            <p>
-              Monitor progress, expenses, and timelines from <span> one dashboard</span> to ensure
-              projects stay <span> profitable.</span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem sunt tenetur, mollitia maxime corporis harum ducimus in nesciunt voluptatibus reiciendis aut. Perferendis nesciunt enim natus accusamus expedita alias numquam cum?
-            </p>
-          </div>
-        </div>
-
-      </section>
-
-      <section className="integration-section reveal" >
-        <div className="integration-wrapper">
-
-          {/* LEFT – Circle integrations */}
-          <div className="integration-visual" >
-            <div className="circle">
-              <span className="center-text">
-                <h2>100+</h2>
-                <p>Tool Integrations</p>
-              </span>
-
-              <img src="https://techwave.golothemes.com/payroll/wp-content/uploads/sites/33/2024/06/icon-images-min.png" alt="" />
-            </div>
-          </div>
-
-          {/* RIGHT – Content */}
-          <div className="integration-content">
-            <span className="tag">INTEGRATION</span>
-            <h2>
-              Scale your team <br /> up-and-down
-            </h2>
-            <p>
-              Solutions for startup and SMBs, helping them establish
-              efficient HR operations, manage growing teams.
-            </p>
-
-            <button className="primary-btn">
-              Start 14-day free trial
-            </button>
-          </div>
-
+          </motion.div>
         </div>
       </section>
-      <div className='client-head'>
-        <h1>Prestigious Clients</h1>
-      </div>
-      <section className="client-flow">
 
-        <div className="flow-track">
+      {/* ── 2. PAYROLL KINETIC TYPOGRAPHY ── */}
+      <section className="home-payroll-text-section modern-payroll-section">
+        <div className="modern-max-container">
+          <p className="home-payroll-reveal">
+            {"Smart build payroll is a cutting-edge, cloud based Human Resources Management Software designed to streamline.".split(" ").map((word, i) => (
+              <span key={i} style={{ "--idx": i }}>{word}{" \u00A0"}</span>
+            ))}
+          </p>
+        </div>
+      </section>
 
-          {[...Array(2)].map((_, loopIndex) =>
-            [
-              "https://www.genovatechnologies.com/images/clients/miart.jpg",
-              "https://www.genovatechnologies.com/images/clients/micc_calicut.jpg",
-              "https://www.genovatechnologies.com/images/clients/gateway.jpg",
-              "https://www.genovatechnologies.com/images/clients/majestic.jpg",
-              "https://www.genovatechnologies.com/images/clients/better_half.jpg",
-              "https://www.genovatechnologies.com/images/clients/pure_solutions.jpg",
-              "https://www.genovatechnologies.com/images/clients/meque.jpg",
-              "https://www.genovatechnologies.com/images/clients/eric.jpg",
-            ].map((logo, index) => (
-              <div className="flow-item" key={`${loopIndex}-${index}`}>
-                <img src={logo} alt="client logo" />
+      {/* ── 3. PLATFORM CAPABILITIES & IMPACT ── */}
+      <section className="modern-platform-impact">
+        <div className="modern-max-container">
+
+          {/* Top Bar: Impact & Global Presence */}
+          <motion.div
+            className="modern-impact-bar"
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <div className="impact-stat">
+              <div className="stat-circle">
+                <span className="stat-num">10+</span>
+                <span className="stat-unit">Years</span>
               </div>
-            ))
-          )}
-        </div>
-
-        <div className="flow-track2">
-
-          {[...Array(2)].map((_, loopIndex) =>
-            [
-              "https://www.genovatechnologies.com/images/clients/miart.jpg",
-              "https://www.genovatechnologies.com/images/clients/micc_calicut.jpg",
-              "https://www.genovatechnologies.com/images/clients/gateway.jpg",
-              "https://www.genovatechnologies.com/images/clients/majestic.jpg",
-              "https://www.genovatechnologies.com/images/clients/better_half.jpg",
-              "https://www.genovatechnologies.com/images/clients/pure_solutions.jpg",
-              "https://www.genovatechnologies.com/images/clients/meque.jpg",
-              "https://www.genovatechnologies.com/images/clients/eric.jpg",
-            ].map((logo, index) => (
-              <div className="flow-item" key={`${loopIndex}-${index}`}>
-                <img src={logo} alt="client logo" />
+              <div className="stat-text">
+                <strong>Industry Experience</strong>
+                <span>Serving global clients since 2014</span>
               </div>
-            ))
-          )}
+            </div>
+
+            <div className="impact-content">
+              <div className="modern-chip">Global & Digital</div>
+              <h2 className="impact-title">Transforming Traditional Workflows</h2>
+              <p className="impact-desc">
+                With over 10 years of successful industry experience and a strong presence serving clients worldwide, Smart Build transforms traditional construction workflows into a fully digital, paperless, and real-time management system.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Bottom Grid: Platform Features as Points */}
+          <div className="modern-feature-points-grid">
+            <div className="points-header">
+              <span className="points-badge">PLATFORM FEATURES</span>
+              <h3>Our platform includes</h3>
+            </div>
+
+            <div className="points-grid">
+              {platformFeatures.map((feat, idx) => (
+                <motion.div
+                  key={idx}
+                  className="point-item"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                >
+                  <div className="point-icon-sm">
+                    <img src={feat.img} alt="" />
+                  </div>
+                  <div className="point-info">
+                    <h4>{feat.title}</h4>
+                    <p>{feat.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
+      {/* ── 3.C MODERN SHOWCASE SECTION ── */}
+      <section className="modern-showcase-section">
+        <div className="modern-max-container">
+          {showcaseItems.map((item, idx) => {
+            const isReverse = idx % 2 !== 0;
+            return (
+              <motion.div
+                key={idx}
+                className={`showcase-row ${isReverse ? 'reverse' : ''}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                <div className="showcase-image-wrap">
+                  <img src={item.img} alt={item.title} className="showcase-img" />
+                </div>
+                <div className="showcase-content">
+                  <div className="modern-chip">{item.chip}</div>
+                  <h3 className="showcase-title">{item.title}</h3>
+                  <p className="showcase-desc">{item.desc}</p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
 
+      {/* ── 3.D HORIZONTAL CONVERSION BLADE ── */}
+      <section className="modern-demo-section">
+        <div className="modern-max-container">
+          <div className="demo-grid-split">
+            {/* Left: Headline & Context */}
+            <motion.div
+              className="demo-left"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="modern-chip">Get Started Today</div>
+              <h2 className="demo-section-title">Ready to Experience <br /><span className="modern-text-gradient">Smart Build?</span></h2>
+            </motion.div>
+
+            {/* Right: Benefits & Active CTA */}
+            <motion.div
+              className="demo-right"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <p className="demo-section-p">
+                Join hundreds of construction firms worldwide that have transformed their project management. Request a free demo today.
+              </p>
+
+              <div className="demo-inline-features">
+                <div className="demo-tick-marker"><span>✓</span> Walkthrough</div>
+                <div className="demo-tick-marker"><span>✓</span> Full Access</div>
+                <div className="demo-tick-marker"><span>✓</span> 24/7 Support</div>
+              </div>
+
+              <div className="demo-action-area">
+                <button className="modern-btn-primary" onClick={scrollToForm}>Schedule Your Demo Today</button>
+                <span className="demo-sub-text">Active Technical Support Team</span>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. MODERN FULL-BLEED CTA ── */}
+      <section className="modern-cta-bleed">
+        <div className="cta-bleed-image" style={{ backgroundImage: `url(${aboutImg})` }}></div>
+        <div className="cta-bleed-gradient"></div>
+        <div className="modern-max-container">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="cta-bleed-card"
+          >
+            <h2>Anytime, Anywhere Access</h2>
+            <p>
+              From enquiry to project completion and final balance sheet, Smart Build manages everything in one integrated system — accessible anytime, anywhere through your browser.
+            </p>
+            <button className="modern-btn-dark" onClick={scrollToForm}>Start Your Digital Journey</button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── SCROLL TO TOP ── */}
+      <motion.div
+        className={`scroll-to-top-btn ${showScroll ? 'visible' : ''}`}
+        onClick={scrollToTop}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: showScroll ? 1 : 0, scale: showScroll ? 1 : 0.5 }}
+        whileHover={{ scale: 1.1, backgroundColor: '#0a79c5' }}
+      >
+        <span className="scroll-arrow">↑</span>
+      </motion.div>
 
     </div>
-
   );
 };
 
