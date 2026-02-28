@@ -15,10 +15,12 @@
   /* Increased space to prevent overlap */
   padding: 0 40px;
 }
+
 .text-center {
   padding: 10px;
   top: 50%;
 }
+
 .section-label {
   display: block;
   font-size: 0.8rem;
@@ -344,9 +346,8 @@
 }
 
 
-/* Global Manage Section */
 .global-manage-section {
-  padding: 100px 0;
+  padding: 100px 0 0;
   background-color: white;
 }
 
@@ -534,7 +535,11 @@
   }
 
   .team-section {
-    padding: 60px 20px;
+    padding: 60px 20px 20px;
+  }
+
+  .global-manage-section {
+    padding: 0;
   }
 
 
@@ -612,7 +617,7 @@
   }
 
   .why-highlight-section {
-    padding: 60px 20px !important;
+    padding: 20px 20px 40px !important;
   }
 
   .why-highlight-section h2 {
@@ -777,7 +782,7 @@
 
 /* Modern Difference Section */
 .modern-diff {
-  padding: 96px 20px;
+  padding: 40px 20px 96px;
   background: #ffffff;
   color: #16324b;
   border-top: 1px solid #e5eef7;
@@ -881,6 +886,10 @@
 }
 
 @media (max-width: 992px) {
+  .modern-diff {
+    padding: 20px 20px 50px;
+  }
+
   .modern-diff-wrap {
     grid-template-columns: 1fr;
   }
@@ -892,7 +901,7 @@
 
 @media (max-width: 576px) {
   .modern-diff {
-    padding: 70px 14px;
+    padding: 20px 14px 40px;
   }
 
   .modern-diff-intro,
