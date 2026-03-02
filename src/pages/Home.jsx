@@ -19,6 +19,7 @@ const Home = () => {
   const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     AOS.init({ duration: 1000, once: true, offset: 50 });
 
     const handleScroll = () => {
@@ -80,26 +81,7 @@ const Home = () => {
     { title: "Support", desc: "Dedicated Technical Support Team for your success", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" }
   ];
 
-  const showcaseItems = [
-    {
-      chip: "ENQUIRY",
-      title: "Smart enquiry management",
-      desc: "Capture and manage customer enquiries efficiently with real-time tracking, follow-ups, and centralized communication.",
-      img: enquiryImg
-    },
-    {
-      chip: "ISSUE MANAGEMENT",
-      title: "Resolve issues faster",
-      desc: "Track, assign, and close issues seamlessly with transparent workflows and instant updates across teams.",
-      img: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=1000"
-    },
-    {
-      chip: "PROJECT",
-      title: "Complete project control",
-      desc: "Monitor progress, expenses, and timelines from one dashboard to ensure projects stay profitable.",
-      img: projectImg
-    }
-  ];
+
 
   return (
     <div className="modern-home-wrapper">
@@ -236,28 +218,36 @@ const Home = () => {
       {/* ── 3.C MODERN SHOWCASE SECTION ── */}
       <section className="modern-showcase-section">
         <div className="modern-max-container">
-          {showcaseItems.map((item, idx) => {
-            const isReverse = idx % 2 !== 0;
-            return (
-              <motion.div
-                key={idx}
-                className={`showcase-row ${isReverse ? 'reverse' : ''}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true, margin: "-100px" }}
-              >
-                <div className="showcase-image-wrap">
-                  <img src={item.img} alt={item.title} className="showcase-img" />
-                </div>
-                <div className="showcase-content">
-                  <div className="modern-chip">{item.chip}</div>
-                  <h3 className="showcase-title">{item.title}</h3>
-                  <p className="showcase-desc">{item.desc}</p>
-                </div>
-              </motion.div>
-            );
-          })}
+          <div className="showcase-row">
+            <div className="showcase-image-wrap">
+              <img src={enquiryImg} alt="Smart enquiry management" className="showcase-img" />
+            </div>
+            <div className="showcase-content">
+              <div className="modern-chip">ENQUIRY</div>
+              <h3 className="showcase-title">Smart enquiry management</h3>
+              <p className="showcase-desc">Capture and manage customer enquiries efficiently with real-time tracking, follow-ups, and centralized communication.</p>
+            </div>
+          </div>
+          <div className="showcase-row reverse">
+            <div className="showcase-image-wrap">
+              <img src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=1000" alt="Resolve issues faster" className="showcase-img" />
+            </div>
+            <div className="showcase-content">
+              <div className="modern-chip">ISSUE MANAGEMENT</div>
+              <h3 className="showcase-title">Resolve issues faster</h3>
+              <p className="showcase-desc">Track, assign, and close issues seamlessly with transparent workflows and instant updates across teams.</p>
+            </div>
+          </div>
+          <div className="showcase-row">
+            <div className="showcase-image-wrap">
+              <img src={projectImg} alt="Complete project control" className="showcase-img" />
+            </div>
+            <div className="showcase-content">
+              <div className="modern-chip">PROJECT</div>
+              <h3 className="showcase-title">Complete project control</h3>
+              <p className="showcase-desc">Monitor progress, expenses, and timelines from one dashboard to ensure projects stay profitable.</p>
+            </div>
+          </div>
         </div>
       </section>
 

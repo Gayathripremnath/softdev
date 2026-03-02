@@ -71,6 +71,7 @@ const controlCards = [
 
 const Features = () => {
   useEffect(() => {
+    window.scrollTo(0, 0);
     const items = document.querySelectorAll(".fx-scroll");
     const observer = new IntersectionObserver(
       (entries) => {

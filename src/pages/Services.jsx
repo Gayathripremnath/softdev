@@ -144,6 +144,7 @@ const Services = () => {
   const heroRef = useRef(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     /* ---- Intersection-based scroll reveal ---- */
     const observer = new IntersectionObserver(
       (entries) => {

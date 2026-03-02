@@ -6,6 +6,7 @@ const About = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const handleMouseMove = (e) => {
       setMousePos({
         x: (e.clientX / window.innerWidth - 0.5) * 40,
