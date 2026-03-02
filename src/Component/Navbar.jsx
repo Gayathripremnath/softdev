@@ -35,7 +35,7 @@ const Navbar = () => {
   }, [location]);
 
   const scrollToForm = () => {
-    document.querySelector(".demo-form-card")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("request-demo-section")?.scrollIntoView({ behavior: "smooth" });
     setMobileMenuOpen(false);
   };
 

@@ -96,7 +96,13 @@ const About = () => {
           </div>
 
           <div className="about-content-main animate right">
-            <span className="section-label">ABOUT SMART BUILD</span>
+            <span className="section-label">
+              {"ABOUT SMART BUILD".split("").map((letter, i) => (
+                <span key={i} className="animated-letter" style={{ "--delay": `${i * 0.1}s` }}>
+                  {letter === " " ? "\u00A0" : letter}
+                </span>
+              ))}
+            </span>
             <h2>Smart Build: Digital Construction Management Platform</h2>
             <p>
               Smart Build was launched 10 years ago with a clear vision: to simplify construction
@@ -219,47 +225,20 @@ const About = () => {
         </div>
       </section>
 
-      <section className="why-highlight-section modern-diff animate up">
-        <div className="about-container modern-diff-wrap">
-          <div className="modern-diff-intro">
-            <span className="section-label modern-diff-label">WHAT MAKES US DIFFERENT</span>
-            <h2>Trusted, Customizable, and Fast to Implement</h2>
-            <p>
-              Smart Build is fully customizable to match your workflow and designed to improve profitability,
-              transparency, and decision-making speed.
-            </p>
+      <section className="compact-differentiators-section animate up">
+        <div className="about-container">
+          <div className="compact-header">
+            <div className="modern-chip">WHAT MAKES US DIFFERENT</div>
+            <h2>Trusted, Customizable, and <span className="gradient-text">Fast to Implement</span></h2>
+            <p>Smart Build is fully customizable to match your workflow and designed to improve profitability, transparency, and decision-making speed.</p>
           </div>
-
-          <div className="modern-diff-highlight">
-            <span>10+</span>
-            <p>Years of Industry Experience</p>
-          </div>
-
-          <div className="why-grid modern-diff-grid">
-            <div className="why-item-mini modern-diff-card">
-              <strong>10+ Years</strong>
-              <p>of industry experience</p>
+         
             </div>
-            <div className="why-item-mini modern-diff-card">
-              <strong>Global Client Base</strong>
-              <p>trusted across regions</p>
-            </div>
-            <div className="why-item-mini modern-diff-card">
-              <strong>Fully Customizable</strong>
-              <p>software platform</p>
-            </div>
-            <div className="why-item-mini modern-diff-card">
-              <strong>Fast Implementation</strong>
-              <p>for quick deployment</p>
-            </div>
-            <div className="why-item-mini modern-diff-card">
-              <strong>Dedicated Support Team</strong>
-              <p>for ongoing success</p>
-            </div>
-            <div className="why-item-mini modern-diff-card">
-              <strong>Continuous Improvements</strong>
-              <p>based on real feedback</p>
-            </div>
+             <div className="moving-points">
+            <div className="moving-text">
+              {"10+ Years industry experience • Global Client Base trusted across regions • Fully Customizable software platform • Fast Implementation for quick deployment • Dedicated Support for ongoing success • Continuous Updates based on real feedback • ".split(" ").map((word, i) => (
+                <span key={i} className="moving-word">{word} </span>
+              ))}
           </div>
         </div>
       </section>

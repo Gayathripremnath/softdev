@@ -1,0 +1,19 @@
+/* Animated Chip Letters - Scale Rotate Effect */
+.animated-chip-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0.5) rotate(-10deg);
+  animation: chipFadeIn 0.3s ease-out forwards;
+  animation-delay: var(--delay);
+}
+
+@keyframes chipFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}

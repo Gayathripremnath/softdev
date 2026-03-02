@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import './Home.css';
+import './chip-animation.css';
 
 // Assets
 import heroBg from "../assets/homepage.jpg";
@@ -98,7 +99,13 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="modern-chip">The Complete Digital Solution</div>
+            <div className="modern-chip">
+              {"The Complete Digital Solution".split("").map((letter, i) => (
+                <span key={i} className="animated-chip-letter" style={{ "--delay": `${i * 0.05}s` }}>
+                  {letter === " " ? "\u00A0" : letter}
+                </span>
+              ))}
+            </div>
             <h1 className="modern-h1">
               Smart Build – The Complete Digital Solution for <span className="modern-text-gradient">Construction Management</span>
             </h1>
