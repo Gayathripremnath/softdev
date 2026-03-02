@@ -126,7 +126,8 @@ body {
 .modern-chip {
   display: inline-flex;
   padding: 8px 16px;
-  color: var(--hm-primary);
+  background: transparent !important;
+  color:rgb(1, 111, 200) !important;
   border-radius: 100px;
   font-weight: 700;
   font-size: 0.85rem;
