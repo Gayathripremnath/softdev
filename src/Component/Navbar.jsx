@@ -95,9 +95,14 @@ const Navbar = () => {
                     Services
                   </Link>
                 </li>
+                 <li>
+                  <Link to="/contact" className={location.pathname === "/contact" ? "active" : ""}>
+                    Contact
+                  </Link>
+                </li>
                 <li className="mobile-cta">
                   <button className="glow-btn mobile-menu-btn" onClick={scrollToForm}>
-                    Request Demo
+                    <Link to="/contact">Request Demo</Link>
                   </button>
                 </li>
               </ul>

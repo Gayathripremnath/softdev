@@ -9,6 +9,7 @@ import Features from "./pages/Features";
 import Services from "./pages/Services";
 import MainSection from "./pages/Services";
 import Footer from "./pages/Footer";
+import Contact from "./pages/Contact";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </BrowserRouter>

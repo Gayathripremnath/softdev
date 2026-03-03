@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { motion } from "framer-motion"; // Ensure framer-motion is installed
 import "./Features.css";
 
 const featureList = [
@@ -34,11 +35,7 @@ const featureList = [
   }
 ];
 
-const flow = [
-  { step: "01", title: "Enquiry to Quotation", desc: "Capture enquiries, track follow-ups, and generate approved quotations." },
-  { step: "02", title: "Quotation to Live Project", desc: "Convert approved quotations directly into projects without duplicate entry." },
-  { step: "03", title: "Project to Final Reports", desc: "Track operations and finance, then close with complete ledgers and reports." }
-];
+
 
 const outcomes = [
   { value: "100%", label: "End-to-End Workflow" },
@@ -48,14 +45,8 @@ const outcomes = [
 ];
 
 const workModules = [
-  "Cash Ledger",
-  "Bank Ledger",
-  "Vendor Ledger",
-  "Labour Ledger",
-  "HR Ledger",
-  "Vehicle Ledger",
-  "Client Ledger",
-  "Subcontract Ledger"
+  "Cash Ledger", "Bank Ledger", "Vendor Ledger", "Labour Ledger",
+  "HR Ledger", "Vehicle Ledger", "Client Ledger", "Subcontract Ledger"
 ];
 
 const controlCards = [
@@ -91,55 +82,26 @@ const Features = () => {
 
   return (
     <div className="fx-page">
+      {/* HERO SECTION */}
       <section className="fx-hero">
         <div className="fx-wrap fx-hero-grid">
           <div className="fx-hero-main fx-scroll" style={{ "--sd": "60ms" }}>
             <p className="fx-kicker">SMART BUILD FEATURES</p>
-            <h1>Complete Enquiry to Project Management Workflow</h1>
+            <h1>Complete Enquiry to Project Management Workflow</h1> </div>
+            <div className="sub-fx">
             <p className="fx-subtitle">
               Smart Build covers the full business cycle from enquiry to final balance sheet,
               with centralized project, financial, workforce, and reporting control.
             </p>
-            <div className="fx-hero-actions">
-              <a href="/" className="fx-btn fx-btn-primary">Request Demo</a>
-              <a href="/services" className="fx-btn fx-btn-ghost">Explore Services</a>
-            </div>
-          </div>
-
-          <div className="fx-hero-side">
-            <div className="fx-hero-card fx-scroll" style={{ "--sd": "160ms" }}>
-              <h3>Business Cycle Coverage</h3>
-              <ul>
-                <li><span className="dots"></span> Enquiry Management</li>
-                <li><span className="dots"></span> Quotation Management</li>
-                <li><span className="dots"></span> Project + Ledger Control</li>
-              </ul>
-            </div>
-            <div className="fx-hero-card fx-card-dark fx-scroll" style={{ "--sd": "240ms" }}>
-              <p>Management can access project and financial reports instantly from the browser anytime.</p>
-            </div>
-          </div>
+           </div>
+         
         </div>
       </section>
 
-      <section className="fx-proof-section">
-        <div className="fx-wrap">
-          <div className="fx-proof-grid">
-            {outcomes.map((item, index) => (
-              <article className="fx-proof-item fx-scroll" style={{ "--sd": `${80 + index * 90}ms` }} key={item.label}>
-                <h3>{item.value}</h3>
-                <p>{item.label}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="fx-grid-section">
         <div className="fx-wrap">
           <div className="fx-section-head fx-scroll" style={{ "--sd": "70ms" }}>
-            <p className="fx-kicker">CORE CAPABILITIES</p>
-            <h2>Project Management Modules (Inside Project)</h2>
           </div>
           <div className="fx-grid">
             {featureList.map((item, index) => (
@@ -158,10 +120,10 @@ const Features = () => {
         </div>
       </section>
 
+      {/* LEDGER SECTION */}
       <section className="fx-ops-section">
         <div className="fx-wrap fx-ops-layout">
           <div className="fx-ops-content fx-scroll" style={{ "--sd": "80ms" }}>
-            <p className="fx-kicker">OUTSIDE PROJECT</p>
             <h2>Ledger & Financial Modules</h2>
             <p className="fx-subtitle">
               Smart Build provides complete accounting visibility through centralized ledgers
@@ -181,7 +143,7 @@ const Features = () => {
             <article className="fx-ops-image-card fx-scroll" style={{ "--sd": "150ms" }}>
               <img
                 src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
-                alt="Construction planning and execution"
+                alt="Construction planning"
                 loading="lazy"
               />
             </article>
@@ -195,24 +157,29 @@ const Features = () => {
         </div>
       </section>
 
+      {/* FLOW SECTION (With Stats integrated under heading) */}
       <section className="fx-flow-section">
         <div className="fx-wrap">
           <div className="fx-section-head fx-scroll" style={{ "--sd": "70ms" }}>
             <p className="fx-kicker">DELIVERY FLOW</p>
             <h2>How Smart Build Handles the Complete Lifecycle</h2>
           </div>
-          <div className="fx-flow-grid">
-            {flow.map((item, index) => (
-              <article className="fx-flow-item fx-scroll" style={{ "--sd": `${110 + index * 120}ms` }} key={item.step}>
-                <span>{item.step}</span>
-                <h4>{item.title}</h4>
-                <p>{item.desc}</p>
+
+          {/* MOVED STATS GRID HERE */}
+          <div className="fx-proof-grid" style={{ marginBottom: '60px' }}>
+            {outcomes.map((item, index) => (
+              <article className="fx-proof-item fx-scroll" style={{ "--sd": `${100 + index * 100}ms` }} key={item.label}>
+                <h3>{item.value}</h3>
+                <p>{item.label}</p>
               </article>
             ))}
           </div>
+
+      
         </div>
       </section>
 
+      {/* CTA SECTION */}
       <section className="fx-cta-section">
         <div className="fx-wrap fx-cta-box fx-scroll" style={{ "--sd": "120ms" }}>
           <h2>Need A Demo Built Around Your Workflow?</h2>

@@ -131,13 +131,7 @@ const services = [
   },
 ];
 
-/* ── Stats ─────────────────────────────────────────── */
-const stats = [
-  { value: "500+", label: "Projects Delivered" },
-  { value: "99%", label: "Client Satisfaction" },
-  { value: "24/7", label: "Support Available" },
-  { value: "10+", label: "Years Experience" },
-];
+
 
 /* ── Component ─────────────────────────────────────── */
 const Services = () => {
@@ -256,21 +250,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* ===== STATS BAR ===== */}
-      <section className="sv2-stats">
-        <div className="sv2-container sv2-stats-grid">
-          {stats.map((s, i) => (
-            <div
-              key={s.label}
-              className="sv2-stat sv2-anim sv2-anim-up"
-              style={{ "--delay": `${i * 100}ms` }}
-            >
-              <strong>{s.value}</strong>
-              <span>{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+
 
       {/* ===== SERVICE SECTIONS ===== */}
       {services.map((svc, idx) => (

@@ -125,25 +125,6 @@ const About = () => {
               <li><span className="check-icon">+</span> Increase project profitability</li>
               <li><span className="check-icon">+</span> Digitize construction operations</li>
             </ul>
-
-            <div className="contact-signature-row">
-              <div className="contact-box-mini">
-                <div className="call-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
-                  </svg>
-                </div>
-                <div className="call-text">
-                  <span>Our approach</span>
-                  <strong>Technology that adapts to your business</strong>
-                </div>
-              </div>
-              <div className="signature-box">
-                <span className="signature-text" style={{ fontFamily: "auto", fontWeight: "bold", fontSize: "1.2rem" }}>
-                  Smart Build Admin
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -183,65 +164,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="global-manage-section">
-        <div className="about-container">
-          <div className="manage-content animate left">
-            <span className="section-label">OUR STRENGTH</span>
-            <h2>Built for Long-Term Partnership and Continuous Improvement</h2>
-            <p>
-              We do not just sell software - we provide a long-term technology partnership.
-              Any modification or new module requirement can be developed as per your company's process.
-            </p>
-
-            <div className="manage-feature">
-              <div className="manage-feature-icon">
-                <span className="icon-badge">+</span>
-              </div>
-              <div className="manage-feature-text">
-                <h4>Dedicated Support Team</h4>
-                <p>Responsive support for implementation, adoption, and ongoing operations.</p>
-              </div>
-            </div>
-
-            <div className="manage-feature">
-              <div className="manage-feature-icon">
-                <span className="icon-badge">+</span>
-              </div>
-              <div className="manage-feature-text">
-                <h4>Continuous Software Improvements</h4>
-                <p>Regular updates driven by evolving industry needs and real user feedback.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="manage-images animate right">
-            <div className="manage-img-1">
-              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Financial Analysis" />
-            </div>
-            <div className="manage-img-2">
-              <img src="https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?w=600&auto=format&fit=crop&q=60" alt="Data Dashboard" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="compact-differentiators-section animate up">
-        <div className="about-container">
-          <div className="compact-header">
-            <div className="modern-chip">WHAT MAKES US DIFFERENT</div>
-            <h2>Trusted, Customizable, and <span className="gradient-text">Fast to Implement</span></h2>
-            <p>Smart Build is fully customizable to match your workflow and designed to improve profitability, transparency, and decision-making speed.</p>
-          </div>
-         
-            </div>
-             <div className="moving-points">
-            <div className="moving-text">
-              {"10+ Years industry experience • Global Client Base trusted across regions • Fully Customizable software platform • Fast Implementation for quick deployment • Dedicated Support for ongoing success • Continuous Updates based on real feedback • ".split(" ").map((word, i) => (
-                <span key={i} className="moving-word">{word} </span>
-              ))}
-          </div>
-        </div>
-      </section>
+   
     </div>
   );
 };

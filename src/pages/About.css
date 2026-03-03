@@ -46,7 +46,9 @@
     transform: translateX(0);
   }
 }
-
+.about-content-main{
+  margin-top: 20px;
+}
 .about-content-main h2,
 .team-section h2,
 .manage-content h2 {
@@ -68,13 +70,11 @@
   margin-bottom: 25px;
 }
 
-/* Overlapping Images Grid */
 .about-images-grid {
   flex: 1;
   position: relative;
   max-width: 400px;
-  padding-top: 40px;
-  /* Space for the badge overlap */
+
 }
 
 .small-images-wrapper {
@@ -217,9 +217,9 @@
 
 /* Team Section */
 .team-section {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 88px 20px 56px;
+  padding: 38px 20px ;
 }
 
 .who-modern-grid {
@@ -339,6 +339,7 @@
 
   .experience-badge {
     height: 100px;
+   
   }
 }
 
@@ -363,7 +364,6 @@
 
 
 .global-manage-section {
-  padding: 100px 0 0;
   background-color: white;
 }
 

@@ -11,6 +11,7 @@ import civilImg from "../assets/civil.jpg";
 import aboutImg from "../assets/about-civil.jpg";
 import enquiryImg from "../assets/enquiry.webp";
 import projectImg from "../assets/project-tracking.png";
+import { title } from 'framer-motion/client';
 
 const Home = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', city: '' });
@@ -38,11 +39,26 @@ const Home = () => {
       });
     }, { threshold: 0.1 });
 
+    // Animation observer for .animate elements
+    const animateObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
     const revealElement = document.querySelector('.home-payroll-reveal');
     if (revealElement) observer.observe(revealElement);
+    
+    document.querySelectorAll(".animate").forEach((el) => animateObserver.observe(el));
 
     return () => {
       observer.disconnect();
+      animateObserver.disconnect();
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
@@ -53,6 +69,10 @@ const Home = () => {
 
   const scrollToForm = () => {
     document.getElementById('request-demo-section')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToPhoneNumbers = () => {
+    document.querySelector('.top-banner')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleSubmit = (e) => {
@@ -81,7 +101,35 @@ const Home = () => {
     { title: "Customizable", desc: "Fully Customizable Modules to fit your workflow", img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800" },
     { title: "Support", desc: "Dedicated Technical Support Team for your success", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" }
   ];
-
+const showcaseData = [
+    {
+      id: "01",
+      chip: "ENQUIRY",
+      title: "Enquiry Management",
+      desc: "Capture and manage customer enquiries efficiently with real-time tracking, follow-ups, and centralized communication.",
+      img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1000", 
+      points: ["Real-time enquiry tracking", "Automated follow-up reminders", "Centralized communication hub", "Lead conversion analytics"],
+      reverse: false
+    },
+    {
+      id: "02",
+      chip: "ISSUE MANAGEMENT",
+      title: "Resolve issues faster",
+      desc: "Track, assign, and close issues seamlessly with transparent workflows and instant updates across teams.",
+      img: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=1000",
+      points: ["Issue tracking & assignment", "Transparent workflow management", "Instant team notifications", "Resolution time analytics"],
+      reverse: true 
+    },
+    {
+      id: "03",
+      chip: "PROJECT",
+     title: "project control",
+      desc: "Monitor progress, expenses, and timelines from one dashboard to ensure projects stay profitable.",
+      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000",
+      points: ["Real-time progress monitoring", "Expense tracking & control", "Timeline management", "Profitability analytics"],
+      reverse: false
+    }
+  ];
 
 
   return (
@@ -162,33 +210,6 @@ const Home = () => {
       <section className="modern-platform-impact">
         <div className="modern-max-container">
 
-          {/* Top Bar: Impact & Global Presence */}
-          <motion.div
-            className="modern-impact-bar"
-            initial={{ opacity: 0, scale: 0.95, y: 30 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <div className="impact-stat">
-              <div className="stat-circle">
-                <span className="stat-num">10+</span>
-                <span className="stat-unit">Years</span>
-              </div>
-              <div className="stat-text">
-                <strong>Industry Experience</strong>
-                <span>Serving global clients since 2014</span>
-              </div>
-            </div>
-
-            <div className="impact-content">
-              <div className="modern-chip">Global & Digital</div>
-              <h2 className="impact-title">Transforming Traditional Workflows</h2>
-              <p className="impact-desc">
-                With over 10 years of successful industry experience and a strong presence serving clients worldwide, Smart Build transforms traditional construction workflows into a fully digital, paperless, and real-time management system.
-              </p>
-            </div>
-          </motion.div>
 
           {/* Bottom Grid: Platform Features as Points */}
           <div className="modern-feature-points-grid">
@@ -222,79 +243,93 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 3.C MODERN SHOWCASE SECTION ── */}
       <section className="modern-showcase-section">
-        <div className="modern-max-container">
-          <div className="showcase-row">
-            <div className="showcase-image-wrap">
-              <img src={enquiryImg} alt="Smart enquiry management" className="showcase-img" />
-            </div>
-            <div className="showcase-content">
-              <div className="modern-chip">ENQUIRY</div>
-              <h3 className="showcase-title">Smart enquiry management</h3>
-              <p className="showcase-desc">Capture and manage customer enquiries efficiently with real-time tracking, follow-ups, and centralized communication.</p>
-            </div>
-          </div>
-          <div className="showcase-row reverse">
-            <div className="showcase-image-wrap">
-              <img src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=1000" alt="Resolve issues faster" className="showcase-img" />
-            </div>
-            <div className="showcase-content">
-              <div className="modern-chip">ISSUE MANAGEMENT</div>
-              <h3 className="showcase-title">Resolve issues faster</h3>
-              <p className="showcase-desc">Track, assign, and close issues seamlessly with transparent workflows and instant updates across teams.</p>
-            </div>
-          </div>
-          <div className="showcase-row">
-            <div className="showcase-image-wrap">
-              <img src={projectImg} alt="Complete project control" className="showcase-img" />
-            </div>
-            <div className="showcase-content">
-              <div className="modern-chip">PROJECT</div>
-              <h3 className="showcase-title">Complete project control</h3>
-              <p className="showcase-desc">Monitor progress, expenses, and timelines from one dashboard to ensure projects stay profitable.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="modern-max-containers">
+        {showcaseData.map((item, index) => (
+          <motion.div 
+            key={index}
+            className={`showcase-row ${item.reverse ? 'reverse' : ''}`}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {/* Background Step Number */}
+            <span className="bg-step-number">{item.id}</span>
 
-      {/* ── 3.D HORIZONTAL CONVERSION BLADE ── */}
-      <section className="modern-demo-section">
-        <div className="modern-max-container">
-          <div className="demo-grid-split">
-            {/* Left: Headline & Context */}
-            <motion.div
-              className="demo-left"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="modern-chip">Get Started Today</div>
-              <h2 className="demo-section-title">Ready to Experience <br /><span className="modern-text-gradient">Smart Build?</span></h2>
-            </motion.div>
+            {/* Image Wrap */}
+            <div className="showcase-image-wrap">
+              <img src={item.img} alt={item.title} className="showcase-img" />
+            </div>
 
-            {/* Right: Benefits & Active CTA */}
-            <motion.div
-              className="demo-right"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <p className="demo-section-p">
-                Join hundreds of construction firms worldwide that have transformed their project management. Request a free demo today.
-              </p>
+            {/* Content Wrap */}
+            <div className="showcase-content">
+              <div className="modern-chip">{item.chip}</div>
+              <h3 className="showcase-title">{item.title}</h3>
+              <p className="showcase-desc">{item.desc}</p>
+              
+              <ul className="showcase-points-list">
+                {item.points.map((point, pIdx) => (
+                  <motion.li 
+                    key={pIdx}
+                    className="showcase-point-card"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ 
+                      delay: 0.2 + (pIdx * 0.15), // Sequential "one-by-one" delay
+                      duration: 0.5 
+                    }}
+                    viewport={{ once: true }}
+                  >
+                    <span className="blue-check-circle">✓</span>
+                    <span className="point-text">{point}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>  
 
-              <div className="demo-inline-features">
-                <div className="demo-tick-marker"><span>✓</span> Walkthrough</div>
-                <div className="demo-tick-marker"><span>✓</span> Full Access</div>
-                <div className="demo-tick-marker"><span>✓</span> 24/7 Support</div>
+               <section className="global-manage-section">
+        <div className="about-container">
+          <div className="manage-content animate left">
+            <span className="section-label">OUR STRENGTH</span>
+            <h2>Built for Long-Term Partnership and Continuous Improvement</h2>
+            <p>
+              We do not just sell software - we provide a long-term technology partnership.
+              Any modification or new module requirement can be developed as per your company's process.
+            </p>
+
+            <div className="manage-feature">
+              <div className="manage-feature-icon">
+                <span className="icon-badge">+</span>
               </div>
-
-              <div className="demo-action-area">
-                <button className="modern-btn-primary" onClick={scrollToForm}>Schedule Your Demo Today</button>
-                <span className="demo-sub-text">Active Technical Support Team</span>
+              <div className="manage-feature-text">
+                <h4>Dedicated Support Team</h4>
+                <p>Responsive support for implementation, adoption, and ongoing operations.</p>
               </div>
-            </motion.div>
+            </div>
+
+            <div className="manage-feature">
+              <div className="manage-feature-icon">
+                <span className="icon-badge">+</span>
+              </div>
+              <div className="manage-feature-text">
+                <h4>Continuous Software Improvements</h4>
+                <p>Regular updates driven by evolving industry needs and real user feedback.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="manage-images animate right">
+            <div className="manage-img-1">
+              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Financial Analysis" />
+            </div>
+            <div className="manage-img-2">
+              <img src="https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?w=600&auto=format&fit=crop&q=60" alt="Data Dashboard" />
+            </div>
           </div>
         </div>
       </section>
