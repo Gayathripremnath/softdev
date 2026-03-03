@@ -264,10 +264,14 @@
 
 .sv2-hero-actions {
   display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;   
 }
-
+.schedule-wrapper {
+  display: flex;
+  flex-direction: column;  
+  align-items: flex-start;  
+}
 /* ── Buttons ── */
 .sv2-btn {
   display: inline-flex;
@@ -284,17 +288,43 @@
 }
 .call-number {
   margin-top: 15px;
-  font-weight: 600;
+  width: 240px;
   font-size: 1rem;
 }
 .call-number a {
   text-decoration: none;
-  color: #0066ff;
+  color: #010e22;
 }
+.call-number {
+  margin-top: 15px;
+  padding: 15px 20px;
+  background: #f5f9ff;
+  border-radius: 12px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* Smooth dropdown animation */
+.dropdown-anim {
+  animation: slideDown 0.35s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .sv2-btn-icon {
   display: inline-flex;
-  width: 18px;
+  width: 19px;
   transition: transform 0.35s ease;
 }
 

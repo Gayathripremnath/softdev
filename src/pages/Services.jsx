@@ -213,24 +213,32 @@ const Services = () => {
               customization, training, and support with how your teams execute
               projects — in the field and at the office.
             </p>
-            <div className="sv2-hero-actions">
-             <button 
-  className="sv2-btn sv2-btn-primary"
-  onClick={() => setShowNumber(true)}
->
-  Schedule a Call
-  <span className="sv2-btn-icon"><IconArrow /></span>
-</button>
-{showNumber && (
-  <div className="call-number">
-    📞 <a href="tel:+917559080005">+91 7559080005</a>
+          <div className="sv2-hero-actions">
+
+  {/* LEFT SIDE WRAPPER */}
+  <div className="schedule-wrapper">
+    <button 
+      className="sv2-btn sv2-btn-primary"
+      onClick={() => setShowNumber(!showNumber)}
+    >
+      Schedule a Call
+      <span className="sv2-btn-icon"><IconArrow /></span>
+    </button>
+
+    {showNumber && (
+      <div className="call-number dropdown-anim">
+        📞 <a href="tel:+917559080005">+91 7559080005</a>
+       
+      </div>
+    )}
   </div>
-)}  
-              <button className="sv2-btn sv2-btn-ghost">
-                Explore Services
-              </button>
-            </div>
-          </div>
+
+  {/* RIGHT SIDE BUTTON */}
+  <button className="sv2-btn sv2-btn-ghost">
+    Explore Services
+  </button>
+</div>
+</div>
 
           <div className="sv2-hero-img-wrap sv2-anim sv2-anim-right">
             <div className="sv2-hero-img-glow" />
