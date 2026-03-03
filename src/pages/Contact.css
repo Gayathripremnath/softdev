@@ -89,10 +89,9 @@
    align-items: center;
     gap: 8px; background: #f8fafc;
     padding: 8px 16px;
-    border: #0a0a0a solid;
   border-radius: 12px;
      font-size: 14px;
-  text-decoration: none; color: inherit; font-weight: 600; margin: 5px; border: 1px solid #051f38; }
+  text-decoration: none; color: inherit; font-weight: 600; margin: 5px; border: 1px solid #051f384a; }
 
 /* ENQUIRY FORM */
 .form-inner-box {
