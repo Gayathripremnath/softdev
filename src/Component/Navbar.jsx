@@ -102,7 +102,7 @@ const Navbar = () => {
                 </li>
                 <li className="mobile-cta">
                   <button className="glow-btn mobile-menu-btn" onClick={scrollToForm}>
-                    <Link to="/contact">Request Demo</Link>
+                    <Link to="/" style={{ color: "white" }}>Request Demo</Link>
                   </button>
                 </li>
               </ul>

@@ -216,12 +216,42 @@
   transition: var(--transition);
   box-shadow: 0 8px 20px rgba(24, 24, 23, 0.3);
 }
-
-.glow-btn:hover {
-  transform: translateY(-2px);
-  background: white;
-  color: var(--accent);
+@media (max-width: 480px) {
+  .glow-btn {
+    font-size: 11px;
+    padding: 10px 16px;
+  }
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  .glow-btn {
+  color: #ffffff !important;
+    font-size: 12px;
+    padding: 12px 18px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .glow-btn {
+    font-size: 13px;
+    padding: 12px 24px;
+    width: auto;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .glow-btn {
+    font-size: 13px;
+    padding: 12px 28px;
+    width: auto;
+  }
+}
+@media (min-width: 1441px) {
+  .glow-btn {
+    font-size: 13px;
+    padding: 12px 28px;
+    width: auto;
+  }
+}
+
+
 
 .mobile-menu-btn {
   width: 100%;
@@ -286,7 +316,9 @@
   .trust-badge {
     display: none;
   }
-
+.glow-btn{
+  color: white;
+}
   .banner-content {
     gap: 8px;
   }
@@ -387,7 +419,9 @@
   .separator {
     margin: 0 4px;
   }
-
+.glow-btn{
+  color: white;
+}
   .container {
     padding: 0 14px;
   }
