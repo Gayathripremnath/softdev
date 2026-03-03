@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef , useState} from "react";
 import "./Services.css";
 import imgHero from "../assets/service_hero.png";
 import imgImplementation from "../assets/service_implementation.png";
@@ -50,7 +50,6 @@ const IconArrow = () => (
     <polyline points="12 5 19 12 12 19" />
   </svg>
 );
-
 /* ── Service data ──────────────────────────────────── */
 const services = [
   {
@@ -135,6 +134,9 @@ const services = [
 
 /* ── Component ─────────────────────────────────────── */
 const Services = () => {
+
+  const [showNumber, setShowNumber] = useState(false);
+
   const heroRef = useRef(null);
 
   useEffect(() => {
@@ -212,10 +214,18 @@ const Services = () => {
               projects — in the field and at the office.
             </p>
             <div className="sv2-hero-actions">
-              <button className="sv2-btn sv2-btn-primary">
-                Schedule a Call
-                <span className="sv2-btn-icon"><IconArrow /></span>
-              </button>
+             <button 
+  className="sv2-btn sv2-btn-primary"
+  onClick={() => setShowNumber(true)}
+>
+  Schedule a Call
+  <span className="sv2-btn-icon"><IconArrow /></span>
+</button>
+{showNumber && (
+  <div className="call-number">
+    📞 <a href="tel:+917559080005">+91 7559080005</a>
+  </div>
+)}  
               <button className="sv2-btn sv2-btn-ghost">
                 Explore Services
               </button>

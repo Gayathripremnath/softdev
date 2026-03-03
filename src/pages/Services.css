@@ -282,6 +282,15 @@
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   font-family: inherit;
 }
+.call-number {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.call-number a {
+  text-decoration: none;
+  color: #0066ff;
+}
 
 .sv2-btn-icon {
   display: inline-flex;
