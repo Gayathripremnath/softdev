@@ -36,8 +36,17 @@
 .contact-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
 /* HEADER */
-.status-tag { display: inline-flex; align-items: center; gap: 8px; background: #f0f7ff; color: var(--accent); padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 700; margin-bottom: 20px; }
-.pulse { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+.status-tag {
+   display: inline-flex; 
+   align-items: center;
+    gap: 8px; background: #f0f7ff; color: var(--accent); 
+    padding: 6px 14px;
+    margin-top: 40px;
+     border-radius: 50px; font-size: 12px; font-weight: 700; margin-bottom: 20px; }
+.pulse {
+   width: 8px;
+    height: 8px;
+     background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
 
 .header-content h1 {
      font-size: 64px; 
