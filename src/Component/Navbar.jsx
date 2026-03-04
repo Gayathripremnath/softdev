@@ -14,7 +14,6 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Hide navbar on scroll down, show on scroll up
       if (currentScrollY > lastScrollY && currentScrollY > 150) {
         setHidden(true);
       } else {
@@ -29,7 +28,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
@@ -41,7 +39,6 @@ const Navbar = () => {
 
   return (
     <header className={`header-wrapper ${scrolled ? "scrolled" : ""} ${hidden ? "hidden" : ""}`}>
-      {/* TOP DESCRIPTOR BAR */}
       <div className="top-banner">
         <div className="container">
           <div className="banner-content">
@@ -114,7 +111,7 @@ const Navbar = () => {
               </button>
 
               <button
-                className={`burger ${mobileMenuOpen ? "open" : ""}`}
+                className={`set-nav-mobile ${mobileMenuOpen ? "open" : ""}`}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Menu"
               >

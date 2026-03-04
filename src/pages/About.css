@@ -4,7 +4,6 @@
   position: relative;
 }
 
-/* Container Utility */
 .about-container {
   max-width: 1250px;
   margin: 0 auto;
@@ -12,14 +11,9 @@
   display: flex;
   align-items: center;
   gap: 120px;
-  /* Increased space to prevent overlap */
   padding: 0 40px;
 }
 
-.text-center {
-  padding: 10px;
-  top: 50%;
-}
 
 .section-label {
   display: inline-block;
@@ -98,26 +92,6 @@
 
 
 
-
-
-
-
-
-
-.manage-images {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.manage-content {
-  flex: 1;
-}
-
-
-
-
-
 .badge-number {
   font-size: 3.5rem;
   font-weight: 800;
@@ -167,50 +141,6 @@
   justify-content: center;
   font-size: 0.8rem;
 }
-
-/* Contact Signature Row */
-.contact-signature-row {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-top: 40px;
-  padding-top: 30px;
-  border-top: 1px solid #f0f0f0;
-}
-
-.contact-box-mini {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.call-icon {
-  width: 50px;
-  height: 50px;
-  background: #1a1f26;
-  color: white;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.call-text span {
-  display: block;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.call-text strong {
-  font-size: 1.2rem;
-  color: var(--dark-navy);
-}
-
-.signature-box .signature-img {
-  height: 60px;
-  opacity: 0.8;
-}
-
 
 
 
@@ -397,47 +327,6 @@
   font-size: 1.5rem;
 }
 
-.manage-feature-text h4 {
-  font-size: 1.4rem;
-  color: var(--dark-navy);
-  margin-bottom: 10px;
-}
-
-.manage-images {
-  flex: 1;
-  position: relative;
-  height: 500px;
-}
-
-.manage-img-1 {
-  width: 70%;
-  height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  position: absolute;
-  left: 5%;
-  top: 0;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.manage-img-2 {
-  width: 50%;
-  height: 350px;
-  border-radius: 20px;
-  border: 10px solid white;
-  position: absolute;
-  bottom: -40px;
-  right: 5%;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  z-index: 5;
-}
-
-.manage-img-1 img,
-.manage-img-2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 /* Animations */
 .animate {

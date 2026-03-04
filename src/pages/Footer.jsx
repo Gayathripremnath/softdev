@@ -7,7 +7,6 @@ const Footer = () => {
     <footer className="footer-wrapper">
 
    
-      {/* FOOTER CONTENT */}
       <div className="footer-main">
 
         <div className="footer-header">

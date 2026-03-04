@@ -1,11 +1,8 @@
-/* ═══════════════════════════════════════════════════════
-   SMART BUILD — PREMIUM SERVICES PAGE
-   ═══════════════════════════════════════════════════════ */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-/* ── Design Tokens ─────────────────────────────────── */
 .sv2-page {
   --sv2-bg: #ffffff;
   --sv2-surface: #f8fafc;
@@ -33,7 +30,6 @@
   margin: 0 auto;
 }
 
-/* ── Floating Particles ────────────────────────────── */
 .sv2-particles {
   position: fixed;
   inset: 0;
@@ -524,7 +520,7 @@
     padding-bottom: 40px;
   }
 
-  /* 2. Align the Trust Bar points in a clean vertical list */
+
   .sv2-trust-bar {
     flex-direction: column;
     align-items: flex-start;
@@ -537,7 +533,7 @@
 
   .sv2-trust-item {
     display: flex;
-    align-items: center;    /* Keeps check and text on the same line */
+    align-items: center;    
     justify-content: flex-start;
     font-size: 0.95rem;
     text-align: left;
@@ -728,9 +724,6 @@
   background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.3), transparent);
 }
 
-/* ═══════════════════════════════════════════════════════
-   CTA SECTION
-   ═══════════════════════════════════════════════════════ */
 .sv2-cta {
   position: relative;
   z-index: 2;
@@ -901,9 +894,7 @@
   transform: translateY(-2px);
 }
 
-/* ═══════════════════════════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════════════════════════ */
+   /* RESPONSIVE */
 @media (max-width: 1024px) {
   .sv2-hero-inner {
     grid-template-columns: 1fr;
@@ -1054,17 +1045,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 48px; /* Space between the items */
+  gap: 48px; 
   padding: 40px 20px;
   margin-top: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05); /* Subtle separation */
+  border-top: 1px solid rgba(0, 0, 0, 0.05); 
 }
 
 .sv2-trust-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #4b5563; /* Subtle gray */
+  color: #4b5563; 
   font-weight: 500;
   font-size: 1rem;
   white-space: nowrap;
@@ -1076,7 +1067,7 @@
   justify-content: center;
   width: 22px;
   height: 22px;
-  background: #0ea5e9; /* Matches your theme blue */
+  background: #0ea5e9;  
   color: white;
   border-radius: 50%;
   padding: 4px;

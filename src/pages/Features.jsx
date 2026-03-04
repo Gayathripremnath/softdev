@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { motion } from "framer-motion"; // Ensure framer-motion is installed
+import { motion } from "framer-motion"; 
 import "./Features.css";
 
 const featureList = [
@@ -82,7 +82,6 @@ const Features = () => {
 
   return (
     <div className="fx-page">
-      {/* HERO SECTION */}
       <section className="fx-hero">
         <div className="fx-wrap fx-hero-grid">
           <div className="fx-hero-main fx-scroll" style={{ "--sd": "60ms" }}>
@@ -157,7 +156,6 @@ const Features = () => {
         </div>
       </section>
 
-      {/* FLOW SECTION (With Stats integrated under heading) */}
       <section className="fx-flow-section">
         <div className="fx-wrap">
           <div className="fx-section-head fx-scroll" style={{ "--sd": "70ms" }}>
@@ -165,7 +163,6 @@ const Features = () => {
             <h2>How Smart Build Handles the Complete Lifecycle</h2>
           </div>
 
-          {/* MOVED STATS GRID HERE */}
           <div className="fx-proof-grid" style={{ marginBottom: '60px' }}>
             {outcomes.map((item, index) => (
               <article className="fx-proof-item fx-scroll" style={{ "--sd": `${100 + index * 100}ms` }} key={item.label}>
@@ -179,7 +176,6 @@ const Features = () => {
         </div>
       </section>
 
-      {/* CTA SECTION */}
       <section className="fx-cta-section">
         <div className="fx-wrap fx-cta-box fx-scroll" style={{ "--sd": "120ms" }}>
           <h2>Need A Demo Built Around Your Workflow?</h2>

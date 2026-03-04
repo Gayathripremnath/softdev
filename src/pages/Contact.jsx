@@ -13,7 +13,6 @@ const Contact = () => {
 
   return (
     <div className="modern-contact-root">
-      {/* Dynamic Background */}
       <div className="mesh-gradient"></div>
       <div className="grid-layer"></div>
 
@@ -31,7 +30,6 @@ const Contact = () => {
         </section>
 
         <div className="interactive-grid">
-          {/* Address Side */}
           <div className="address-stack">
             {branches.map((branch, idx) => (
               <motion.div 
@@ -60,7 +58,6 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* Integrated Modern Form */}
           <motion.div 
             className="main-enquiry-container"
             initial={{ opacity: 0, x: 30 }}

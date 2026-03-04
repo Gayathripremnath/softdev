@@ -623,7 +623,6 @@ body {
   }
 }
 
-/* ── 3.C MODERN SHOWCASE SECTION ── */
 .modern-showcase-section {
   background: #ffffff;
 }
@@ -737,7 +736,6 @@ body {
   }
 }
 
-/* ── 3.D HORIZONTAL CONVERSION BLADE ── */
 .modern-demo-section {
   padding: 60px 0;
   background: white;
@@ -831,7 +829,6 @@ body {
   letter-spacing: 1.5px;
 }
 
-/* ── 4. COMPREHENSIVE RESPONSIVE SYSTEM ── */
 
 @media (max-width: 1200px) {
   .modern-hero-container {
@@ -996,7 +993,6 @@ body {
   }
 }
 
-/* Animated Chip Letters */
 .animated-chip-letter {
   display: inline-block;
   opacity: 0;
@@ -1016,14 +1012,6 @@ body {
   }
 }
 
-
-
-
-
-
-
-/* --- Showcase Section Styles (Image 1 Style) --- */
-
 .modern-showcase-section {
     overflow: hidden;
 }
@@ -1033,14 +1021,13 @@ body {
     align-items: center;
     gap: 80px;
     margin-bottom: 120px;
-    position: relative; /* Needed for background number */
+    position: relative; 
 }
 
 .showcase-row.reverse {
     flex-direction: row-reverse;
 }
 
-/* The Large 01, 02 Background Number */
 .bg-step-number {
     position: absolute;
     top: -40px;
@@ -1086,10 +1073,8 @@ body {
     color: #666;
     margin-bottom: 30px;
     line-height: 1.6;
-    /* Removed the border-left as per your "remove line" request */
 }
 
-/* Points styled as Cards like Image 1 */
 .showcase-points-list {
     list-style: none;
     padding: 0;
@@ -1115,7 +1100,7 @@ body {
 .blue-check-circle {
     width: 22px;
     height: 22px;
-    background-color: #007bff; /* Blue check like image */
+    background-color: #007bff; 
     color: white;
     border-radius: 50%;
     display: flex;
@@ -1145,7 +1130,7 @@ body {
     max-width: 1100px;
     margin: 0 auto;
 }
-/* Flexbox Row with alternating support */
+
 .showcase-row {
     display: flex;
     align-items: center;
@@ -1158,14 +1143,14 @@ body {
     flex-direction: row-reverse;
 }
 
-/* Large Background Numbers (01, 02...) */
+
 .bg-step-number {
     position: absolute;
     top: -60px;
     right: 0;
     font-size: 200px;
     font-weight: 900;
-    color: rgba(0, 0, 0, 0.03); /* Very subtle gray */
+    color: rgba(0, 0, 0, 0.03); 
     z-index: 0;
     pointer-events: none;
 }
@@ -1207,7 +1192,7 @@ body {
     font-size: 16px;
 }
 
-/* Point Cards (Exactly like Video) */
+
 .showcase-points-list {
     list-style: none;
     padding: 0;
@@ -1219,7 +1204,7 @@ body {
 .showcase-point-card {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Fix: Keeps tick on left */
+    justify-content: flex-start; 
     background: #ffffff;
     padding: 14px 20px;
     border-radius: 12px;
@@ -1230,13 +1215,13 @@ body {
 }
 
 .showcase-point-card:hover {
-    transform: translateX(8px); /* Subtle slide on hover */
+    transform: translateX(8px); 
 }
 
 .blue-check-circle {
     width: 22px;
     height: 22px;
-    background-color: #007bff; /* Primary Blue */
+    background-color: #007bff;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -1268,11 +1253,11 @@ body {
     .showcase-row.reverse {
         flex-direction: column;
         gap: 40px;
-        text-align: left; /* Change from center to left */
+        text-align: left; 
     }
 
     .showcase-content {
-        text-align: justify; /* Make paragraph justify */
+        text-align: justify; 
     }
 
     .showcase-desc {
@@ -1280,11 +1265,11 @@ body {
     }
 
     .showcase-points-list {
-        align-items: flex-start; /* Force left alignment */
+        align-items: flex-start; 
     }
 
     .showcase-point-card {
-        justify-content: flex-start; /* Tick + text start from left */
+        justify-content: flex-start; 
         text-align: justify;
         width: 100%;
     }
@@ -1308,4 +1293,46 @@ body {
     margin-bottom: 0 !important;
   }
 
+}
+
+.manage-feature-text h4 {
+  font-size: 1.4rem;
+  color: var(--dark-navy);
+  margin-bottom: 10px;
+}
+
+.manage-images {
+  flex: 1;
+  position: relative;
+  height: 500px;
+}
+
+.manage-img-1 {
+  width: 70%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: absolute;
+  left: 5%;
+  top: 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.manage-img-2 {
+  width: 50%;
+  height: 350px;
+  border-radius: 20px;
+  border: 10px solid white;
+  position: absolute;
+  bottom: -40px;
+  right: 5%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+.manage-img-1 img,
+.manage-img-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

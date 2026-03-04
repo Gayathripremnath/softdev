@@ -7,7 +7,6 @@
   import imgSupport from "../assets/service_support.png";
   import imghero from "../assets/imghero.jpg";
 
-  /* ── Icon components ─────────────────────────────── */
   const IconRocket = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09Z" />
@@ -51,7 +50,6 @@
       <polyline points="12 5 19 12 12 19" />
     </svg>
   );
-  /* ── Service data ──────────────────────────────────── */
   const services = [
     {
       id: "implementation",
@@ -133,7 +131,6 @@
 
 
 
-  /* ── Component ─────────────────────────────────────── */
   const Services = () => {
 
     const [showNumber, setShowNumber] = useState(false);
@@ -142,7 +139,6 @@
 
     useEffect(() => {
       window.scrollTo(0, 0);
-      /* ---- Intersection-based scroll reveal ---- */
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -158,7 +154,6 @@
         .querySelectorAll(".sv2-anim")
         .forEach((el) => observer.observe(el));
 
-      /* ---- parallax tilt on hero image ---- */
       const handleScroll = () => {
         const scrollY = window.scrollY;
         const heroImg = document.querySelector(".sv2-hero-img-wrap");
@@ -167,7 +162,6 @@
           heroImg.style.transform = `translateY(${y}px)`;
         }
 
-        /* floating particles parallax */
         document.querySelectorAll(".sv2-particle").forEach((p, i) => {
           const speed = 0.08 + i * 0.04;
           p.style.transform = `translateY(${scrollY * speed}px)`;
@@ -184,14 +178,12 @@
 
     return (
       <div className="sv2-page">
-        {/* ===== FLOATING PARTICLES ===== */}
         <div className="sv2-particles" aria-hidden="true">
           {[...Array(6)].map((_, i) => (
             <span key={i} className="sv2-particle" style={{ "--pi": i }} />
           ))}
         </div>
 
-        {/* ===== HERO ===== */}
         <section className="sv2-hero" ref={heroRef}>
           <div className="sv2-hero-bg" aria-hidden="true">
             <img src={imgHero} alt="" className="sv2-hero-bg-img" />
@@ -216,7 +208,6 @@
               </p>
             <div className="sv2-hero-actions">
 
-    {/* LEFT SIDE WRAPPER */}
     <div className="schedule-wrapper">
       <button 
         className="sv2-btn sv2-btn-primary"
@@ -234,7 +225,6 @@
       )}
     </div>
 
-    {/* RIGHT SIDE BUTTON */}
     <button className="sv2-btn sv2-btn-ghost">
       Explore Services
     </button>
@@ -248,7 +238,7 @@
                 alt="Smart Build implementation"
                 className="sv2-hero-img"
               />
-              {/* floating stat cards */}
+             
               <div className="sv2-float-card sv2-float-card-1 sv2-anim sv2-anim-scale">
                 <strong>100%</strong>
                 <span>Workflow-Oriented</span>
@@ -260,7 +250,7 @@
             </div>
           </div>
 
-          {/* scroll indicator */}
+          
           <div className="sv2-scroll-hint sv2-anim sv2-anim-up">
             <div className="sv2-scroll-mouse">
               <div className="sv2-scroll-wheel" />
@@ -285,7 +275,7 @@
 
 
 
-        {/* ===== SERVICE SECTIONS ===== */}
+        
         {services.map((svc, idx) => (
           <section
             key={svc.id}
@@ -293,7 +283,7 @@
             id={svc.id}
           >
             <div className="sv2-container sv2-service-grid">
-              {/* IMAGE COLUMN */}
+             
               <div
                 className={`sv2-service-media sv2-anim sv2-anim-${svc.direction}`}
               >
@@ -308,7 +298,6 @@
                 />
               </div>
 
-              {/* CONTENT COLUMN */}
               <div className="sv2-service-content sv2-anim sv2-anim-up">
                 <div className="sv2-service-icon" style={{ color: svc.accent }}>
                   {svc.icon}
@@ -342,7 +331,6 @@
               </div>
             </div>
 
-            {/* decorative divider */}
             {idx < services.length - 1 && (
               <div className="sv2-divider" aria-hidden="true">
                 <span />
@@ -351,11 +339,10 @@
           </section>
         ))}
 
-        {/* ===== CTA ===== */}
+   
         <section className="sv2-cta sv2-anim sv2-anim-up">
           <div className="sv2-container">
             <div className="sv2-cta-box">
-              {/* animated background orbs */}
               <div className="sv2-cta-orb sv2-cta-orb-1" aria-hidden="true" />
               <div className="sv2-cta-orb sv2-cta-orb-2" aria-hidden="true" />
               <div className="sv2-cta-orb sv2-cta-orb-3" aria-hidden="true" />

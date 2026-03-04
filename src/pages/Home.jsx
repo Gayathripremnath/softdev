@@ -5,7 +5,6 @@ import "aos/dist/aos.css";
 import './Home.css';
 import './chip-animation.css';
 
-// Assets
 import heroBg from "../assets/homepage.jpg";
 import civilImg from "../assets/civil.jpg";
 import aboutImg from "../assets/about-civil.jpg";
@@ -30,7 +29,6 @@ const Home = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Custom observer for the word reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -39,7 +37,6 @@ const Home = () => {
       });
     }, { threshold: 0.1 });
 
-    // Animation observer for .animate elements
     const animateObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -135,7 +132,6 @@ const showcaseData = [
   return (
     <div className="modern-home-wrapper">
 
-      {/* ── 1. MODERN SPLIT HERO ── */}
       <section className="modern-hero">
         <div className="modern-hero-bg" style={{ backgroundImage: `url(${heroBg})` }}></div>
         <div className="modern-hero-gradient-overlay"></div>
@@ -195,7 +191,6 @@ const showcaseData = [
         </div>
       </section>
 
-      {/* ── 2. PAYROLL KINETIC TYPOGRAPHY ── */}
       <section className="home-payroll-text-section modern-payroll-section">
         <div className="modern-max-container">
           <p className="home-payroll-reveal">
@@ -206,12 +201,10 @@ const showcaseData = [
         </div>
       </section>
 
-      {/* ── 3. PLATFORM CAPABILITIES & IMPACT ── */}
       <section className="modern-platform-impact">
         <div className="modern-max-container">
 
 
-          {/* Bottom Grid: Platform Features as Points */}
           <div className="modern-feature-points-grid">
             <div className="points-header">
               <span className="points-badge">PLATFORM FEATURES</span>
@@ -254,15 +247,12 @@ const showcaseData = [
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            {/* Background Step Number */}
             <span className="bg-step-number">{item.id}</span>
 
-            {/* Image Wrap */}
-            <div className="showcase-image-wrap">
+=            <div className="showcase-image-wrap">
               <img src={item.img} alt={item.title} className="showcase-img" />
             </div>
 
-            {/* Content Wrap */}
             <div className="showcase-content">
               <div className="modern-chip">{item.chip}</div>
               <h3 className="showcase-title">{item.title}</h3>
@@ -276,7 +266,7 @@ const showcaseData = [
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ 
-                      delay: 0.2 + (pIdx * 0.15), // Sequential "one-by-one" delay
+                      delay: 0.2 + (pIdx * 0.15), 
                       duration: 0.5 
                     }}
                     viewport={{ once: true }}
@@ -334,7 +324,6 @@ const showcaseData = [
         </div>
       </section>
 
-      {/* ── 5. MODERN FULL-BLEED CTA ── */}
       <section className="modern-cta-bleed">
         <div className="cta-bleed-image" style={{ backgroundImage: `url(${aboutImg})` }}></div>
         <div className="cta-bleed-gradient"></div>
@@ -354,7 +343,6 @@ const showcaseData = [
         </div>
       </section>
 
-      {/* ── SCROLL TO TOP ── */}
       <motion.div
         className={`scroll-to-top-btn ${showScroll ? 'visible' : ''}`}
         onClick={scrollToTop}
