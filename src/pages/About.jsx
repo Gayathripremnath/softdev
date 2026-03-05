@@ -103,8 +103,7 @@ const About = () => {
                 </span>
               ))}
             </span>
-            <h2 className="about-heading-main">
-              Smart Build: <span className="text-gradient">Digital Construction Management </span>Platform
+            <h2 className="about-heading-main">Digital <span className="text-gradient"> Construction Management </span>Platform
             </h2>
             <p>
               Smart Build was launched 10 years ago with a clear vision: to simplify construction
@@ -135,31 +134,71 @@ const About = () => {
         <div className="who-modern-grid">
           <div className="who-modern-intro">
             <span className="section-label who-modern-label">WHO WE ARE</span>
-            <h2>Software Professionals + Construction Workflow Specialists</h2>
+            <h2>Smart Build Construction Management Application</h2>
             <p className="team-who-text">
-              We are a dedicated team of software professionals and construction workflow specialists
-              who understand both technology and field-level operations.
+              Smart Build Construction Management Application is a dedicated construction
+              management solution developed to simplify and digitalize project operations for the
+              construction industry.
+            </p>
+            <p className="team-who-text">
+              We are a team focused on delivering smart technology that helps builders,
+              contractors, architects, and construction companies manage their projects
+              efficiently. With more than 10 years of industry experience, we understand the real
+              challenges faced in construction project management.
+            </p>
+            <p className="team-who-text">
+              Our platform is designed to provide complete control over project operations,
+              including enquiry management, quotation preparation, project execution, and project-wise
+              income and expense tracking.
+            </p>
+            <p className="team-who-text">
+              What makes us different is our commitment to customization, continuous
+              improvement, and long-term client relationships. We work closely with our clients to
+              adapt the system according to their business processes, ensuring that the software
+              truly supports their daily operations.
+            </p>
+            <p className="team-who-text">
+              Our goal is to help construction companies save time, reduce operational
+              complexity, and improve project profitability through a reliable and easy-to-use
+              digital solution.
             </p>
           </div>
 
           <div className="who-modern-strength">
-            <h3 className="team-strength-title">Our Strength Lies in Combining</h3>
+            <h3 className="team-strength-title">Why Choose Us</h3>
+            <p className="team-who-text">
+              Choosing Smart Build Construction Management Application means choosing a
+              reliable technology partner that understands the construction industry and its
+              challenges.
+            </p>
             <ul className="team-strength-list">
               <li>
                 <span className="strength-index">01</span>
-                <span className="strength-text">Practical construction knowledge</span>
+                <span className="strength-text">Industry-Focused Solutions</span>
               </li>
               <li>
                 <span className="strength-index">02</span>
-                <span className="strength-text">Strong accounting and financial systems</span>
+                <span className="strength-text">Complete Project Management</span>
               </li>
               <li>
                 <span className="strength-index">03</span>
-                <span className="strength-text">Advanced web and mobile technology</span>
+                <span className="strength-text">10+ Years of Experience</span>
               </li>
               <li>
                 <span className="strength-index">04</span>
-                <span className="strength-text">Custom development expertise</span>
+                <span className="strength-text">Fully Customizable System</span>
+              </li>
+              <li>
+                <span className="strength-index">05</span>
+                <span className="strength-text">Real-Time Reports & Insights</span>
+              </li>
+              <li>
+                <span className="strength-index">06</span>
+                <span className="strength-text">Dedicated Support</span>
+              </li>
+              <li>
+                <span className="strength-index">07</span>
+                <span className="strength-text">Continuous Updates & Improvements</span>
               </li>
             </ul>
           </div>

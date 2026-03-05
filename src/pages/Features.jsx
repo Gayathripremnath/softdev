@@ -5,32 +5,32 @@ import "./Features.css";
 const featureList = [
   {
     title: "Enquiry Management",
-    desc: "Enquiry upload, customer details entry, follow-up tracking, status monitoring, and conversion management.",
+    desc: "Capture and manage all client enquiries in one place. Track follow-ups, assign leads to your sales team, and convert enquiries into successful projects",
     img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
   },
   {
     title: "Quotation Management",
-    desc: "Prepare professional quotations with item-wise cost calculation, approval tracking, and version control.",
+    desc: "Create accurate and professional quotations quickly. Add materials, labour costs,taxes, and terms to generate detailed quotations for your clients.",
     img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80"
   },
   {
-    title: "Financial Control",
-    desc: "Invoice creation, security deposit management, creditors and debtors tracking, balance sheet generation, and extra expense management.",
+    title: " Material Management",
+    desc: "Track material purchases, usage, and stock movements. Ensure proper control overmaterial costs and reduce wastage.",
     img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80"
   },
   {
-    title: "Planning & Documentation",
-    desc: "BOQ management, project schedule monitoring, daily task assignment, and photo documentation.",
+    title: " Project-wise Income & Expense Tracking",
+    desc: "Monitor project finances easily by tracking all income and expenses related to each project. Maintain clear financial control and improve profitability",
     img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=80"
   },
   {
-    title: "Purchase & Stock Control",
-    desc: "Purchase request, purchase order, purchase bill entry, stock management, and stock transfer.",
+    title: "Project Operations Management",
+    desc: "Manage the entire lifecycle of your construction projects—from planning and execution to completion—with real-time updates and progress tracking",
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
   },
   {
-    title: "Workforce & Resource Management",
-    desc: "Labour management, salary management, subcontract management, tools management, and vehicle management.",
+    title: " Labour & Site Activity Management",
+    desc: "LRecord labour work, daily site activities, and contractor details to maintain better control over project execution.",
     img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
   }
 ];
@@ -51,12 +51,12 @@ const workModules = [
 
 const controlCards = [
   {
-    title: "Additional Reports",
-    desc: "Daily Report and Daily Transaction Report are available instantly for management."
+    title: "Reports & Profit Analysis",
+    desc: "Generate detailed reports for project costs, income, expenses, and profitability to help you make better business decisions."
   },
   {
-    title: "Centralized Financial Visibility",
-    desc: "All project data is centralized and automatically reflected in financial reports."
+    title: "Web & Mobile Access",
+    desc: "Access the system anytime from web or mobile devices, allowing your team to stay connected and update project information from anywhere."
   }
 ];
 
@@ -89,8 +89,10 @@ const Features = () => {
             <h1>Complete Enquiry to Project Management Workflow</h1> </div>
             <div className="sub-fx">
             <p className="fx-subtitle">
-              Smart Build covers the full business cycle from enquiry to final balance sheet,
-              with centralized project, financial, workforce, and reporting control.
+             Smart Build Construction Management Application is designed to simplify and
+streamline every stage of construction project management. Our powerful features help
+you manage operations, finances, and project activities efficiently from a single
+platform.
             </p>
            </div>
          

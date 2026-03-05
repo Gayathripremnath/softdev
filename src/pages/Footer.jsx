@@ -24,9 +24,15 @@ const Footer = () => {
           <div className="footer-col">
             <h4>Social Media</h4>
             <p>Facebook</p>
-            <p>Twitter</p>
             <p>Instagram</p>
-            <p>LinkedIn</p>
+            <div className="footer-branch" style={{ marginTop: '20px' }}>
+              <p>
+                <strong>Email:</strong> <a href="mailto:info@smartbuildapp.com">info@smartbuildapp.com</a>
+              </p>
+              <p>
+                <strong>Website:</strong> <a href="https://www.smartbuildapp.com" target="_blank" rel="noreferrer">www.smartbuildapp.com</a>
+              </p>
+            </div>
           </div>
 
           <div className="footer-col">
@@ -62,14 +68,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="footer-branch" style={{ marginTop: '20px' }}>
-              <h5>UAE</h5>
-              <p className="footer-comp">Genova Technologies LLC</p>
-              <div className="footer-phones">
-                <a href="tel:+971508291970">+971 50 829 1970</a><br />
-                <a href="tel:+971501249940">+971 50 124 9940</a>
-              </div>
-            </div>
+
           </div>
 
         </div>
