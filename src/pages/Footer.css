@@ -1,6 +1,6 @@
 .footer-wrapper {
   position: relative;
-  background: #064168;
+  background: rgb(1, 1, 37);
   padding-top: 60px;
   font-family: "Inter", sans-serif;
   margin-top: -2px;
@@ -44,8 +44,8 @@
 /* GRID */
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
 }
 
 .footer-col h4 {
@@ -134,7 +134,7 @@
 /* RESPONSIVE */
 @media (max-width: 1200px) {
   .footer-grid {
-    grid-template-columns: 1fr 1.5fr 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 }

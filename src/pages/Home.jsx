@@ -133,9 +133,9 @@ const Home = () => {
     {
       id: "01",
       chip: "ENQUIRY",
-      title: "Smart Enquiry Management(CRM)",
+      title: "Smart Enquiry Management (CRM)",
       desc: "Manage all your client enquiries in one place and never miss a potential project.",
-      img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1000",
+      img: enquiryImg,
       points: ["Capture enquiries from multiple sources", "Maintain complete client communication history", "Assign enquiries to sales team members", "Track enquiry status (New, Follow-up, Quoted, Won, Lost)", "Set reminders for follow-ups and meetings", "Convert enquiries into projects instantly"],
       reverse: false
     },
@@ -231,9 +231,16 @@ const Home = () => {
       <section className="home-payroll-text-section modern-payroll-section">
         <div className="modern-max-container">
           <p className="home-payroll-reveal">
-            {"Smart build payroll is a cutting-edge, cloud based Human Resources Management Software designed to streamline.".split(" ").map((word, i) => (
-              <span key={i} style={{ "--idx": i }}>{word}{" \u00A0"}</span>
-            ))}
+            <span className="payroll-line">
+              {"Smart build payroll is a cutting-edge, cloud based".split(" ").map((word, i) => (
+                <span key={`l1-${i}`} style={{ "--idx": i }}>{word}{" \u00A0"}</span>
+              ))}
+            </span>
+            <span className="payroll-line">
+              {"Human Resources Management Software designed to streamline.".split(" ").map((word, i) => (
+                <span key={`l2-${i}`} style={{ "--idx": i + 8 }}>{word}{" \u00A0"}</span>
+              ))}
+            </span>
           </p>
         </div>
       </section>

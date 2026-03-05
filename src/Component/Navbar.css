@@ -83,6 +83,14 @@
   border-radius: 60px;
 }
 
+.flag-icon {
+  width: 14px;
+  height: 10px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-left: 2px;
+}
+
 .navdot {
   width: 8px;
   height: 8px;

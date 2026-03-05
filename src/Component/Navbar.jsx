@@ -83,7 +83,7 @@ const Navbar = () => {
       to_name: 'Smart Build Admin'
     };
 
-    // NOTE: Replace these with your actual EmailJS credentials
+    
     const SERVICE_ID = 'service_gsd092p';
     const TEMPLATE_ID = 'template_zyusngf';
     const PUBLIC_KEY = 'tX9cxueTJuOgEl9Sz'; // Removed trailing hyphen
@@ -113,10 +113,24 @@ const Navbar = () => {
               <div className="banner-left">
                 <a href="tel:+917559080005" className="contact-link">
                   <span className="navdot"></span> +91 7559080005
+                  <span>(</span>
+                  <img
+                    src="https://flagcdn.com/w20/in.png"
+                    alt="India flag"
+                    className="flag-icon"
+                  />
+                  <span>)</span>
                 </a>
                 <span className="separator">/</span>
-                <a href="tel:+918714359715" className="contact-link">
-                  <span className="navdot"></span> +91 8714359715
+                <a href="tel:+971508291970" className="contact-link">
+                  <span className="navdot"></span> +971 50 829 1970
+                  <span>(</span>
+                  <img
+                    src="https://flagcdn.com/w20/ae.png"
+                    alt="UAE flag"
+                    className="flag-icon"
+                  />
+                  <span>)</span>
                 </a>
               
                 <span className="separator">|</span>
