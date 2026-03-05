@@ -111,13 +111,14 @@ const Navbar = () => {
           <div className="container">
             <div className="banner-content">
               <div className="banner-left">
-                <a href="tel:+919778553345" className="contact-link">
+                <a href="tel:+917559080005" className="contact-link">
                   <span className="navdot"></span> +91 7559080005
                 </a>
                 <span className="separator">/</span>
-                <a href="tel:+919123456789" className="contact-link">
+                <a href="tel:+918714359715" className="contact-link">
                   <span className="navdot"></span> +91 8714359715
                 </a>
+              
                 <span className="separator">|</span>
                 <span className="availability">Available 24/7</span>
               </div>

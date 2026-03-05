@@ -1,17 +1,17 @@
 import React from "react";
 import "./Footer.css";
-import logo from "../assets/logo.jpg"; 
+import logo from "../assets/logo.jpg";
 
 const Footer = () => {
   return (
     <footer className="footer-wrapper">
 
-   
+
       <div className="footer-main">
 
         <div className="footer-header">
-         
-<h1>SMART BUILD</h1>
+
+          <h1>SMART BUILD</h1>
           <div className="social-icons">
             <span>f</span>
             <span>t</span>
@@ -45,20 +45,31 @@ const Footer = () => {
             <p>Domain Registration</p>
           </div>
 
-          <div className="footer-col">
+          <div className="footer-col" id="footer-contact">
             <h4>Contact Us</h4>
-            <p>
-              1st Floor, Basil Building, Horse Ride Road,
-              Opp. St. Michels Church, Westhill,
-              Kozhikode, Kerala, 673005
-            </p>
-            <p><strong>GSTIN:</strong> 32AKLPL0387L1ZW</p>
-            <p>
-              <strong>Call us:</strong><br />
-              +91 7559080005<br />
-              +91 8714359715<br />
-              +91 9562020978
-            </p>
+
+            <div className="footer-branch">
+              <h5>India (Kerala)</h5>
+              <p className="footer-comp">Genova Technologies Pvt Ltd</p>
+              <p className="footer-address">
+                2nd Floor, West Hill Chungam, East Hill<br />
+                Kozhikode, Kerala, 673005
+              </p>
+              <p className="footer-gst"><strong>GSTIN:</strong> 32AKLPL0387L1ZW</p>
+              <div className="footer-phones">
+                <a href="tel:+917559080005">+91 7559080005</a> <br />
+                <a href="tel:+919562020978">+91 9562020978</a>
+              </div>
+            </div>
+
+            <div className="footer-branch" style={{ marginTop: '20px' }}>
+              <h5>UAE</h5>
+              <p className="footer-comp">Genova Technologies LLC</p>
+              <div className="footer-phones">
+                <a href="tel:+971508291970">+971 50 829 1970</a><br />
+                <a href="tel:+971501249940">+971 50 124 9940</a>
+              </div>
+            </div>
           </div>
 
         </div>
