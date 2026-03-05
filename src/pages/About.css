@@ -21,10 +21,10 @@
   font-weight: 700;
   color: #3b82f6;
   letter-spacing: 2px;
-  margin-top: 40px;
   text-transform: uppercase;
   background: transparent;
   padding: 0;
+  margin-bottom: 5px;
   border-radius: 0;
   box-shadow: none;
   animation: textSlideIn 1s ease-out;
@@ -35,23 +35,55 @@
     opacity: 0;
     transform: translateX(-30px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
-.about-content-main{
-  margin-top: 20px;
+
+.about-content-main {
+  margin-top: 70px;
 }
+
 .about-content-main h2,
 .team-section h2,
 .manage-content h2 {
-  font-size: 2.4rem;
+  font-size: 3.6rem;
   font-weight: 800;
   color: var(--dark-navy);
   line-height: 1.1;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
+
+.about-heading-main {
+  margin-top: 0;
+  font-size: 3.6rem;
+  font-weight: 800;
+  color: #0c1c2c;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #3a85ffbb 0%, #1023b1c4 60%, #2ecc70ba 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Two-color dual heading */
+.manage-dual-heading {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+
 
 .about-content-main p,
 .manage-content p {
@@ -68,7 +100,7 @@
   flex: 1;
   position: relative;
   max-width: 400px;
-
+  margin-top: 0;
 }
 
 .small-images-wrapper {
@@ -87,6 +119,7 @@
   text-align: center;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   z-index: 10;
+  margin-bottom: 20px;
 }
 
 
@@ -107,6 +140,7 @@
 
 .small-image.small-1 {
   width: 300px;
+  margin-bottom: 20px;
 }
 
 .small-image.small-1 img {
@@ -149,7 +183,7 @@
 .team-section {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 38px 20px ;
+  padding: 38px 20px;
 }
 
 .who-modern-grid {
@@ -269,7 +303,7 @@
 
   .experience-badge {
     height: 100px;
-   
+
   }
 }
 
@@ -294,6 +328,8 @@
 
 
 .global-manage-section {
+  max-width: 1120px;
+  margin: 0 auto;
   background-color: white;
 }
 
@@ -302,6 +338,7 @@
 }
 
 .about-container {
+  padding: 10px;
   display: flex;
   align-items: center;
 }
@@ -836,7 +873,7 @@
   right: 0;
   bottom: 0;
   background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -1005,7 +1042,7 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .experience-showcase {
     position: static;
     max-width: 400px;
@@ -1017,25 +1054,25 @@
   .modern-differentiators-section {
     padding: 60px 0;
   }
-  
+
   .differentiators-header {
     margin-bottom: 50px;
   }
-  
+
   .differentiators-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .differentiator-card {
     padding: 24px 20px;
   }
-  
+
   .experience-circle {
     width: 100px;
     height: 100px;
   }
-  
+
   .experience-number {
     font-size: 2rem;
   }
@@ -1045,19 +1082,20 @@
   .differentiators-content {
     gap: 30px;
   }
-  
+
   .experience-showcase {
     padding: 30px 20px;
   }
-  
+
   .differentiator-card {
     padding: 20px 16px;
   }
-  
+
   .card-icon {
     font-size: 2rem;
   }
 }
+
 /* Compact Differentiators Section */
 .compact-differentiators-section {
   padding: 50px 0;
@@ -1159,7 +1197,7 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .compact-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1170,6 +1208,7 @@
     grid-template-columns: 1fr;
   }
 }
+
 /* Simple Points Section */
 .simple-points {
   display: flex;
@@ -1225,16 +1264,17 @@
     gap: 20px;
     align-items: center;
   }
-  
+
   .experience-highlight {
     width: 100%;
     max-width: 200px;
   }
-  
+
   .points-list {
     width: 100%;
   }
 }
+
 /* Horizontal Points */
 .horizontal-points {
   display: flex;
@@ -1257,12 +1297,13 @@
   .horizontal-points {
     gap: 10px;
   }
-  
+
   .point {
     font-size: 0.8rem;
     padding: 6px 12px;
   }
 }
+
 /* Moving Points */
 .moving-points {
   overflow: hidden;
@@ -1285,10 +1326,12 @@
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }
 }
+
 /* Compact Header Centered */
 .compact-header {
   text-align: center;
@@ -1313,6 +1356,7 @@
   margin-top: 20px;
   line-height: 1.6;
 }
+
 /* Moving Points */
 .moving-text {
   animation: scroll-left 25s linear infinite !important;
@@ -1324,6 +1368,7 @@
   margin-top: 20px;
   padding: 10px 0;
 }
+
 /* Compact Section Spacing */
 .compact-differentiators-section {
   padding: 30px 0 !important;
@@ -1337,14 +1382,16 @@
   margin-top: 10px !important;
   padding: 5px 0 !important;
 }
+
 /* Minimal Final Section */
 .compact-differentiators-section {
   padding: 20px 0 20px !important;
 }
-/* Reduce About Page Top Space */
+
 .about-page {
   padding: 80px 0 100px !important;
 }
+
 /* Animated Letters for ABOUT SMART BUILD */
 .animated-letter {
   display: inline-block;
@@ -1359,6 +1406,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);

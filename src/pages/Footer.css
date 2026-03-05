@@ -1,8 +1,10 @@
 .footer-wrapper {
   position: relative;
-  background: rgb(6, 65, 104);
+  background: #064168;
   padding-top: 60px;
   font-family: "Inter", sans-serif;
+  margin-top: -2px;
+  display: block;
 }
 
 

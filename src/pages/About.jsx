@@ -103,7 +103,9 @@ const About = () => {
                 </span>
               ))}
             </span>
-            <h2>Smart Build: Digital Construction Management Platform</h2>
+            <h2 className="about-heading-main">
+              Smart Build: <span className="text-gradient">Digital Construction Management </span>Platform
+            </h2>
             <p>
               Smart Build was launched 10 years ago with a clear vision: to simplify construction
               management using smart digital technology. We understood the common problems in
@@ -164,7 +166,7 @@ const About = () => {
         </div>
       </section>
 
-   
+
     </div>
   );
 };
