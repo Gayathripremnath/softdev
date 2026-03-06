@@ -9,7 +9,7 @@ import emailjs from '@emailjs/browser';
 import heroBg from "../assets/homepage.jpg";
 import civilImg from "../assets/civil.jpg";
 import aboutImg from "../assets/about-civil.jpg";
-import enquiryImg from "../assets/enquiry.webp";
+import enquiryImg from "../assets/enquiryimg.jpg";
 import projectImg from "../assets/project-tracking.png";
 import { Monitor, Smartphone, UserCheck, BarChart3, Settings, Headphones } from 'lucide-react';
 
