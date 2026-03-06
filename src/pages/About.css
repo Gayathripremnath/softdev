@@ -394,9 +394,7 @@
   transform: none !important;
 }
 
-/* ========================================
-   COMPREHENSIVE RESPONSIVE MEDIA QUERIES
-   ======================================== */
+
 
 /* Desktop Large (1400px+) */
 @media (min-width: 1400px) {
@@ -716,7 +714,6 @@
 
 
 
-/* Ensure section backgrounds are transparent where needed */
 .main-about-section,
 .team-section,
 .global-manage-section {
@@ -725,7 +722,6 @@
   background-color: transparent !important;
 }
 
-/* Modern Difference Section */
 .modern-diff {
   padding: 40px 20px 96px;
   background: #ffffff;
@@ -1212,7 +1208,6 @@
   }
 }
 
-/* Simple Points Section */
 .simple-points {
   display: flex;
   gap: 40px;
