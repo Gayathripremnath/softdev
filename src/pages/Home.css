@@ -1685,27 +1685,24 @@ body {
 
   .hm-manage-content h2 {
     font-size: 1.6rem;
-    margin-top: 50px;
-    /* Space from absolute overlapping image */
     text-align: center;
   }
 
   .hm-manage-images {
     height: auto;
-    /* Remove fixed height */
     max-width: 100%;
-    margin: 0 auto 30px;
+    margin: 0 auto 40px;
+    padding-bottom: 28px;
     position: relative;
     display: flex;
     justify-content: center;
-    min-height: 200px;
+    min-height: 220px;
   }
 
   .hm-manage-img-1 {
     width: 70%;
     height: 180px;
     position: relative;
-    /* Switch to relative to avoid overlap */
     left: 0;
     z-index: 1;
   }
@@ -1714,8 +1711,7 @@ body {
     width: 50%;
     height: 130px;
     position: absolute;
-    /* Keep overlay but tighter */
-    bottom: -15px;
+    bottom: 0;
     right: 5%;
     border-width: 4px;
     z-index: 2;
@@ -1781,15 +1777,14 @@ body {
 
   .hm-manage-content h2 {
     font-size: 1.4rem;
-    margin-top: 50px;
-    /* Even more space for very small screens */
   }
 
   .hm-manage-images {
     height: auto;
-    min-height: 140px;
+    min-height: 165px;
     max-width: 100%;
-    margin-bottom: 0px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
   }
 
   .hm-manage-img-1 {
@@ -1798,7 +1793,7 @@ body {
 
   .hm-manage-img-2 {
     height: 90px;
-    bottom: -10px;
+    bottom: 0;
   }
 
   .showcase-point-card {

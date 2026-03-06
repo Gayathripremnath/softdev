@@ -25,6 +25,7 @@ body {
   --sb-brand: #0a79c5;
   --sb-brand-deep: #084a86;
   --sb-bg: #f3f8ff;
+  --page-offset: 20px;
 }
 
 body {
@@ -40,4 +41,20 @@ h2,
 h3,
 h4 {
   font-family: 'Space Grotesk', sans-serif;
+}
+
+.page-content {
+  margin-top: var(--page-offset) !important;
+}
+
+@media (max-width: 991px) {
+  :root {
+    --page-offset: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --page-offset: 20px;
+  }
 }
