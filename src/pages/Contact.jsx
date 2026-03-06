@@ -208,6 +208,7 @@ const Contact = () => {
                 <div className="input-box">
                   <input
                     type="text"
+                    placeholder="Name"
                     value={formData.name}
                     onChange={(e) => {
                       setFormData({ ...formData, name: e.target.value });
@@ -221,6 +222,7 @@ const Contact = () => {
                 <div className="input-box">
                   <input
                     type="email"
+                    placeholder="Email"
                     value={formData.email}
                     onChange={(e) => {
                       setFormData({ ...formData, email: e.target.value });
@@ -234,6 +236,7 @@ const Contact = () => {
                 <div className="input-box">
                   <input
                     type="tel"
+                    placeholder="Phone Number"
                     value={formData.phone}
                     onChange={(e) => {
                       setFormData({ ...formData, phone: e.target.value });
@@ -247,6 +250,7 @@ const Contact = () => {
                 <div className="input-box">
                   <input
                     type="text"
+                    placeholder="City"
                     value={formData.city}
                     onChange={(e) => {
                       setFormData({ ...formData, city: e.target.value });
