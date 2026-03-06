@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion"; 
 import "./Features.css";
+import enquiryImg from "../assets/enquiryimg.jpg";
+import ledgerimg from "../assets/ledger.jpg";
+
 
 const featureList = [
   {
     title: "Enquiry Management",
     desc: "Capture and manage all client enquiries in one place. Track follow-ups, assign leads to your sales team, and convert enquiries into successful projects",
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+    img:enquiryImg
   },
   {
     title: "Quotation Management",
@@ -31,7 +34,7 @@ const featureList = [
   {
     title: " Labour & Site Activity Management",
     desc: "LRecord labour work, daily site activities, and contractor details to maintain better control over project execution.",
-    img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
+    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
   }
 ];
 
@@ -143,7 +146,7 @@ platform.
           <div className="fx-ops-panels">
             <article className="fx-ops-image-card fx-scroll" style={{ "--sd": "150ms" }}>
               <img
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
+                src={ledgerimg}
                 alt="Construction planning"
                 loading="lazy"
               />

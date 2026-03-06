@@ -240,12 +240,12 @@ const Home = () => {
         <div className="modern-max-container">
           <p className="home-payroll-reveal">
             <span className="payroll-line">
-              {"Smart build payroll is a cutting-edge, cloud based".split(" ").map((word, i) => (
+              {"Complete Construction Project Management Solution for Builders and Contractors to ".split(" ").map((word, i) => (
                 <span key={`l1-${i}`} style={{ "--idx": i }}>{word}{" \u00A0"}</span>
               ))}
             </span>
             <span className="payroll-line">
-              {"Human Resources Management Software designed to streamline.".split(" ").map((word, i) => (
+              {"Track Projects, Manage Accounts, Materials, Labour, and Site Activities in Real Time".split(" ").map((word, i) => (
                 <span key={`l2-${i}`} style={{ "--idx": i + 8 }}>{word}{" \u00A0"}</span>
               ))}
             </span>
