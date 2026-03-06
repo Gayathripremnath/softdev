@@ -256,6 +256,19 @@ body {
   box-shadow: 0 0 0 4px rgba(10, 121, 197, 0.1);
 }
 
+.modern-input-wrapper input.error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+}
+
+.modern-field-error {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #dc2626;
+  font-weight: 700;
+}
+
 .modern-btn-submit {
   width: 100%;
   padding: 14px;

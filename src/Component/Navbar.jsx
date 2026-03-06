@@ -15,6 +15,7 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [demoPopupOpen, setDemoPopupOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", city: "" });
+  const [formErrors, setFormErrors] = useState({ name: "", email: "", city: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const location = useLocation();
@@ -55,6 +56,7 @@ const Navbar = () => {
     setMobileMenuOpen(false);
     setFormSubmitted(false);
     setFormData({ name: "", email: "", city: "" });
+    setFormErrors({ name: "", email: "", city: "" });
     setDemoPopupOpen(true);
   };
 
@@ -63,21 +65,43 @@ const Navbar = () => {
   };
 
   const handleFormChange = (e) => {
+    const { name, value } = e.target;
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormErrors({ ...formErrors, [name]: "" });
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.city) return;
+    const trimmedData = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      city: formData.city.trim()
+    };
+    const nextErrors = { name: "", email: "", city: "" };
+
+    if (!trimmedData.name) {
+      nextErrors.name = "Please enter a valid value";
+    }
+
+    if (!trimmedData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedData.email)) {
+      nextErrors.email = "Please enter a valid value";
+    }
+
+    if (!trimmedData.city) {
+      nextErrors.city = "Please enter a valid value";
+    }
+
+    setFormErrors(nextErrors);
+    if (nextErrors.name || nextErrors.email || nextErrors.city) return;
 
     setIsSubmitting(true);
 
     const templateParams = {
-      name: formData.name,       // matches {{name}}
-      from_name: formData.name,  // matches {{from_name}}
-      email: formData.email,     // matches {{email}}
-      from_email: formData.email, // matches {{from_email}}
-      city: formData.city,
+      name: trimmedData.name,
+      from_name: trimmedData.name,
+      email: trimmedData.email,
+      from_email: trimmedData.email,
+      city: trimmedData.city,
       phone: formData.phone || "N/A",
       request_type: 'Navbar Demo Request',
       to_name: 'Smart Build Admin'
@@ -94,6 +118,7 @@ const Navbar = () => {
           console.log('NAVBAR SUCCESS!', response.status, response.text);
           setFormSubmitted(true);
           setFormData({ name: "", email: "", city: "" });
+          setFormErrors({ name: "", email: "", city: "" });
           setIsSubmitting(false);
         })
         .catch((err) => {
@@ -232,12 +257,13 @@ const Navbar = () => {
                       type="text"
                       name="name"
                       placeholder="Enter your full name"
-                      value={formData.name}
-                      onChange={handleFormChange}
-                      required
-                      autoComplete="name"
-                    />
-                  </div>
+                    value={formData.name}
+                    onChange={handleFormChange}
+                    autoComplete="name"
+                    className={formErrors.name ? "demo-input-error" : ""}
+                  />
+                  {formErrors.name && <p className="demo-field-error">{formErrors.name}</p>}
+                </div>
 
                   <div className="demo-form-group">
                     <label htmlFor="demo-email">Email Address</label>
@@ -246,12 +272,13 @@ const Navbar = () => {
                       type="email"
                       name="email"
                       placeholder="Enter your email"
-                      value={formData.email}
-                      onChange={handleFormChange}
-                      required
-                      autoComplete="email"
-                    />
-                  </div>
+                    value={formData.email}
+                    onChange={handleFormChange}
+                    autoComplete="email"
+                    className={formErrors.email ? "demo-input-error" : ""}
+                  />
+                  {formErrors.email && <p className="demo-field-error">{formErrors.email}</p>}
+                </div>
 
                   <div className="demo-form-group">
                     <label htmlFor="demo-city">City</label>
@@ -260,12 +287,13 @@ const Navbar = () => {
                       type="text"
                       name="city"
                       placeholder="Enter your city"
-                      value={formData.city}
-                      onChange={handleFormChange}
-                      required
-                      autoComplete="address-level2"
-                    />
-                  </div>
+                    value={formData.city}
+                    onChange={handleFormChange}
+                    autoComplete="address-level2"
+                    className={formErrors.city ? "demo-input-error" : ""}
+                  />
+                  {formErrors.city && <p className="demo-field-error">{formErrors.city}</p>}
+                </div>
 
                   <button type="submit" className="demo-submit-btn" disabled={isSubmitting}>
                     {isSubmitting ? 'Sending...' : 'Send Request'}

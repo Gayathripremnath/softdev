@@ -14,24 +14,67 @@ const Contact = () => {
   const [success, setSuccess] = useState(false);
 
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", city: "" });
+  const [formErrors, setFormErrors] = useState({ name: "", email: "", phone: "", city: "" });
   const [popupPhone, setPopupPhone] = useState("");
+  const [popupError, setPopupError] = useState("");
 
   const branches = [
     { id: "01", region: "India (Kerala)", name: "Genova Technologies Pvt Ltd", nums: ["+91 7559080005", "+91 8714359715"] },
     { id: "02", region: "UAE", name: "Genova Technologies LLC", nums: ["+971 50 829 1970", "+971 50 124 9940"] }
   ];
 
+  const validateEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+  const validateMainForm = () => {
+    const trimmedData = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      city: formData.city.trim()
+    };
+
+    const nextErrors = { name: "", email: "", phone: "", city: "" };
+
+    if (!trimmedData.name) {
+      nextErrors.name = "Please enter a valid value";
+    }
+
+    if (!trimmedData.email || !validateEmail(trimmedData.email)) {
+      nextErrors.email = "Please enter a valid value";
+    }
+
+    if (!trimmedData.phone) {
+      nextErrors.phone = "Please enter a valid value";
+    }
+
+    if (!trimmedData.city) {
+      nextErrors.city = "Please enter a valid value";
+    }
+
+    setFormErrors(nextErrors);
+
+    return {
+      isValid: Object.values(nextErrors).every((value) => !value),
+      trimmedData
+    };
+  };
+
   const handleMainSubmit = (e) => {
     e.preventDefault();
+    const { isValid, trimmedData } = validateMainForm();
+    if (!isValid) {
+      return;
+    }
+
     setIsSubmitting(true);
 
     const templateParams = {
-      name: formData.name,
-      from_name: formData.name,
-      email: formData.email,
-      from_email: formData.email,
-      phone: formData.phone,
-      city: formData.city,
+      name: trimmedData.name,
+      from_name: trimmedData.name,
+      email: trimmedData.email,
+      from_email: trimmedData.email,
+      phone: trimmedData.phone,
+      city: trimmedData.city,
       request_type: 'General Enquiry',
       to_name: 'Smart Build Admin'
     };
@@ -46,6 +89,7 @@ const Contact = () => {
         console.log('SUCCESS!', response.status, response.text);
         setSuccess(true);
         setFormData({ name: "", email: "", phone: "", city: "" });
+        setFormErrors({ name: "", email: "", phone: "", city: "" });
         setIsSubmitting(false);
         setTimeout(() => setSuccess(false), 5000);
       })
@@ -58,15 +102,21 @@ const Contact = () => {
 
   const handlePopupSubmit = (e) => {
     e.preventDefault();
-    if (!popupPhone) return;
+    const trimmedPopupPhone = popupPhone.trim();
+    if (!trimmedPopupPhone) {
+      setPopupError("Please enter a valid value");
+      return;
+    }
+
     setIsSubmitting(true);
+    setPopupError("");
 
     const templateParams = {
       name: 'Fast Track Lead',
       from_name: 'Fast Track Lead',
       email: 'fasttrack@callback.com',
       from_email: 'fasttrack@callback.com',
-      phone: popupPhone,
+      phone: trimmedPopupPhone,
       city: 'Instant Callback',
       request_type: 'Callback Request',
       to_name: 'Smart Build Admin'
@@ -80,6 +130,7 @@ const Contact = () => {
       .then((response) => {
         console.log('POPUP SUCCESS!', response.status, response.text);
         setPopupPhone("");
+        setPopupError("");
         setIsSubmitting(false);
         setIsPopupOpen(false);
         alert('Request sent! We will call you soon.');
@@ -155,20 +206,56 @@ const Contact = () => {
               </div>
               <form className="modern-floating-form" onSubmit={handleMainSubmit}>
                 <div className="input-box">
-                  <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+                  <input
+                    type="text"
+                    value={formData.name}
+                    onChange={(e) => {
+                      setFormData({ ...formData, name: e.target.value });
+                      setFormErrors({ ...formErrors, name: "" });
+                    }}
+                    className={formErrors.name ? "input-error" : ""}
+                  />
                   <label>Full Name</label>
+                  {formErrors.name && <p className="field-error">{formErrors.name}</p>}
                 </div>
                 <div className="input-box">
-                  <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+                  <input
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => {
+                      setFormData({ ...formData, email: e.target.value });
+                      setFormErrors({ ...formErrors, email: "" });
+                    }}
+                    className={formErrors.email ? "input-error" : ""}
+                  />
                   <label> Email</label>
+                  {formErrors.email && <p className="field-error">{formErrors.email}</p>}
                 </div>
                 <div className="input-box">
-                  <input type="number" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
+                  <input
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => {
+                      setFormData({ ...formData, phone: e.target.value });
+                      setFormErrors({ ...formErrors, phone: "" });
+                    }}
+                    className={formErrors.phone ? "input-error" : ""}
+                  />
                   <label>Phone Number</label>
+                  {formErrors.phone && <p className="field-error">{formErrors.phone}</p>}
                 </div>
                 <div className="input-box">
-                  <input type="text" required value={formData.city} onChange={(e) => setFormData({ ...formData, city: e.target.value })} />
+                  <input
+                    type="text"
+                    value={formData.city}
+                    onChange={(e) => {
+                      setFormData({ ...formData, city: e.target.value });
+                      setFormErrors({ ...formErrors, city: "" });
+                    }}
+                    className={formErrors.city ? "input-error" : ""}
+                  />
                   <label>City</label>
+                  {formErrors.city && <p className="field-error">{formErrors.city}</p>}
                 </div>
                 <button type="submit" className="glow-submit-btn" disabled={isSubmitting}>
                   {isSubmitting ? 'Processing...' : 'Initialize Project'} <Send size={18} />
@@ -194,10 +281,14 @@ const Contact = () => {
                 <input
                   type="tel"
                   placeholder="Phone Number"
-                  required
                   value={popupPhone}
-                  onChange={(e) => setPopupPhone(e.target.value)}
+                  onChange={(e) => {
+                    setPopupPhone(e.target.value);
+                    setPopupError("");
+                  }}
+                  className={popupError ? "input-error" : ""}
                 />
+                {popupError && <p className="field-error">{popupError}</p>}
                 <button type="submit" className="glow-submit-btn" disabled={isSubmitting}>
                   {isSubmitting ? 'Sending...' : 'Call Me Back'}
                 </button>

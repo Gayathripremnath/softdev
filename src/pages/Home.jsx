@@ -77,22 +77,27 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const trimmedData = {
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      city: formData.city.trim()
+    };
     const newErrors = { name: '', phone: '', city: '' };
-    if (!formData.name) newErrors.name = 'Required';
-    if (!formData.phone) newErrors.phone = 'Required';
-    if (!formData.city) newErrors.city = 'Required';
+    if (!trimmedData.name) newErrors.name = 'Please enter a valid value';
+    if (!trimmedData.phone) newErrors.phone = 'Please enter a valid value';
+    if (!trimmedData.city) newErrors.city = 'Please enter a valid value';
     setErrors(newErrors);
-    if (!formData.name || !formData.phone || !formData.city) return;
+    if (!trimmedData.name || !trimmedData.phone || !trimmedData.city) return;
 
     setIsSubmitting(true);
 
     const templateParams = {
-      name: formData.name,      
-      from_name: formData.name,  
+      name: trimmedData.name,
+      from_name: trimmedData.name,
       email: 'no-email-provided@demo.com',
       from_email: 'no-email-provided@demo.com',
-      phone: formData.phone,
-      city: formData.city,
+      phone: trimmedData.phone,
+      city: trimmedData.city,
       request_type: 'Free Demo',
       to_name: 'Smart Build Admin'
     };
@@ -207,12 +212,15 @@ const Home = () => {
               <form onSubmit={handleSubmit} className="modern-form">
                 <div className="modern-input-wrapper">
                   <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} className={errors.name ? 'error' : ''} />
+                  {errors.name && <p className="modern-field-error">{errors.name}</p>}
                 </div>
                 <div className="modern-input-wrapper">
                   <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className={errors.phone ? 'error' : ''} />
+                  {errors.phone && <p className="modern-field-error">{errors.phone}</p>}
                 </div>
                 <div className="modern-input-wrapper">
                   <input type="text" name="city" placeholder="City Name" value={formData.city} onChange={handleChange} className={errors.city ? 'error' : ''} />
+                  {errors.city && <p className="modern-field-error">{errors.city}</p>}
                 </div>
                 <button
                   type="submit"

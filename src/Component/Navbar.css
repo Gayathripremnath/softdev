@@ -623,6 +623,18 @@
   background: #fff;
 }
 
+.demo-form-group input.demo-input-error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.demo-field-error {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #dc2626;
+  font-weight: 700;
+}
+
 /* Submit button */
 .demo-submit-btn {
   margin-top: 6px;

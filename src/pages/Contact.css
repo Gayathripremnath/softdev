@@ -129,6 +129,16 @@
 
 .input-box input:focus ~ label, .input-box input:valid ~ label { top: -10px; font-size: 12px; color: var(--accent); font-weight: 700; }
 .input-box input:focus { border-bottom-color: var(--accent); }
+.input-box input.input-error {
+  border-bottom-color: #dc2626;
+}
+
+.field-error {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #dc2626;
+  font-weight: 600;
+}
 
 .glow-submit-btn {
   width: 100%; background: var(--accent); color: white; border: none; padding: 20px; border-radius: 15px; font-weight: 800; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3); transition: 0.3s;
@@ -236,7 +246,6 @@
 }
 
 
-
 .mini-form {
   display: flex;
   flex-direction: column;
@@ -255,6 +264,11 @@
 .mini-form input:focus {
   border-color: #1e3a8a;
   box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+.mini-form input.input-error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
 }
 
 
