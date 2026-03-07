@@ -37,8 +37,9 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.8fr) minmax(0, 0.85fr);
+  column-gap: 12px;
+  row-gap: 20px;
   align-items: start;
 }
 
@@ -162,8 +163,9 @@
 
 @media (max-width: 1200px) {
   .footer-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.85fr) minmax(0, 0.85fr);
+    column-gap: 10px;
+    row-gap: 16px;
   }
 }
 
