@@ -1,13 +1,11 @@
 .footer-wrapper {
   position: relative;
-  background:     rgb(1, 1, 43);
+  background: rgb(1, 1, 43);
   padding-top: 60px;
   font-family: "Inter", sans-serif;
   margin-top: -2px;
   display: block;
 }
-
-
 
 .footer-main {
   padding: 10px 70px;
@@ -15,16 +13,13 @@
   color: #b5b5b5;
 }
 
-.footer-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-}
-
-.footer-header h1 {
-  color: white;
-  font-size: 2.6rem;
+.footer-logo {
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left:-25px;
+  margin-bottom: 16px;
 }
 
 .social-icons span {
@@ -40,22 +35,31 @@
   cursor: pointer;
 }
 
-/* GRID */
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 32px;
+  align-items: start;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contact-col {
+  margin-left: 0;
 }
 
 .footer-col h4 {
   color: white;
   font-size: 0.9rem;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 .footer-col p {
   font-size: 0.85rem;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 .footer-col a {
@@ -65,6 +69,33 @@
 }
 
 .footer-col a:hover {
+  color: #ffffff;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  line-height: 1.6;
+}
+
+.footer-links li + li {
+  margin-top: 0;
+}
+
+.footer-links a {
+  display: inline;
+  color: inherit;
+  text-decoration: none;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: inherit;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a.active {
   color: #ffffff;
 }
 
@@ -82,7 +113,6 @@
   color: #ffffff;
 }
 
-/* BOTTOM */
 .footer-bottom {
   margin-top: 50px;
   padding-top: 20px;
@@ -130,10 +160,9 @@
   font-size: 0.8rem !important;
 }
 
-/* RESPONSIVE */
 @media (max-width: 1200px) {
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
   }
 }
@@ -153,12 +182,12 @@
     padding: 40px 20px 20px;
   }
 
-  .footer-header {
-    flex-direction: column;
-    gap: 20px;
+  .footer-logo {
+    width: 180px;
+    margin-left: 0;
   }
 
-  .footer-header h1 {
-    font-size: 2rem;
+  .footer-contact-col {
+    margin-left: 0;
   }
 }
