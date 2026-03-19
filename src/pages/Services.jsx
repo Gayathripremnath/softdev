@@ -405,7 +405,7 @@ const Services = () => {
                 background: "#f4f4f4",
                 padding: "16px 32px",
                 borderRadius: "50px",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.05)"
+                boxShadow: "0 4px 12px rgba(31, 29, 29, 0.05)"
               }}>
                 📞 +91 75590 80005
               </a>
